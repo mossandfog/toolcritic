@@ -377,6 +377,20 @@
     }
     .tool-try:hover { box-shadow: 0 0 20px rgba(162,89,255,0.6); transform: scale(1.05); }
 
+    /* ---- CARD HOVER: BOOST TEXT CONTRAST ---- */
+    .tool-card:hover .tool-tagline,
+    .tool-card:hover .tool-price,
+    .tool-card:hover .pros li,
+    .tool-card:hover .cons li { color: #c8c8e8; transition: color .25s; }
+    .tool-card:hover .tool-tag {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.18);
+      color: #d8d8f0;
+      transition: all .25s;
+    }
+    .tool-card:hover .tool-name { color: #ffffff; transition: color .25s; }
+    .tool-card:hover .rating-num { color: #f0f0ff; transition: color .25s; }
+
     /* ---- SPARKLE STARS ---- */
     .sparkle {
       position: fixed; pointer-events: none; z-index: 9999;
@@ -494,6 +508,7 @@
     <li><a href="#tools">Reviews</a></li>
     <li><a href="#quiz">Quiz</a></li>
     <li><a href="#compare">Compare</a></li>
+    <li><a href="#deep-dive">Deep Dive</a></li>
     <li><a href="#timeline">Timeline</a></li>
     <li><a href="#newsletter">Newsletter</a></li>
   </ul>
@@ -667,7 +682,7 @@
       <div class="tool-card editors-pick" data-cats="writing research" data-color="purple">
         <div class="tool-icon">🟠</div>
         <div class="tool-name">Claude</div>
-        <div class="tool-tagline">by Anthropic — The deep thinker</div>
+        <div class="tool-tagline">by Anthropic — Sonnet 4.6 · The deep thinker</div>
         <div class="tool-tags">
           <span class="tool-tag">Writing</span>
           <span class="tool-tag">Analysis</span>
@@ -704,11 +719,11 @@
       <div class="tool-card" data-cats="writing research coding" data-color="green">
         <div class="tool-icon">🟢</div>
         <div class="tool-name">ChatGPT</div>
-        <div class="tool-tagline">by OpenAI — The popular kid</div>
+        <div class="tool-tagline">by OpenAI — GPT-5.4 · The do-everything model</div>
         <div class="tool-tags">
           <span class="tool-tag">Writing</span>
           <span class="tool-tag">Coding</span>
-          <span class="tool-tag">Everything</span>
+          <span class="tool-tag">Voice + Images</span>
         </div>
         <div class="tool-rating">
           <span class="stars" style="color:#00ffc8">★★★★☆</span>
@@ -719,16 +734,16 @@
           <div class="pros">
             <h4>Pros</h4>
             <ul>
-              <li>Huge ecosystem of plugins</li>
-              <li>Image generation built in</li>
-              <li>Most recognized brand</li>
+              <li>Native voice & image gen</li>
+              <li>272K context window</li>
+              <li>Widest feature breadth</li>
             </ul>
           </div>
           <div class="cons">
             <h4>Cons</h4>
             <ul>
-              <li>Can feel shallow on complex topics</li>
-              <li>Quality varies by model</li>
+              <li>Answers optimized to sound good</li>
+              <li>Pricier API than some rivals</li>
             </ul>
           </div>
         </div>
@@ -1048,279 +1063,490 @@
   </div>
 </section>
 
-<!-- AI TIMELINE -->
-<div style="padding: 0 24px 20px;" id="timeline">
+<!-- DEEP DIVE: CLAUDE VS CHATGPT -->
+<div class="full-section" id="deep-dive">
   <section>
-    <div class="section-label">The Big Picture</div>
-    <div class="section-title">How fast is this moving? <em style="font-style:normal;background:linear-gradient(135deg,var(--accent),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Insanely fast.</em></div>
-    <p class="section-sub">Every model below changed what was possible. Scroll through the last few years of AI history.</p>
+    <div class="section-label">The Deep Dive</div>
+    <div class="section-title" style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:10px;">
+      <span style="background:linear-gradient(135deg,#a259ff,#ff2d9b);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Claude</span>
+      <span style="color:var(--muted); font-size:1.4rem; -webkit-text-fill-color: var(--muted);">vs</span>
+      <span style="background:linear-gradient(135deg,#00ffc8,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">ChatGPT</span>
+    </div>
+    <p class="section-sub">The most-Googled matchup in AI, finally settled. Claude Sonnet 4.6 vs GPT-5.4 — March 2026.</p>
 
-    <div class="timeline-wrap">
-      <div class="timeline-track"></div>
+    <!-- Small Multiples Chart Grid -->
+    <div class="dd-grid">
 
-      <!-- 2020 -->
-      <div class="tl-item tl-left" data-color="#a259ff">
-        <div class="tl-dot" style="--c:#a259ff"></div>
-        <div class="tl-card" style="--c:#a259ff">
-          <div class="tl-date">May 2020</div>
-          <div class="tl-model">GPT-3</div>
-          <div class="tl-by">OpenAI</div>
-          <div class="tl-desc">175 billion parameters. The moment the world realized language models could actually write. Spawned a thousand startups and a lot of mediocre blog posts.</div>
-          <div class="tl-tags"><span>175B params</span><span>Text generation</span><span>API-first</span></div>
+      <div class="dd-card" data-winner="tie">
+        <div class="dd-metric">💻 Coding · SWE-Bench Verified</div>
+        <div class="dd-bars">
+          <div class="dd-bar-row">
+            <span class="dd-label dd-claude">Claude 4.6</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-claude" style="--pct:80%"><span class="dd-bar-val">80%</span></div></div>
+          </div>
+          <div class="dd-bar-row">
+            <span class="dd-label dd-gpt">GPT-5.4</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:79.6%"><span class="dd-bar-val">79.6%</span></div></div>
+          </div>
         </div>
+        <div class="dd-verdict dd-verdict-tie">🤝 Essentially tied</div>
       </div>
 
-      <!-- 2022 early -->
-      <div class="tl-item tl-right" data-color="#00d4ff">
-        <div class="tl-dot" style="--c:#00d4ff"></div>
-        <div class="tl-card" style="--c:#00d4ff">
-          <div class="tl-date">Apr 2022</div>
-          <div class="tl-model">DALL·E 2</div>
-          <div class="tl-by">OpenAI</div>
-          <div class="tl-desc">Text-to-image that actually worked. Designers panicked. Artists argued. Everyone made avatars. The first real "wow" moment for image AI going mainstream.</div>
-          <div class="tl-tags"><span>Text-to-image</span><span>Creative AI</span><span>Viral</span></div>
+      <div class="dd-card" data-winner="claude">
+        <div class="dd-metric">🖥️ Computer Use · OSWorld</div>
+        <div class="dd-bars">
+          <div class="dd-bar-row">
+            <span class="dd-label dd-claude">Claude 4.6</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-claude" style="--pct:72.5%"><span class="dd-bar-val">72.5%</span></div></div>
+          </div>
+          <div class="dd-bar-row">
+            <span class="dd-label dd-gpt">GPT-5.4</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:64%"><span class="dd-bar-val">64%</span></div></div>
+          </div>
         </div>
+        <div class="dd-verdict dd-verdict-claude">🟠 Claude wins</div>
       </div>
 
-      <!-- 2022 mid -->
-      <div class="tl-item tl-left" data-color="#ff8c42">
-        <div class="tl-dot" style="--c:#ff8c42"></div>
-        <div class="tl-card" style="--c:#ff8c42">
-          <div class="tl-date">Jul 2022</div>
-          <div class="tl-model">Midjourney v1–3</div>
-          <div class="tl-by">Midjourney</div>
-          <div class="tl-desc">A Discord bot that made the internet fall in love with AI art. By v3 it was producing images that stopped scrollers in their tracks. The aesthetic internet changed overnight.</div>
-          <div class="tl-tags"><span>Artistic quality</span><span>Discord community</span><span>Style control</span></div>
+      <div class="dd-card" data-winner="gpt">
+        <div class="dd-metric">📄 Context Window · Tokens</div>
+        <div class="dd-bars">
+          <div class="dd-bar-row">
+            <span class="dd-label dd-claude">Claude 4.6</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-claude" style="--pct:73.5%"><span class="dd-bar-val">200K</span></div></div>
+          </div>
+          <div class="dd-bar-row">
+            <span class="dd-label dd-gpt">GPT-5.4</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:100%"><span class="dd-bar-val">272K</span></div></div>
+          </div>
         </div>
+        <div class="dd-verdict dd-verdict-gpt">🟢 ChatGPT wins</div>
       </div>
 
-      <!-- ChatGPT -->
-      <div class="tl-item tl-right" data-color="#00ffc8">
-        <div class="tl-dot" style="--c:#00ffc8"></div>
-        <div class="tl-card tl-milestone" style="--c:#00ffc8">
-          <div class="tl-badge">🚀 Inflection Point</div>
-          <div class="tl-date">Nov 2022</div>
-          <div class="tl-model">ChatGPT</div>
-          <div class="tl-by">OpenAI</div>
-          <div class="tl-desc">100 million users in 2 months. Nothing before or since has grown this fast. ChatGPT didn't just launch a product — it launched an era. Your grandma knows what AI is because of this.</div>
-          <div class="tl-tags"><span>100M users in 2mo</span><span>Consumer AI</span><span>Culture shift</span></div>
+      <div class="dd-card" data-winner="gpt">
+        <div class="dd-metric">💰 API Price · Per 1M input tokens</div>
+        <div class="dd-bars">
+          <div class="dd-bar-row">
+            <span class="dd-label dd-claude">Claude 4.6</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-claude" style="--pct:100%"><span class="dd-bar-val">$3.00</span></div></div>
+          </div>
+          <div class="dd-bar-row">
+            <span class="dd-label dd-gpt">GPT-5.4</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:83%"><span class="dd-bar-val">$2.50</span></div></div>
+          </div>
         </div>
+        <div class="dd-verdict dd-verdict-gpt">🟢 ChatGPT cheaper</div>
+        <div class="dd-note">Shorter bar = better value here</div>
       </div>
 
-      <!-- GPT-4 -->
-      <div class="tl-item tl-left" data-color="#a259ff">
-        <div class="tl-dot" style="--c:#a259ff"></div>
-        <div class="tl-card" style="--c:#a259ff">
-          <div class="tl-date">Mar 2023</div>
-          <div class="tl-model">GPT-4</div>
-          <div class="tl-by">OpenAI</div>
-          <div class="tl-desc">Passed the bar exam in the 90th percentile. Aced medical licensing tests. Suddenly "AI can't reason" became a very hard sentence to say with a straight face.</div>
-          <div class="tl-tags"><span>Multimodal</span><span>Reasoning leap</span><span>Pro tier</span></div>
+      <div class="dd-card" data-winner="claude">
+        <div class="dd-metric">✍️ Writing Quality · Editorial Score</div>
+        <div class="dd-bars">
+          <div class="dd-bar-row">
+            <span class="dd-label dd-claude">Claude 4.6</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-claude" style="--pct:95%"><span class="dd-bar-val">9.5/10</span></div></div>
+          </div>
+          <div class="dd-bar-row">
+            <span class="dd-label dd-gpt">GPT-5.4</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:85%"><span class="dd-bar-val">8.5/10</span></div></div>
+          </div>
         </div>
+        <div class="dd-verdict dd-verdict-claude">🟠 Claude wins</div>
+        <div class="dd-note">ToolCritic editorial score</div>
       </div>
 
-      <!-- Claude 1/2 -->
-      <div class="tl-item tl-right" data-color="#ff2d9b">
-        <div class="tl-dot" style="--c:#ff2d9b"></div>
-        <div class="tl-card" style="--c:#ff2d9b">
-          <div class="tl-date">Jul 2023</div>
-          <div class="tl-model">Claude 2</div>
-          <div class="tl-by">Anthropic</div>
-          <div class="tl-desc">200K token context window — equivalent to reading a full novel in a single prompt. Writers and researchers discovered a tool that could actually hold context like a thoughtful human collaborator.</div>
-          <div class="tl-tags"><span>200K context</span><span>Constitutional AI</span><span>Long docs</span></div>
+      <div class="dd-card" data-winner="gpt">
+        <div class="dd-metric">🛠️ Feature Breadth · Score</div>
+        <div class="dd-bars">
+          <div class="dd-bar-row">
+            <span class="dd-label dd-claude">Claude 4.6</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-claude" style="--pct:70%"><span class="dd-bar-val">7/10</span></div></div>
+          </div>
+          <div class="dd-bar-row">
+            <span class="dd-label dd-gpt">GPT-5.4</span>
+            <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:90%"><span class="dd-bar-val">9/10</span></div></div>
+          </div>
         </div>
+        <div class="dd-verdict dd-verdict-gpt">🟢 ChatGPT wins</div>
+        <div class="dd-note">Voice, image gen, memory, plugins</div>
       </div>
 
-      <!-- Gemini -->
-      <div class="tl-item tl-left" data-color="#00d4ff">
-        <div class="tl-dot" style="--c:#00d4ff"></div>
-        <div class="tl-card" style="--c:#00d4ff">
-          <div class="tl-date">Dec 2023</div>
-          <div class="tl-model">Gemini Ultra</div>
-          <div class="tl-by">Google</div>
-          <div class="tl-desc">Google's first model to genuinely challenge GPT-4 on benchmarks. Native multimodality from day one — it sees, reads, and reasons across formats simultaneously.</div>
-          <div class="tl-tags"><span>Multimodal native</span><span>Google integration</span><span>1M context (Pro 1.5)</span></div>
+    </div>
+
+    <!-- Score tally -->
+    <div class="dd-tally">
+      <div class="dd-tally-side dd-tally-claude">
+        <div class="dd-tally-tool">🟠 Claude Sonnet 4.6</div>
+        <div class="dd-tally-score">2</div>
+        <div class="dd-tally-label">categories won</div>
+      </div>
+      <div class="dd-tally-vs">vs</div>
+      <div class="dd-tally-side dd-tally-gpt">
+        <div class="dd-tally-tool">🟢 ChatGPT GPT-5.4</div>
+        <div class="dd-tally-score">3</div>
+        <div class="dd-tally-label">categories won</div>
+      </div>
+    </div>
+
+    <!-- Editorial -->
+    <div class="dd-editorial">
+      <div class="dd-editorial-block">
+        <h3>The honest take</h3>
+        <p>On raw benchmark scores, these two are closer than they've ever been — and that's actually the most interesting story. For most use cases, the model you'll enjoy using more matters as much as its benchmark numbers. And that's still Claude for most power users.</p>
+        <p>Claude writes better. It thinks more carefully. Its answers feel like they came from someone who cares about being right, not just about sounding right. ChatGPT does more — voice mode, native image generation, persistent memory, a huge ecosystem — but its outputs can feel optimized to <em>seem</em> good rather than <em>be</em> good.</p>
+        <p>If you live in code, Claude leads on reasoning quality and computer-use. If you need a do-everything AI that also talks back and draws pictures, ChatGPT's breadth wins. If you're writing anything that needs to be genuinely excellent — emails, essays, reports, strategy docs — Claude. No contest.</p>
+      </div>
+      <div class="dd-editorial-picks">
+        <div class="dd-pick">
+          <div class="dd-pick-for">Best for writers & analysts</div>
+          <div class="dd-pick-tool">🟠 Claude Sonnet 4.6</div>
+          <a href="https://claude.ai" class="dd-pick-btn" target="_blank">Try Claude →</a>
+        </div>
+        <div class="dd-pick">
+          <div class="dd-pick-for">Best for do-everything users</div>
+          <div class="dd-pick-tool">🟢 ChatGPT GPT-5.4</div>
+          <a href="https://chat.openai.com" class="dd-pick-btn dd-pick-btn-gpt" target="_blank">Try ChatGPT →</a>
         </div>
       </div>
-
-      <!-- Claude 3 -->
-      <div class="tl-item tl-right" data-color="#ff2d9b">
-        <div class="tl-dot" style="--c:#ff2d9b"></div>
-        <div class="tl-card tl-milestone" style="--c:#ff2d9b">
-          <div class="tl-badge">🧠 Reasoning Era</div>
-          <div class="tl-date">Mar 2024</div>
-          <div class="tl-model">Claude 3 Opus</div>
-          <div class="tl-by">Anthropic</div>
-          <div class="tl-desc">Topped every major benchmark. But more importantly: people who used it daily said it felt different — more like talking to someone who was actually thinking. The "vibe" gap opened up.</div>
-          <div class="tl-tags"><span>#1 on benchmarks</span><span>Near-human reasoning</span><span>Haiku / Sonnet / Opus</span></div>
-        </div>
-      </div>
-
-      <!-- GPT-4o -->
-      <div class="tl-item tl-left" data-color="#00ffc8">
-        <div class="tl-dot" style="--c:#00ffc8"></div>
-        <div class="tl-card" style="--c:#00ffc8">
-          <div class="tl-date">May 2024</div>
-          <div class="tl-model">GPT-4o</div>
-          <div class="tl-by">OpenAI</div>
-          <div class="tl-desc">"Omni" — voice, vision, and text in one fluid model. The live demo where it coached someone through math in real time felt like science fiction. Real-time voice AI arrived.</div>
-          <div class="tl-tags"><span>Real-time voice</span><span>Vision + text</span><span>Free for all</span></div>
-        </div>
-      </div>
-
-      <!-- o1 -->
-      <div class="tl-item tl-right" data-color="#ffe566">
-        <div class="tl-dot" style="--c:#ffe566"></div>
-        <div class="tl-card tl-milestone" style="--c:#ffe566">
-          <div class="tl-badge">💡 New Paradigm</div>
-          <div class="tl-date">Sep 2024</div>
-          <div class="tl-model">OpenAI o1</div>
-          <div class="tl-by">OpenAI</div>
-          <div class="tl-desc">Thinks before it answers. Literally. Chain-of-thought reasoning that outperforms PhD-level humans on physics, chemistry, and biology problems. The "reasoning model" era began here.</div>
-          <div class="tl-tags"><span>Chain-of-thought</span><span>PhD-level science</span><span>Slow + powerful</span></div>
-        </div>
-      </div>
-
-      <!-- Claude 3.5 -->
-      <div class="tl-item tl-left" data-color="#ff2d9b">
-        <div class="tl-dot" style="--c:#ff2d9b"></div>
-        <div class="tl-card" style="--c:#ff2d9b">
-          <div class="tl-date">Oct 2024</div>
-          <div class="tl-model">Claude 3.5 Sonnet</div>
-          <div class="tl-by">Anthropic</div>
-          <div class="tl-desc">Best coding model on the planet for several months running. Also introduced computer use — the ability to actually operate a computer like a human. Agentic AI stopped being a demo.</div>
-          <div class="tl-tags"><span>Best at coding</span><span>Computer use</span><span>Agentic AI</span></div>
-        </div>
-      </div>
-
-      <!-- Gemini 2.0 / early 2025 -->
-      <div class="tl-item tl-right" data-color="#00d4ff">
-        <div class="tl-dot" style="--c:#00d4ff"></div>
-        <div class="tl-card" style="--c:#00d4ff">
-          <div class="tl-date">Feb 2025</div>
-          <div class="tl-model">Gemini 2.0 Flash</div>
-          <div class="tl-by">Google DeepMind</div>
-          <div class="tl-desc">Fast, cheap, and shockingly capable. A "Flash" model that beats older flagship models at a fraction of the cost. The race to the bottom on price-per-token accelerated hard.</div>
-          <div class="tl-tags"><span>Ultra-fast</span><span>Low cost</span><span>Multimodal</span></div>
-        </div>
-      </div>
-
-      <!-- Claude 3.7 / 2025 -->
-      <div class="tl-item tl-left" data-color="#ff2d9b">
-        <div class="tl-dot" style="--c:#ff2d9b"></div>
-        <div class="tl-card tl-milestone" style="--c:#ff2d9b">
-          <div class="tl-badge">⚡ Right Now</div>
-          <div class="tl-date">Feb 2025</div>
-          <div class="tl-model">Claude 3.7 Sonnet</div>
-          <div class="tl-by">Anthropic</div>
-          <div class="tl-desc">Extended thinking mode: Claude can reason for minutes before responding on hard problems. Highest coding scores ever measured. The current state-of-the-art for complex tasks — and what powers this very quiz.</div>
-          <div class="tl-tags"><span>Extended thinking</span><span>SOTA coding</span><span>Powers this site</span></div>
-        </div>
-      </div>
-
-    </div><!-- .timeline-wrap -->
+    </div>
   </section>
 </div>
 
+<!-- AI TIMELINE (HORIZONTAL) -->
+<div id="timeline">
+  <div style="max-width: 1100px; margin: 0 auto; padding: 80px 24px 40px;">
+    <div class="section-label">The Big Picture</div>
+    <div class="section-title">How fast is this moving? <em style="font-style:normal;background:linear-gradient(135deg,var(--accent),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Insanely fast.</em></div>
+    <p class="section-sub" style="margin-bottom: 0;">6 years. 15 breakthroughs. Every model that changed what was possible. Drag to explore.</p>
+  </div>
+
+  <div class="htl-scroll-wrap" id="htl-scroll">
+    <div class="htl-stage">
+      <div class="htl-track-line"></div>
+
+      <div class="htl-item" style="--c:#a259ff">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">May 2020</div>
+          <div class="htl-model">GPT-3</div>
+          <div class="htl-by">OpenAI</div>
+          <div class="htl-desc">175B parameters. The moment the world realized language models could write. Spawned a thousand startups.</div>
+          <div class="htl-tags"><span>175B params</span><span>API-first</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item" style="--c:#00d4ff">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">Apr 2022</div>
+          <div class="htl-model">DALL·E 2</div>
+          <div class="htl-by">OpenAI</div>
+          <div class="htl-desc">Text-to-image that actually worked. Designers panicked. Everyone made avatars. Image AI went mainstream overnight.</div>
+          <div class="htl-tags"><span>Text-to-image</span><span>Creative AI</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item" style="--c:#ff8c42">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">Jul 2022</div>
+          <div class="htl-model">Midjourney v1–3</div>
+          <div class="htl-by">Midjourney</div>
+          <div class="htl-desc">A Discord bot that made the internet fall in love with AI art. By v3, the aesthetic internet changed forever.</div>
+          <div class="htl-tags"><span>Artistic quality</span><span>Discord</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item htl-milestone" style="--c:#00ffc8">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-badge">🚀 Inflection Point</div>
+          <div class="htl-date">Nov 2022</div>
+          <div class="htl-model">ChatGPT</div>
+          <div class="htl-by">OpenAI</div>
+          <div class="htl-desc">100M users in 2 months. Nothing since has grown this fast. Your grandma knows what AI is because of this.</div>
+          <div class="htl-tags"><span>100M users / 2mo</span><span>Culture shift</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item" style="--c:#a259ff">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">Mar 2023</div>
+          <div class="htl-model">GPT-4</div>
+          <div class="htl-by">OpenAI</div>
+          <div class="htl-desc">Passed the bar exam in the 90th percentile. "AI can't reason" became very hard to say with a straight face.</div>
+          <div class="htl-tags"><span>Multimodal</span><span>Reasoning leap</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item" style="--c:#ff2d9b">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">Jul 2023</div>
+          <div class="htl-model">Claude 2</div>
+          <div class="htl-by">Anthropic</div>
+          <div class="htl-desc">200K token context — a full novel in one prompt. Writers discovered a collaborator that actually holds context.</div>
+          <div class="htl-tags"><span>200K context</span><span>Long docs</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item" style="--c:#00d4ff">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">Dec 2023</div>
+          <div class="htl-model">Gemini Ultra</div>
+          <div class="htl-by">Google</div>
+          <div class="htl-desc">Google's first model to genuinely challenge GPT-4. Native multimodality from day one — sees, reads, and reasons.</div>
+          <div class="htl-tags"><span>Multimodal native</span><span>Google integration</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item htl-milestone" style="--c:#ff2d9b">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-badge">🧠 Reasoning Era</div>
+          <div class="htl-date">Mar 2024</div>
+          <div class="htl-model">Claude 3 Opus</div>
+          <div class="htl-by">Anthropic</div>
+          <div class="htl-desc">Topped every benchmark. People said it felt different — like talking to someone actually thinking. The "vibe" gap opened up.</div>
+          <div class="htl-tags"><span>#1 benchmarks</span><span>Near-human reasoning</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item" style="--c:#00ffc8">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">May 2024</div>
+          <div class="htl-model">GPT-4o</div>
+          <div class="htl-by">OpenAI</div>
+          <div class="htl-desc">"Omni" — voice, vision, and text in one fluid model. Real-time voice AI that felt like pure science fiction arrived.</div>
+          <div class="htl-tags"><span>Real-time voice</span><span>Vision + text</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item htl-milestone" style="--c:#ffe566">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-badge">💡 New Paradigm</div>
+          <div class="htl-date">Sep 2024</div>
+          <div class="htl-model">OpenAI o1</div>
+          <div class="htl-by">OpenAI</div>
+          <div class="htl-desc">Thinks before it answers. Outperforms PhD-level humans on physics and chemistry. The reasoning model era began here.</div>
+          <div class="htl-tags"><span>Chain-of-thought</span><span>PhD-level science</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item" style="--c:#ff2d9b">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">Oct 2024</div>
+          <div class="htl-model">Claude 3.5 Sonnet</div>
+          <div class="htl-by">Anthropic</div>
+          <div class="htl-desc">Best coding model for months running. Introduced computer use — AI actually operating a computer. Agentic AI stopped being a demo.</div>
+          <div class="htl-tags"><span>Best at coding</span><span>Computer use</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item" style="--c:#00d4ff">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-date">Feb 2025</div>
+          <div class="htl-model">Gemini 2.0 Flash</div>
+          <div class="htl-by">Google DeepMind</div>
+          <div class="htl-desc">Fast, cheap, shockingly capable. Beats older flagships at a fraction of the cost. The race to bottom on price-per-token accelerated.</div>
+          <div class="htl-tags"><span>Ultra-fast</span><span>Low cost</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item htl-milestone" style="--c:#aaff00">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-badge">🌟 New Generation</div>
+          <div class="htl-date">2025</div>
+          <div class="htl-model">GPT-5</div>
+          <div class="htl-by">OpenAI</div>
+          <div class="htl-desc">A unified model combining reasoning, coding, and native computer-use. OpenAI's first true next-generation model since GPT-4.</div>
+          <div class="htl-tags"><span>Computer use</span><span>Unified reasoning</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item htl-milestone" style="--c:#ff2d9b">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-badge">⚡ Right Now</div>
+          <div class="htl-date">Feb 2026</div>
+          <div class="htl-model">Claude Sonnet 4.6</div>
+          <div class="htl-by">Anthropic</div>
+          <div class="htl-desc">Adaptive reasoning with hybrid thinking modes. 72.5% on OSWorld computer use — near-human computer operation. Powers this site.</div>
+          <div class="htl-tags"><span>Adaptive reasoning</span><span>Computer use SOTA</span><span>Powers this site</span></div>
+        </div>
+      </div>
+
+      <div class="htl-item htl-milestone" style="--c:#aaff00">
+        <div class="htl-dot"></div><div class="htl-connector"></div>
+        <div class="htl-card">
+          <div class="htl-badge">🔥 Latest Drop</div>
+          <div class="htl-date">Mar 2026</div>
+          <div class="htl-model">GPT-5.4</div>
+          <div class="htl-by">OpenAI</div>
+          <div class="htl-desc">272K context, native computer use API, 33% fewer hallucinations vs GPT-5.2. OpenAI's current state-of-the-art.</div>
+          <div class="htl-tags"><span>272K context</span><span>Computer use API</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div style="text-align: center; padding: 12px 0 60px;">
+    <p style="color: var(--muted); font-size: 0.82rem; letter-spacing: .04em;">← Drag or scroll to explore 6 years of AI history →</p>
+  </div>
+</div>
+
 <style>
-  /* TIMELINE STYLES */
-  .timeline-wrap {
-    position: relative;
-    padding: 20px 0 40px;
+  /* ---- DEEP DIVE COMPARISON ---- */
+  .dd-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+    gap: 18px;
+    margin-bottom: 32px;
   }
-  .timeline-track {
-    position: absolute;
-    left: 50%; top: 0; bottom: 0;
-    width: 2px;
-    transform: translateX(-50%);
-    background: linear-gradient(180deg, var(--accent), var(--accent2), var(--cyan), var(--lime), var(--accent));
-    background-size: 100% 300%;
-    animation: trackFlow 5s linear infinite;
-    box-shadow: 0 0 10px rgba(162,89,255,0.4);
+  .dd-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px 24px;
+    transition: transform .2s, box-shadow .2s;
   }
-  @keyframes trackFlow {
-    0%   { background-position: 0% 0%; }
-    100% { background-position: 0% 300%; }
+  .dd-card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.35); }
+  .dd-card[data-winner="claude"] { border-color: rgba(162,89,255,0.3); }
+  .dd-card[data-winner="gpt"]    { border-color: rgba(0,255,200,0.22); }
+  .dd-card[data-winner="tie"]    { border-color: rgba(255,229,102,0.22); }
+  .dd-metric { font-weight: 700; font-size: 0.875rem; margin-bottom: 18px; font-family: 'Syne', sans-serif; }
+  .dd-bars { display: flex; flex-direction: column; gap: 10px; margin-bottom: 14px; }
+  .dd-bar-row { display: flex; align-items: center; gap: 8px; }
+  .dd-label { font-size: 0.72rem; font-weight: 600; white-space: nowrap; width: 76px; flex-shrink: 0; }
+  .dd-label.dd-claude { color: #a259ff; }
+  .dd-label.dd-gpt    { color: #00ffc8; }
+  .dd-bar-track { flex: 1; height: 20px; background: rgba(255,255,255,0.04); border-radius: 6px; overflow: hidden; }
+  .dd-bar {
+    height: 100%; width: 0; border-radius: 6px;
+    display: flex; align-items: center; justify-content: flex-end;
+    padding-right: 7px; position: relative;
+    animation: ddBarGrow .9s cubic-bezier(.22,1,.36,1) forwards;
   }
+  @keyframes ddBarGrow { from { width: 0; } to { width: var(--pct, 50%); } }
+  .dd-bar-claude { background: linear-gradient(90deg, rgba(162,89,255,0.45), rgba(162,89,255,0.85)); box-shadow: inset 0 0 8px rgba(162,89,255,0.3); }
+  .dd-bar-gpt    { background: linear-gradient(90deg, rgba(0,255,200,0.35), rgba(0,212,255,0.75)); box-shadow: inset 0 0 8px rgba(0,255,200,0.25); }
+  .dd-bar-val { font-size: 0.68rem; font-weight: 700; color: rgba(255,255,255,0.95); white-space: nowrap; }
+  .dd-verdict { font-size: 0.78rem; font-weight: 700; padding: 4px 10px; border-radius: 8px; display: inline-flex; align-items: center; gap: 5px; }
+  .dd-verdict-claude { background: rgba(162,89,255,0.1); color: #a259ff; }
+  .dd-verdict-gpt    { background: rgba(0,255,200,0.08); color: #00ffc8; }
+  .dd-verdict-tie    { background: rgba(255,229,102,0.1); color: #ffe566; }
+  .dd-note { font-size: 0.7rem; color: var(--muted); margin-top: 6px; }
+  .dd-tally {
+    display: flex; align-items: center; justify-content: center; gap: 40px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 20px; padding: 28px 40px; margin-bottom: 44px; flex-wrap: wrap;
+  }
+  .dd-tally-side { text-align: center; }
+  .dd-tally-tool { font-size: 0.85rem; color: var(--muted); margin-bottom: 8px; }
+  .dd-tally-score { font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800; line-height: 1; margin-bottom: 4px; }
+  .dd-tally-claude .dd-tally-score { background: linear-gradient(135deg,#a259ff,#ff2d9b); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .dd-tally-gpt    .dd-tally-score { background: linear-gradient(135deg,#00ffc8,#00d4ff); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .dd-tally-label { font-size: 0.75rem; color: var(--muted); }
+  .dd-tally-vs { font-size: 1.5rem; font-weight: 800; color: var(--muted); }
+  .dd-editorial { display: grid; grid-template-columns: 1fr 280px; gap: 40px; align-items: start; }
+  @media (max-width: 800px) { .dd-editorial { grid-template-columns: 1fr; } }
+  .dd-editorial-block h3 { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; margin-bottom: 16px; }
+  .dd-editorial-block p { color: var(--muted); line-height: 1.8; margin-bottom: 14px; font-size: 0.95rem; }
+  .dd-editorial-block em { font-style: italic; color: var(--text); }
+  .dd-editorial-picks { display: flex; flex-direction: column; gap: 16px; }
+  .dd-pick { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; }
+  .dd-pick-for { font-size: 0.72rem; color: var(--muted); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+  .dd-pick-tool { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1rem; margin-bottom: 14px; }
+  .dd-pick-btn {
+    display: inline-block; background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #fff; border: none; border-radius: 20px; padding: 8px 20px;
+    font-size: 0.85rem; font-weight: 600; cursor: pointer; text-decoration: none;
+    transition: all .2s; box-shadow: 0 0 12px rgba(162,89,255,0.3);
+  }
+  .dd-pick-btn:hover { box-shadow: 0 0 24px rgba(162,89,255,0.6); transform: translateY(-1px); }
+  .dd-pick-btn-gpt { background: linear-gradient(135deg,#00ffc8,#00d4ff); color: #000; box-shadow: 0 0 12px rgba(0,255,200,0.3); }
+  .dd-pick-btn-gpt:hover { box-shadow: 0 0 24px rgba(0,255,200,0.5); }
 
-  .tl-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 32px;
-    margin-bottom: 48px;
-    position: relative;
+  /* ---- HORIZONTAL TIMELINE ---- */
+  .htl-scroll-wrap {
+    overflow-x: auto; overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 0 8px;
+    cursor: grab;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(162,89,255,0.5) rgba(255,255,255,0.04);
   }
-  .tl-left  { flex-direction: row-reverse; padding-right: calc(50% + 28px); }
-  .tl-right { flex-direction: row;         padding-left:  calc(50% + 28px); }
-
-  .tl-dot {
+  .htl-scroll-wrap::-webkit-scrollbar { height: 6px; }
+  .htl-scroll-wrap::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); border-radius: 3px; }
+  .htl-scroll-wrap::-webkit-scrollbar-thumb { background: rgba(162,89,255,0.5); border-radius: 3px; }
+  .htl-scroll-wrap.is-grabbing { cursor: grabbing; }
+  .htl-stage {
+    display: flex; align-items: flex-start;
+    padding: 40px 60px 32px; position: relative;
+    min-width: max-content; gap: 0;
+  }
+  .htl-track-line {
     position: absolute;
-    left: 50%; top: 24px;
-    transform: translate(-50%, 0);
-    width: 16px; height: 16px;
-    border-radius: 50%;
+    top: 52px; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--cyan), var(--lime), var(--yellow), var(--orange), var(--accent));
+    background-size: 400% auto;
+    animation: htlFlow 10s linear infinite;
+    box-shadow: 0 0 12px rgba(162,89,255,0.5), 0 0 24px rgba(255,45,155,0.2);
+    z-index: 0;
+  }
+  @keyframes htlFlow { 0% { background-position: 0% center; } 100% { background-position: 400% center; } }
+  .htl-item { display: flex; flex-direction: column; align-items: center; width: 210px; flex-shrink: 0; padding: 0 14px; position: relative; z-index: 1; }
+  .htl-dot {
+    width: 24px; height: 24px; border-radius: 50%;
     background: var(--c, #a259ff);
-    box-shadow: 0 0 0 4px rgba(0,0,0,0.6), 0 0 16px var(--c, #a259ff), 0 0 28px var(--c, #a259ff);
-    z-index: 2;
+    box-shadow: 0 0 0 4px rgba(8,8,16,0.9), 0 0 16px var(--c, #a259ff), 0 0 32px var(--c, #a259ff);
+    z-index: 2; flex-shrink: 0;
     animation: dotPulse 2.5s ease-in-out infinite;
   }
   @keyframes dotPulse {
-    0%, 100% { box-shadow: 0 0 0 4px rgba(0,0,0,0.6), 0 0 14px var(--c, #a259ff), 0 0 24px var(--c, #a259ff); }
-    50%       { box-shadow: 0 0 0 4px rgba(0,0,0,0.6), 0 0 24px var(--c, #a259ff), 0 0 44px var(--c, #a259ff); }
+    0%, 100% { box-shadow: 0 0 0 4px rgba(8,8,16,0.9), 0 0 12px var(--c, #a259ff), 0 0 22px var(--c, #a259ff); }
+    50%       { box-shadow: 0 0 0 4px rgba(8,8,16,0.9), 0 0 22px var(--c, #a259ff), 0 0 42px var(--c, #a259ff); }
   }
-
-  .tl-card {
-    background: var(--surface);
-    border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 18px;
-    padding: 22px 26px;
-    flex: 1;
-    position: relative;
-    overflow: hidden;
+  .htl-connector { width: 2px; height: 22px; background: linear-gradient(180deg, var(--c, #a259ff), rgba(162,89,255,0.2)); flex-shrink: 0; }
+  .htl-card {
+    background: var(--surface); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px; padding: 15px 17px; width: 100%;
+    position: relative; overflow: hidden;
     transition: transform .25s, box-shadow .25s, border-color .25s;
   }
-  .tl-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: var(--c, #a259ff);
-    box-shadow: 0 0 10px var(--c, #a259ff);
+  .htl-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--c, #a259ff); box-shadow: 0 0 8px var(--c, #a259ff); }
+  .htl-item.htl-milestone .htl-card {
+    background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--c, #a259ff) 9%, var(--surface)));
+    border-color: color-mix(in srgb, var(--c, #a259ff) 28%, transparent);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--c, #a259ff) 12%, transparent);
   }
-  .tl-card:hover {
-    transform: translateY(-4px);
+  .htl-card:hover {
+    transform: translateY(-5px);
     border-color: var(--c, #a259ff);
-    box-shadow: 0 0 30px color-mix(in srgb, var(--c, #a259ff) 40%, transparent), 0 12px 40px rgba(0,0,0,0.4);
+    box-shadow: 0 0 28px color-mix(in srgb, var(--c, #a259ff) 35%, transparent), 0 10px 30px rgba(0,0,0,0.4);
   }
-  .tl-card.tl-milestone {
-    background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--c, #a259ff) 8%, var(--surface)));
-    border-color: color-mix(in srgb, var(--c, #a259ff) 30%, transparent);
-    box-shadow: 0 0 20px color-mix(in srgb, var(--c, #a259ff) 15%, transparent);
-  }
-  .tl-badge {
-    display: inline-flex; align-items: center; gap: 6px;
+  .htl-badge {
+    display: inline-flex; align-items: center; gap: 4px;
     background: color-mix(in srgb, var(--c, #a259ff) 14%, transparent);
     border: 1px solid color-mix(in srgb, var(--c, #a259ff) 40%, transparent);
-    border-radius: 20px; padding: 3px 12px;
-    font-size: 0.72rem; font-weight: 700;
-    color: var(--c, #a259ff);
-    margin-bottom: 10px;
+    border-radius: 14px; padding: 2px 9px;
+    font-size: 0.66rem; font-weight: 700; color: var(--c, #a259ff); margin-bottom: 7px;
   }
-  .tl-date { font-size: 0.75rem; color: var(--c, #a259ff); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 4px; }
-  .tl-model { font-family: 'Syne', sans-serif; font-size: 1.25rem; font-weight: 800; margin-bottom: 2px; }
-  .tl-by { font-size: 0.8rem; color: var(--muted); margin-bottom: 10px; }
-  .tl-desc { font-size: 0.875rem; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
-  .tl-tags { display: flex; gap: 6px; flex-wrap: wrap; }
-  .tl-tags span {
+  .htl-date { font-size: 0.68rem; color: var(--c, #a259ff); font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 3px; }
+  .htl-model { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 800; margin-bottom: 2px; line-height: 1.2; }
+  .htl-by { font-size: 0.72rem; color: var(--muted); margin-bottom: 7px; }
+  .htl-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.5; margin-bottom: 9px; }
+  .htl-tags { display: flex; gap: 4px; flex-wrap: wrap; }
+  .htl-tags span {
     background: color-mix(in srgb, var(--c, #a259ff) 10%, transparent);
     border: 1px solid color-mix(in srgb, var(--c, #a259ff) 25%, transparent);
-    color: var(--c, #a259ff);
-    border-radius: 8px; padding: 2px 10px; font-size: 0.72rem; font-weight: 600;
-  }
-
-  @media (max-width: 700px) {
-    .timeline-track { left: 20px; }
-    .tl-item { padding-left: 52px !important; padding-right: 0 !important; flex-direction: row !important; }
-    .tl-dot  { left: 20px; }
-    .tl-left .tl-card, .tl-right .tl-card { text-align: left; }
+    color: var(--c, #a259ff); border-radius: 5px; padding: 1px 7px; font-size: 0.64rem; font-weight: 600;
   }
 </style>
 
@@ -1344,6 +1570,7 @@
     <a href="#tools">Reviews</a> ·
     <a href="#quiz">Quiz</a> ·
     <a href="#compare">Compare</a> ·
+    <a href="#deep-dive">Deep Dive</a> ·
     <a href="#timeline">Timeline</a> ·
     <a href="#newsletter">Newsletter</a>
   </div>
@@ -1514,6 +1741,26 @@
         const cats = card.dataset.cats || '';
         card.style.display = cats.includes(cat) ? 'block' : 'none';
       }
+    });
+  }
+
+  // ---- HORIZONTAL TIMELINE DRAG-TO-SCROLL ----
+  const htlScroll = document.getElementById('htl-scroll');
+  if (htlScroll) {
+    let isDown = false, startX, scrollLeft;
+    htlScroll.addEventListener('mousedown', e => {
+      isDown = true;
+      htlScroll.classList.add('is-grabbing');
+      startX = e.pageX - htlScroll.offsetLeft;
+      scrollLeft = htlScroll.scrollLeft;
+    });
+    htlScroll.addEventListener('mouseleave', () => { isDown = false; htlScroll.classList.remove('is-grabbing'); });
+    htlScroll.addEventListener('mouseup', () => { isDown = false; htlScroll.classList.remove('is-grabbing'); });
+    htlScroll.addEventListener('mousemove', e => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - htlScroll.offsetLeft;
+      htlScroll.scrollLeft = scrollLeft - (x - startX) * 1.4;
     });
   }
 
