@@ -1,0 +1,35 @@
+import Link from "next/link";
+
+const footerLinks = [
+  { href: "#tools", label: "Reviews" },
+  { href: "#quiz", label: "Quiz" },
+  { href: "#compare", label: "Compare" },
+  { href: "#deep-dive", label: "Deep Dive" },
+  { href: "#timeline", label: "Timeline" },
+  { href: "#newsletter", label: "Newsletter" },
+];
+
+export function Footer() {
+  return (
+    <footer className="border-t border-border p-10 text-center text-muted text-sm">
+      <div className="mb-4">
+        {footerLinks.map((link, index) => (
+          <span key={link.href}>
+            <Link
+              href={link.href}
+              className="text-muted hover:text-accent transition-colors"
+            >
+              {link.label}
+            </Link>
+            {index < footerLinks.length - 1 && <span className="mx-2">·</span>}
+          </span>
+        ))}
+      </div>
+      <div>Made with care and actual opinions. © 2026 ToolCritic</div>
+      <div className="mt-2 text-xs opacity-60">
+        Some links may be affiliate links. Our editorial opinions are always our
+        own.
+      </div>
+    </footer>
+  );
+}

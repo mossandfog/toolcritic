@@ -1,0 +1,198 @@
+"use client";
+
+import Link from "next/link";
+import type { Tool } from "@/lib/tools-data";
+
+const colorStyles = {
+  purple: {
+    glow: "linear-gradient(135deg, rgba(162,89,255,0.6), rgba(100,50,255,0.4))",
+    border: "rgba(162,89,255,0.9)",
+    shadow: "0 0 50px rgba(162,89,255,0.4)",
+    stars: "#a259ff",
+  },
+  green: {
+    glow: "linear-gradient(135deg, rgba(0,255,200,0.5), rgba(0,212,255,0.3))",
+    border: "rgba(0,255,200,0.8)",
+    shadow: "0 0 50px rgba(0,255,200,0.35)",
+    stars: "#00ffc8",
+  },
+  cyan: {
+    glow: "linear-gradient(135deg, rgba(0,212,255,0.55), rgba(0,255,200,0.3))",
+    border: "rgba(0,212,255,0.85)",
+    shadow: "0 0 50px rgba(0,212,255,0.4)",
+    stars: "#00d4ff",
+  },
+  pink: {
+    glow: "linear-gradient(135deg, rgba(255,45,155,0.55), rgba(255,100,80,0.3))",
+    border: "rgba(255,45,155,0.85)",
+    shadow: "0 0 50px rgba(255,45,155,0.4)",
+    stars: "#ff2d9b",
+  },
+  orange: {
+    glow: "linear-gradient(135deg, rgba(255,140,66,0.55), rgba(255,45,155,0.3))",
+    border: "rgba(255,140,66,0.85)",
+    shadow: "0 0 50px rgba(255,140,66,0.4)",
+    stars: "#ff8c42",
+  },
+  lime: {
+    glow: "linear-gradient(135deg, rgba(170,255,0,0.5), rgba(0,255,200,0.3))",
+    border: "rgba(170,255,0,0.8)",
+    shadow: "0 0 50px rgba(170,255,0,0.35)",
+    stars: "#aaff00",
+  },
+  teal: {
+    glow: "linear-gradient(135deg, rgba(0,212,170,0.55), rgba(0,212,255,0.3))",
+    border: "rgba(0,212,170,0.85)",
+    shadow: "0 0 50px rgba(0,212,170,0.4)",
+    stars: "#00d4aa",
+  },
+  yellow: {
+    glow: "linear-gradient(135deg, rgba(255,229,102,0.5), rgba(255,140,66,0.3))",
+    border: "rgba(255,229,102,0.85)",
+    shadow: "0 0 50px rgba(255,229,102,0.4)",
+    stars: "#ffe566",
+  },
+};
+
+function renderStars(count: number, color: string) {
+  const fullStars = Math.floor(count);
+  const hasHalfStar = count % 1 >= 0.5;
+  const stars = [];
+
+  for (let i = 0; i < fullStars; i++) {
+    stars.push("★");
+  }
+  if (hasHalfStar) {
+    stars.push("★");
+  }
+
+  return (
+    <span className="text-sm tracking-wider" style={{ color }}>
+      {stars.join("")}
+    </span>
+  );
+}
+
+export function ToolCard({ tool }: { tool: Tool }) {
+  const styles = colorStyles[tool.color];
+
+  return (
+    <div
+      className="group bg-surface border border-border rounded-[18px] p-6 transition-all duration-300 cursor-pointer relative overflow-hidden hover:translate-y-[-6px] hover:scale-[1.01]"
+      style={{
+        ["--card-glow" as string]: styles.glow,
+        ["--card-border" as string]: styles.border,
+        ["--card-shadow" as string]: styles.shadow,
+      }}
+    >
+      {/* Glow layer (hidden by default, visible on hover) */}
+      <div
+        className="absolute inset-[-1px] rounded-[18px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-0"
+        style={{ background: styles.glow }}
+      />
+
+      {/* Inner background layer */}
+      <div className="absolute inset-[1px] rounded-[17px] bg-surface -z-10" />
+
+      {/* Hover border effect */}
+      <div
+        className="absolute inset-0 rounded-[18px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+        style={{
+          boxShadow: `0 0 0 1.5px ${styles.border}, 0 20px 60px rgba(0,0,0,0.5), ${styles.shadow}`,
+        }}
+      />
+
+      {/* Editor's Pick badge */}
+      {tool.editorsPick && (
+        <div className="absolute top-3.5 right-3.5 bg-yellow/15 border border-yellow/40 text-yellow rounded-2xl px-2.5 py-0.5 text-[0.72rem] font-bold shadow-[0_0_12px_rgba(255,229,102,0.25)] z-10">
+          Editor&apos;s Pick
+        </div>
+      )}
+
+      {/* Icon */}
+      <div className="text-4xl mb-3.5">{tool.icon}</div>
+
+      {/* Name */}
+      <div className="font-heading text-xl font-bold mb-1 group-hover:text-white transition-colors">
+        {tool.name}
+      </div>
+
+      {/* Tagline */}
+      <div className="text-muted text-sm mb-3.5 group-hover:text-[#c8c8e8] transition-colors">
+        {tool.tagline}
+      </div>
+
+      {/* Tags */}
+      <div className="flex gap-1.5 flex-wrap mb-4">
+        {tool.tags.map((tag) => (
+          <span
+            key={tag}
+            className="bg-surface2 border border-white/5 rounded-lg px-2.5 py-0.5 text-xs text-muted font-medium group-hover:bg-white/10 group-hover:border-white/20 group-hover:text-[#d8d8f0] transition-all"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      {/* Rating */}
+      <div className="flex items-center gap-2 mb-4">
+        {renderStars(tool.stars, styles.stars)}
+        <span className="text-sm font-semibold group-hover:text-text transition-colors">
+          {tool.rating}
+        </span>
+      </div>
+
+      {/* Divider */}
+      <div className="h-px bg-border my-4" />
+
+      {/* Pros and Cons */}
+      <div className="grid grid-cols-2 gap-3">
+        <div>
+          <h4 className="text-[0.72rem] font-bold tracking-wide uppercase text-accent3 mb-2">
+            Pros
+          </h4>
+          <ul className="list-none">
+            {tool.pros.map((pro) => (
+              <li
+                key={pro}
+                className="text-xs text-muted py-0.5 group-hover:text-[#c8c8e8] transition-colors before:content-['+_'] before:text-accent3 before:font-bold"
+              >
+                {pro}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-[0.72rem] font-bold tracking-wide uppercase text-accent2 mb-2">
+            Cons
+          </h4>
+          <ul className="list-none">
+            {tool.cons.map((con) => (
+              <li
+                key={con}
+                className="text-xs text-muted py-0.5 group-hover:text-[#c8c8e8] transition-colors before:content-['−_'] before:text-accent2 before:font-bold"
+              >
+                {con}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="mt-4 flex items-center justify-between">
+        <div className="text-sm text-muted group-hover:text-[#c8c8e8] transition-colors">
+          <strong className="text-text">{tool.price.split(" / ")[0]}</strong>
+          {tool.price.includes(" / ") && ` / ${tool.price.split(" / ")[1]}`}
+        </div>
+        <Link
+          href={tool.link}
+          target="_blank"
+          className="bg-gradient-to-br from-accent to-accent2 text-white border-none rounded-2xl px-4 py-1.5 text-sm font-semibold transition-all shadow-[0_0_10px_rgba(162,89,255,0.3)] hover:shadow-[0_0_20px_rgba(162,89,255,0.6)] hover:scale-105"
+        >
+          Try it →
+        </Link>
+      </div>
+    </div>
+  );
+}
