@@ -206,7 +206,7 @@ export function Timeline() {
       {/* Scrollable timeline */}
       <div
         ref={scrollRef}
-        className={`htl-scroll-wrap overflow-x-auto overflow-y-visible py-4 px-0 ${
+        className={`htl-scroll-wrap overflow-x-auto overflow-y-visible py-4 px-0 select-none ${
           isDragging ? "cursor-grabbing" : "cursor-grab"
         }`}
         style={{ WebkitOverflowScrolling: "touch" }}
@@ -217,7 +217,7 @@ export function Timeline() {
             className="absolute top-[52px] left-0 right-0 h-[3px] z-0"
             style={{
               background:
-                "linear-gradient(90deg, var(--color-accent), var(--color-accent2), var(--color-cyan), var(--color-lime), var(--color-yellow), var(--color-orange), var(--color-accent))",
+                "linear-gradient(90deg, #a259ff, #ff2d9b, #00d4ff, #aaff00, #ffe566, #ff8c42, #a259ff)",
               backgroundSize: "400% auto",
               animation: "htlFlow 10s linear infinite",
               boxShadow:
@@ -229,7 +229,6 @@ export function Timeline() {
             <div
               key={index}
               className="flex flex-col items-center w-[210px] flex-shrink-0 px-3.5 relative z-10"
-              style={{ ["--c" as string]: item.color }}
             >
               {/* Dot */}
               <div
@@ -237,7 +236,6 @@ export function Timeline() {
                 style={{
                   background: item.color,
                   boxShadow: `0 0 0 4px rgba(8,8,16,0.9), 0 0 16px ${item.color}, 0 0 32px ${item.color}`,
-                  animation: "dotPulse 2.5s ease-in-out infinite",
                 }}
               />
 
@@ -253,16 +251,16 @@ export function Timeline() {
               <div
                 className={`bg-surface border rounded-[14px] p-4 w-full relative overflow-hidden transition-all duration-300 hover:translate-y-[-5px] group ${
                   item.milestone
-                    ? "border-[color-mix(in_srgb,var(--c)_28%,transparent)] shadow-[0_0_18px_color-mix(in_srgb,var(--c)_12%,transparent)]"
-                    : "border-white/5"
+                    ? "shadow-lg"
+                    : ""
                 }`}
-                style={
-                  item.milestone
-                    ? {
-                        background: `linear-gradient(135deg, var(--color-surface), color-mix(in srgb, ${item.color} 9%, var(--color-surface)))`,
-                      }
-                    : {}
-                }
+                style={{
+                  borderColor: item.milestone ? `${item.color}40` : "rgba(255,255,255,0.05)",
+                  background: item.milestone
+                    ? `linear-gradient(135deg, #0f0f1a, ${item.color}15)`
+                    : undefined,
+                  boxShadow: item.milestone ? `0 0 18px ${item.color}20` : undefined,
+                }}
               >
                 {/* Top accent */}
                 <div
@@ -278,8 +276,8 @@ export function Timeline() {
                   <span
                     className="inline-flex items-center gap-1 rounded-[14px] px-2.5 py-0.5 text-[0.66rem] font-bold mb-1.5"
                     style={{
-                      background: `color-mix(in srgb, ${item.color} 14%, transparent)`,
-                      border: `1px solid color-mix(in srgb, ${item.color} 40%, transparent)`,
+                      background: `${item.color}20`,
+                      border: `1px solid ${item.color}60`,
                       color: item.color,
                     }}
                   >
@@ -293,7 +291,7 @@ export function Timeline() {
                 >
                   {item.date}
                 </div>
-                <div className="font-heading text-base font-extrabold mb-0.5 leading-tight">
+                <div className="font-heading text-base font-extrabold mb-0.5 leading-tight text-text">
                   {item.model}
                 </div>
                 <div className="text-[0.72rem] text-muted mb-1.5">{item.by}</div>
@@ -308,8 +306,8 @@ export function Timeline() {
                       key={tag}
                       className="rounded-[5px] px-1.5 py-px text-[0.64rem] font-semibold"
                       style={{
-                        background: `color-mix(in srgb, ${item.color} 10%, transparent)`,
-                        border: `1px solid color-mix(in srgb, ${item.color} 25%, transparent)`,
+                        background: `${item.color}18`,
+                        border: `1px solid ${item.color}40`,
                         color: item.color,
                       }}
                     >
@@ -325,7 +323,7 @@ export function Timeline() {
 
       <div className="text-center py-3 pb-16">
         <p className="text-muted text-sm tracking-wide">
-          ← Drag or scroll to explore 6 years of AI history →
+          Drag or scroll to explore 6 years of AI history
         </p>
       </div>
     </div>

@@ -22,15 +22,15 @@ export function Hero() {
       />
 
       {/* Badge */}
-      <div className="relative inline-flex items-center gap-1.5 bg-accent/15 border border-accent/40 rounded-3xl px-4 py-1.5 text-xs font-semibold text-accent mb-7 shadow-[0_0_14px_rgba(162,89,255,0.25)]">
+      <div className="relative inline-flex items-center gap-1.5 bg-[#a259ff]/15 border border-[#a259ff]/40 rounded-3xl px-4 py-1.5 text-xs font-semibold text-[#a259ff] mb-7 shadow-[0_0_14px_rgba(162,89,255,0.25)]">
         Sharp reviews. Zero fluff.
       </div>
 
       {/* Headline */}
-      <h1 className="relative font-heading font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight mb-5">
+      <h1 className="relative font-heading font-extrabold text-4xl md:text-6xl lg:text-7xl leading-tight mb-5 text-text">
         The AI tool critic
         <br />
-        <span className="bg-gradient-to-br from-accent via-accent2 to-cyan bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(162,89,255,0.5)]">
+        <span className="bg-gradient-to-br from-[#a259ff] via-[#ff2d9b] to-[#00d4ff] bg-clip-text text-transparent drop-shadow-[0_0_24px_rgba(162,89,255,0.5)]">
           you actually need.
         </span>
       </h1>
@@ -38,20 +38,20 @@ export function Hero() {
       {/* Subheadline */}
       <p className="relative max-w-xl mx-auto mb-11 text-muted text-lg">
         Every AI tool reviewed by humans who use them daily. Find yours in 2
-        minutes - jokes, no sponsored rankings, no nonsense.
+        minutes - no sponsored rankings, no nonsense.
       </p>
 
       {/* CTA buttons */}
       <div className="relative flex gap-3 justify-center flex-wrap">
         <Link
           href="#quiz"
-          className="bg-gradient-to-br from-accent to-accent2 text-white border-none rounded-full px-8 py-3.5 text-base font-semibold transition-all shadow-[0_0_24px_rgba(162,89,255,0.45)] hover:translate-y-[-3px] hover:shadow-[0_0_40px_rgba(162,89,255,0.7),0_8px_30px_rgba(255,45,155,0.3)]"
+          className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] text-white border-none rounded-full px-8 py-3.5 text-base font-semibold transition-all shadow-[0_0_24px_rgba(162,89,255,0.45)] hover:translate-y-[-3px] hover:shadow-[0_0_40px_rgba(162,89,255,0.7),0_8px_30px_rgba(255,45,155,0.3)]"
         >
           Take the Quiz
         </Link>
         <Link
           href="#tools"
-          className="bg-transparent text-text border border-accent/30 rounded-full px-8 py-3.5 text-base font-medium transition-all hover:border-cyan hover:text-cyan hover:shadow-[0_0_18px_rgba(0,212,255,0.3)]"
+          className="bg-transparent text-text border border-[#a259ff]/30 rounded-full px-8 py-3.5 text-base font-medium transition-all hover:border-[#00d4ff] hover:text-[#00d4ff] hover:shadow-[0_0_18px_rgba(0,212,255,0.3)]"
         >
           Browse Reviews
         </Link>
@@ -61,7 +61,7 @@ export function Hero() {
       <div className="relative flex gap-11 justify-center mt-16 flex-wrap">
         {stats.map((stat) => (
           <div key={stat.label} className="text-center">
-            <div className="font-heading text-3xl font-extrabold bg-gradient-to-br from-accent3 to-cyan bg-clip-text text-transparent">
+            <div className="font-heading text-3xl font-extrabold bg-gradient-to-br from-[#00ffc8] to-[#00d4ff] bg-clip-text text-transparent">
               {stat.value}
             </div>
             <div className="text-xs text-muted mt-0.5">{stat.label}</div>

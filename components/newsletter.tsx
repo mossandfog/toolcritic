@@ -31,12 +31,12 @@ export function Newsletter() {
           className="absolute top-0 left-0 right-0 h-0.5"
           style={{
             background:
-              "linear-gradient(90deg, var(--color-accent), var(--color-accent2), var(--color-cyan))",
+              "linear-gradient(90deg, #a259ff, #ff2d9b, #00d4ff)",
           }}
         />
 
         <div className="text-4xl mb-4">📬</div>
-        <h2 className="font-heading text-2xl md:text-3xl font-extrabold mb-3 text-balance">
+        <h2 className="font-heading text-2xl md:text-3xl font-extrabold mb-3 text-balance text-text">
           One tool reviewed,
           <br />
           every week.
@@ -58,17 +58,17 @@ export function Newsletter() {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
               required
-              className="flex-1 bg-white/5 border border-accent/25 rounded-full px-5 py-3 text-text text-sm outline-none transition-all focus:border-accent focus:shadow-[0_0_14px_rgba(162,89,255,0.3)] placeholder:text-muted"
+              className="flex-1 bg-white/5 border border-[#a259ff]/25 rounded-full px-5 py-3 text-text text-sm outline-none transition-all focus:border-[#a259ff] focus:shadow-[0_0_14px_rgba(162,89,255,0.3)] placeholder:text-muted"
             />
             <button
               type="submit"
-              className="bg-gradient-to-br from-accent to-accent2 text-white border-none rounded-full px-6 py-3 text-sm font-semibold cursor-pointer transition-all whitespace-nowrap shadow-[0_0_16px_rgba(162,89,255,0.4)] hover:shadow-[0_0_28px_rgba(162,89,255,0.65)] hover:translate-y-[-1px]"
+              className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] text-white border-none rounded-full px-6 py-3 text-sm font-semibold cursor-pointer transition-all whitespace-nowrap shadow-[0_0_16px_rgba(162,89,255,0.4)] hover:shadow-[0_0_28px_rgba(162,89,255,0.65)] hover:translate-y-[-1px]"
             >
               Subscribe
             </button>
           </form>
         ) : (
-          <p className="text-accent3 text-sm mt-3">
+          <p className="text-[#00ffc8] text-sm mt-3">
             You&apos;re in! Welcome aboard.
           </p>
         )}

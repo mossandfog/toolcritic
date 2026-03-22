@@ -222,7 +222,7 @@ export function Quiz() {
     ctx.fillStyle = color;
     ctx.font = "bold 17px Arial";
     ctx.textAlign = "center";
-    ctx.fillText("✦  MY AI MATCH  ✦", W / 2, 86);
+    ctx.fillText("MY AI MATCH", W / 2, 86);
 
     // Emoji
     ctx.font = "108px serif";
@@ -292,18 +292,18 @@ export function Quiz() {
     <div id="quiz" className="px-6 py-5 pb-20 max-w-4xl mx-auto">
       {/* Section header */}
       <div className="text-center mb-10">
-        <div className="text-xs font-bold tracking-wider uppercase text-accent mb-3">
+        <div className="text-xs font-bold tracking-wider uppercase text-[#a259ff] mb-3">
           The Matchmaker
         </div>
-        <div className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
+        <div className="font-heading text-3xl md:text-4xl font-extrabold mb-4 text-text">
           Which AI tool is right for you?
         </div>
         <p className="text-muted text-lg">
           4 questions. One honest, no-BS recommendation.
         </p>
-        <div className="inline-flex items-center gap-2 mt-4 bg-accent3/10 border border-accent3/25 rounded-3xl px-4 py-1.5">
-          <span className="flex items-center gap-1.5 text-xs font-bold tracking-wider uppercase text-accent3">
-            <span className="w-2 h-2 rounded-full bg-accent3 shadow-[0_0_6px_var(--color-accent3)] animate-[liveDotPulse_1.5s_ease-in-out_infinite]" />
+        <div className="inline-flex items-center gap-2 mt-4 bg-[#00ffc8]/10 border border-[#00ffc8]/25 rounded-3xl px-4 py-1.5">
+          <span className="flex items-center gap-1.5 text-xs font-bold tracking-wider uppercase text-[#00ffc8]">
+            <span className="w-2 h-2 rounded-full bg-[#00ffc8] shadow-[0_0_6px_#00ffc8] animate-pulse" />
             Interactive quiz - tap to begin
           </span>
         </div>
@@ -311,7 +311,7 @@ export function Quiz() {
 
       {/* Quiz card */}
       <div
-        className="rounded-3xl max-w-3xl mx-auto p-10 md:p-14 relative overflow-hidden border-[2.5px] border-transparent"
+        className="rounded-3xl max-w-3xl mx-auto p-10 md:p-14 relative overflow-hidden border-[2.5px] border-transparent bg-surface"
         style={{
           backgroundImage: `
             linear-gradient(#0f0f1a, #0f0f1a),
@@ -338,15 +338,19 @@ export function Quiz() {
           {[1, 2, 3, 4].map((step) => (
             <div
               key={step}
-              className={`h-1.5 flex-1 rounded transition-all duration-400 ${
-                step < currentStep
-                  ? "bg-gradient-to-r from-accent3 to-cyan shadow-[0_0_8px_rgba(0,255,200,0.5)]"
+              className="h-1.5 flex-1 rounded transition-all duration-400"
+              style={{
+                background: step < currentStep || (step <= 4 && currentStep === 5)
+                  ? "linear-gradient(to right, #00ffc8, #00d4ff)"
                   : step === currentStep && currentStep < 5
-                  ? "bg-gradient-to-r from-accent to-accent2 shadow-[0_0_8px_rgba(162,89,255,0.7)]"
-                  : step <= 4 && currentStep === 5
-                  ? "bg-gradient-to-r from-accent3 to-cyan shadow-[0_0_8px_rgba(0,255,200,0.5)]"
-                  : "bg-border"
-              }`}
+                  ? "linear-gradient(to right, #a259ff, #ff2d9b)"
+                  : "rgba(255,255,255,0.07)",
+                boxShadow: step < currentStep || (step <= 4 && currentStep === 5)
+                  ? "0 0 8px rgba(0,255,200,0.5)"
+                  : step === currentStep && currentStep < 5
+                  ? "0 0 8px rgba(162,89,255,0.7)"
+                  : "none",
+              }}
             />
           ))}
         </div>
@@ -354,7 +358,7 @@ export function Quiz() {
         {/* Questions */}
         {currentStep <= 4 && currentQuestion && (
           <div>
-            <div className="font-heading text-2xl font-bold mb-2 leading-tight">
+            <div className="font-heading text-2xl font-bold mb-2 leading-tight text-text">
               {currentQuestion.question}
             </div>
             <div className="text-muted text-sm mb-7">{currentQuestion.hint}</div>
@@ -366,12 +370,12 @@ export function Quiz() {
                   onClick={() => handleOptionClick(currentQuestion.id, option.value)}
                   className={`flex items-center gap-3.5 p-4 rounded-xl border-[1.5px] text-left transition-all select-none relative overflow-hidden group ${
                     answers[currentQuestion.id] === option.value
-                      ? "border-accent2 bg-accent2/10 shadow-[0_0_16px_rgba(255,45,155,0.25)]"
-                      : "border-border bg-surface2 hover:border-accent hover:translate-x-1"
+                      ? "border-[#ff2d9b] bg-[#ff2d9b]/10 shadow-[0_0_16px_rgba(255,45,155,0.25)]"
+                      : "border-border bg-surface2 hover:border-[#a259ff] hover:translate-x-1"
                   }`}
                 >
                   <span className="text-2xl flex-shrink-0">{option.emoji}</span>
-                  <span className="font-medium text-sm">{option.text}</span>
+                  <span className="font-medium text-sm text-text">{option.text}</span>
                 </button>
               ))}
             </div>
@@ -380,7 +384,7 @@ export function Quiz() {
               {currentStep > 1 ? (
                 <button
                   onClick={goBack}
-                  className="bg-transparent border-none text-muted cursor-pointer text-sm transition-colors hover:text-cyan"
+                  className="bg-transparent border-none text-muted cursor-pointer text-sm transition-colors hover:text-[#00d4ff]"
                 >
                   ← Back
                 </button>
@@ -395,11 +399,11 @@ export function Quiz() {
         {/* Result */}
         {currentStep === 5 && result && (
           <div>
-            <div className="inline-flex items-center gap-2 bg-accent3/10 border border-accent3/35 rounded-3xl px-4 py-1.5 text-accent3 text-sm font-semibold mb-6 shadow-[0_0_12px_rgba(0,255,200,0.2)]">
-              ✓ Your perfect match
+            <div className="inline-flex items-center gap-2 bg-[#00ffc8]/10 border border-[#00ffc8]/35 rounded-3xl px-4 py-1.5 text-[#00ffc8] text-sm font-semibold mb-6 shadow-[0_0_12px_rgba(0,255,200,0.2)]">
+              Your perfect match
             </div>
             <div className="text-6xl mb-4">{result.emoji}</div>
-            <div className="font-heading text-4xl font-extrabold mb-3 bg-gradient-to-br from-accent to-cyan bg-clip-text text-transparent">
+            <div className="font-heading text-4xl font-extrabold mb-3 bg-gradient-to-br from-[#a259ff] to-[#00d4ff] bg-clip-text text-transparent">
               {result.name}
             </div>
             <div className="text-muted text-base leading-relaxed mb-7 max-w-lg">
@@ -409,27 +413,27 @@ export function Quiz() {
               <Link
                 href={result.link}
                 target="_blank"
-                className="bg-gradient-to-br from-accent3 to-cyan text-black border-none rounded-full px-7 py-3 text-sm font-bold transition-all shadow-[0_0_20px_rgba(0,255,200,0.4)] hover:translate-y-[-2px] hover:shadow-[0_0_35px_rgba(0,255,200,0.65)]"
+                className="bg-gradient-to-br from-[#00ffc8] to-[#00d4ff] text-black border-none rounded-full px-7 py-3 text-sm font-bold transition-all shadow-[0_0_20px_rgba(0,255,200,0.4)] hover:translate-y-[-2px] hover:shadow-[0_0_35px_rgba(0,255,200,0.65)]"
               >
                 Try {result.name} free →
               </Link>
               <button
                 onClick={resetQuiz}
-                className="bg-transparent border border-accent/30 text-text rounded-full px-7 py-3 text-sm cursor-pointer transition-all hover:border-accent hover:shadow-[0_0_14px_rgba(162,89,255,0.3)]"
+                className="bg-transparent border border-[#a259ff]/30 text-text rounded-full px-7 py-3 text-sm cursor-pointer transition-all hover:border-[#a259ff] hover:shadow-[0_0_14px_rgba(162,89,255,0.3)]"
               >
                 Start over
               </button>
             </div>
 
             {/* Share strip */}
-            <div className="mt-7 pt-6 border-t border-accent/15 text-center">
-              <p className="text-xs font-bold tracking-wider uppercase text-accent mb-3.5">
+            <div className="mt-7 pt-6 border-t border-[#a259ff]/15 text-center">
+              <p className="text-xs font-bold tracking-wider uppercase text-[#a259ff] mb-3.5">
                 Share your result
               </p>
               <div className="flex gap-2.5 justify-center flex-wrap">
                 <button
                   onClick={downloadShareCard}
-                  className="border-[1.5px] border-accent/35 bg-accent/10 text-text rounded-3xl px-5 py-2.5 text-sm font-semibold cursor-pointer transition-all hover:border-accent hover:bg-accent/20 hover:shadow-[0_0_16px_rgba(162,89,255,0.3)] hover:translate-y-[-2px]"
+                  className="border-[1.5px] border-[#a259ff]/35 bg-[#a259ff]/10 text-text rounded-3xl px-5 py-2.5 text-sm font-semibold cursor-pointer transition-all hover:border-[#a259ff] hover:bg-[#a259ff]/20 hover:shadow-[0_0_16px_rgba(162,89,255,0.3)] hover:translate-y-[-2px]"
                 >
                   Download card
                 </button>
@@ -437,11 +441,11 @@ export function Quiz() {
                   onClick={copyShareLink}
                   className={`border-[1.5px] rounded-3xl px-5 py-2.5 text-sm font-semibold cursor-pointer transition-all hover:translate-y-[-2px] ${
                     copied
-                      ? "border-accent3 bg-accent3/10 text-accent3"
-                      : "border-accent/35 bg-accent/10 text-text hover:border-cyan hover:bg-cyan/10 hover:shadow-[0_0_16px_rgba(0,212,255,0.25)]"
+                      ? "border-[#00ffc8] bg-[#00ffc8]/10 text-[#00ffc8]"
+                      : "border-[#a259ff]/35 bg-[#a259ff]/10 text-text hover:border-[#00d4ff] hover:bg-[#00d4ff]/10 hover:shadow-[0_0_16px_rgba(0,212,255,0.25)]"
                   }`}
                 >
-                  {copied ? "✓ Copied!" : "Copy link"}
+                  {copied ? "Copied!" : "Copy link"}
                 </button>
               </div>
             </div>

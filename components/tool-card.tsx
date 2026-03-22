@@ -3,7 +3,7 @@
 import Link from "next/link";
 import type { Tool } from "@/lib/tools-data";
 
-const colorStyles = {
+const colorStyles: Record<string, { glow: string; border: string; shadow: string; stars: string }> = {
   purple: {
     glow: "linear-gradient(135deg, rgba(162,89,255,0.6), rgba(100,50,255,0.4))",
     border: "rgba(162,89,255,0.9)",
@@ -79,11 +79,6 @@ export function ToolCard({ tool }: { tool: Tool }) {
   return (
     <div
       className="group bg-surface border border-border rounded-[18px] p-6 transition-all duration-300 cursor-pointer relative overflow-hidden hover:translate-y-[-6px] hover:scale-[1.01]"
-      style={{
-        ["--card-glow" as string]: styles.glow,
-        ["--card-border" as string]: styles.border,
-        ["--card-shadow" as string]: styles.shadow,
-      }}
     >
       {/* Glow layer (hidden by default, visible on hover) */}
       <div
@@ -104,7 +99,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
 
       {/* Editor's Pick badge */}
       {tool.editorsPick && (
-        <div className="absolute top-3.5 right-3.5 bg-yellow/15 border border-yellow/40 text-yellow rounded-2xl px-2.5 py-0.5 text-[0.72rem] font-bold shadow-[0_0_12px_rgba(255,229,102,0.25)] z-10">
+        <div className="absolute top-3.5 right-3.5 bg-[#ffe566]/15 border border-[#ffe566]/40 text-[#ffe566] rounded-2xl px-2.5 py-0.5 text-[0.72rem] font-bold shadow-[0_0_12px_rgba(255,229,102,0.25)] z-10">
           Editor&apos;s Pick
         </div>
       )}
@@ -113,7 +108,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
       <div className="text-4xl mb-3.5">{tool.icon}</div>
 
       {/* Name */}
-      <div className="font-heading text-xl font-bold mb-1 group-hover:text-white transition-colors">
+      <div className="font-heading text-xl font-bold mb-1 group-hover:text-white transition-colors text-text">
         {tool.name}
       </div>
 
@@ -137,7 +132,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
       {/* Rating */}
       <div className="flex items-center gap-2 mb-4">
         {renderStars(tool.stars, styles.stars)}
-        <span className="text-sm font-semibold group-hover:text-text transition-colors">
+        <span className="text-sm font-semibold text-text group-hover:text-text transition-colors">
           {tool.rating}
         </span>
       </div>
@@ -148,30 +143,32 @@ export function ToolCard({ tool }: { tool: Tool }) {
       {/* Pros and Cons */}
       <div className="grid grid-cols-2 gap-3">
         <div>
-          <h4 className="text-[0.72rem] font-bold tracking-wide uppercase text-accent3 mb-2">
+          <h4 className="text-[0.72rem] font-bold tracking-wide uppercase text-[#00ffc8] mb-2">
             Pros
           </h4>
           <ul className="list-none">
             {tool.pros.map((pro) => (
               <li
                 key={pro}
-                className="text-xs text-muted py-0.5 group-hover:text-[#c8c8e8] transition-colors before:content-['+_'] before:text-accent3 before:font-bold"
+                className="text-xs text-muted py-0.5 group-hover:text-[#c8c8e8] transition-colors"
               >
+                <span className="text-[#00ffc8] font-bold mr-1">+</span>
                 {pro}
               </li>
             ))}
           </ul>
         </div>
         <div>
-          <h4 className="text-[0.72rem] font-bold tracking-wide uppercase text-accent2 mb-2">
+          <h4 className="text-[0.72rem] font-bold tracking-wide uppercase text-[#ff2d9b] mb-2">
             Cons
           </h4>
           <ul className="list-none">
             {tool.cons.map((con) => (
               <li
                 key={con}
-                className="text-xs text-muted py-0.5 group-hover:text-[#c8c8e8] transition-colors before:content-['−_'] before:text-accent2 before:font-bold"
+                className="text-xs text-muted py-0.5 group-hover:text-[#c8c8e8] transition-colors"
               >
+                <span className="text-[#ff2d9b] font-bold mr-1">−</span>
                 {con}
               </li>
             ))}
@@ -188,7 +185,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
         <Link
           href={tool.link}
           target="_blank"
-          className="bg-gradient-to-br from-accent to-accent2 text-white border-none rounded-2xl px-4 py-1.5 text-sm font-semibold transition-all shadow-[0_0_10px_rgba(162,89,255,0.3)] hover:shadow-[0_0_20px_rgba(162,89,255,0.6)] hover:scale-105"
+          className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] text-white border-none rounded-2xl px-4 py-1.5 text-sm font-semibold transition-all shadow-[0_0_10px_rgba(162,89,255,0.3)] hover:shadow-[0_0_20px_rgba(162,89,255,0.6)] hover:scale-105"
         >
           Try it →
         </Link>

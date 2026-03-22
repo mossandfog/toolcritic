@@ -4,10 +4,10 @@ export function ComparisonTable() {
   return (
     <section id="compare" className="py-20 px-6 max-w-6xl mx-auto">
       {/* Section header */}
-      <div className="text-xs font-bold tracking-wider uppercase text-accent mb-3">
+      <div className="text-xs font-bold tracking-wider uppercase text-[#a259ff] mb-3">
         Side by Side
       </div>
-      <div className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
+      <div className="font-heading text-3xl md:text-4xl font-extrabold mb-4 text-text">
         The no-BS comparison table
       </div>
       <p className="text-muted text-lg max-w-lg mb-12">
@@ -15,7 +15,7 @@ export function ComparisonTable() {
       </p>
 
       {/* Table wrapper */}
-      <div className="overflow-x-auto rounded-[18px] border border-accent/20 shadow-[0_0_40px_rgba(162,89,255,0.08)]">
+      <div className="overflow-x-auto rounded-[18px] border border-[#a259ff]/20 shadow-[0_0_40px_rgba(162,89,255,0.08)]">
         <table className="w-full border-collapse text-sm">
           <thead className="bg-surface2">
             <tr>
@@ -43,38 +43,38 @@ export function ComparisonTable() {
             {comparisonData.map((row, index) => (
               <tr
                 key={row.name}
-                className={`hover:bg-accent/5 ${
+                className={`hover:bg-[#a259ff]/5 ${
                   index === comparisonData.length - 1 ? "" : "border-b border-border"
                 }`}
               >
                 <td className="px-4 py-3.5">
                   <div className="flex items-center gap-2.5">
                     <span className="text-lg">{row.icon}</span>
-                    <span className="font-semibold">{row.name}</span>
+                    <span className="font-semibold text-text">{row.name}</span>
                   </div>
                 </td>
                 <td className="px-4 py-3.5 text-muted">{row.bestFor}</td>
                 <td className="px-4 py-3.5">
                   {row.freeTier ? (
-                    <span className="text-accent3 font-bold">✓</span>
+                    <span className="text-[#00ffc8] font-bold">✓</span>
                   ) : (
                     <span className="text-muted">✗</span>
                   )}
                 </td>
                 <td className="px-4 py-3.5">
                   {row.webAccess === true ? (
-                    <span className="text-accent3 font-bold">✓</span>
+                    <span className="text-[#00ffc8] font-bold">✓</span>
                   ) : row.webAccess === "Pro" ? (
-                    <span className="text-accent3 font-bold">✓ (Pro)</span>
+                    <span className="text-[#00ffc8] font-bold">✓ (Pro)</span>
                   ) : (
                     <span className="text-muted">✗</span>
                   )}
                 </td>
                 <td className="px-4 py-3.5">
                   {row.imageGen === true ? (
-                    <span className="text-accent3 font-bold">✓</span>
+                    <span className="text-[#00ffc8] font-bold">✓</span>
                   ) : row.imageGen === "★★★" ? (
-                    <span className="text-accent3 font-bold">★★★</span>
+                    <span className="text-[#00ffc8] font-bold">★★★</span>
                   ) : (
                     <span className="text-muted">✗</span>
                   )}
@@ -83,10 +83,10 @@ export function ComparisonTable() {
                   <span
                     className={`rounded-lg px-2 py-0.5 text-xs font-semibold ${
                       row.pricing === "freemium"
-                        ? "bg-yellow/10 text-yellow"
+                        ? "bg-[#ffe566]/10 text-[#ffe566]"
                         : row.pricing === "paid"
-                        ? "bg-accent/10 text-accent"
-                        : "bg-accent3/10 text-accent3"
+                        ? "bg-[#a259ff]/10 text-[#a259ff]"
+                        : "bg-[#00ffc8]/10 text-[#00ffc8]"
                     }`}
                   >
                     {row.pricing === "freemium"

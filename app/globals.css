@@ -167,13 +167,21 @@ body::before {
 @keyframes dotPulse {
   0%,
   100% {
-    box-shadow: 0 0 0 4px rgba(8, 8, 16, 0.9), 0 0 12px var(--c, #a259ff),
-      0 0 22px var(--c, #a259ff);
+    opacity: 1;
   }
   50% {
-    box-shadow: 0 0 0 4px rgba(8, 8, 16, 0.9), 0 0 22px var(--c, #a259ff),
-      0 0 42px var(--c, #a259ff);
+    opacity: 0.7;
   }
+}
+
+/* Utility for hiding scrollbar on timeline */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 /* Scrollbar styling for timeline */

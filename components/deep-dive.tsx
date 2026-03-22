@@ -62,15 +62,15 @@ export function DeepDive() {
     >
       <section className="max-w-6xl mx-auto px-6">
         {/* Section header */}
-        <div className="text-xs font-bold tracking-wider uppercase text-accent mb-3">
+        <div className="text-xs font-bold tracking-wider uppercase text-[#a259ff] mb-3">
           The Deep Dive
         </div>
         <div className="font-heading text-3xl md:text-4xl font-extrabold mb-2.5 flex items-center gap-4 flex-wrap">
-          <span className="bg-gradient-to-br from-accent to-accent2 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] bg-clip-text text-transparent">
             Claude
           </span>
           <span className="text-muted text-2xl">vs</span>
-          <span className="bg-gradient-to-br from-accent3 to-cyan bg-clip-text text-transparent">
+          <span className="bg-gradient-to-br from-[#00ffc8] to-[#00d4ff] bg-clip-text text-transparent">
             ChatGPT
           </span>
         </div>
@@ -86,13 +86,13 @@ export function DeepDive() {
               key={comp.metric}
               className={`bg-surface border rounded-2xl p-5 transition-all duration-200 hover:translate-y-[-3px] hover:shadow-[0_8px_30px_rgba(0,0,0,0.35)] ${
                 comp.winner === "claude"
-                  ? "border-accent/30"
+                  ? "border-[#a259ff]/30"
                   : comp.winner === "gpt"
-                  ? "border-accent3/20"
-                  : "border-yellow/20"
+                  ? "border-[#00ffc8]/20"
+                  : "border-[#ffe566]/20"
               }`}
             >
-              <div className="font-bold text-sm mb-4 font-heading">
+              <div className="font-bold text-sm mb-4 font-heading text-text">
                 {comp.icon} {comp.metric}
               </div>
 
@@ -100,15 +100,16 @@ export function DeepDive() {
               <div className="flex flex-col gap-2.5 mb-3.5">
                 {/* Claude bar */}
                 <div className="flex items-center gap-2">
-                  <span className="text-[0.72rem] font-semibold text-accent w-[76px] flex-shrink-0">
+                  <span className="text-[0.72rem] font-semibold text-[#a259ff] w-[76px] flex-shrink-0">
                     Claude 4.6
                   </span>
                   <div className="flex-1 h-5 bg-white/5 rounded-md overflow-hidden">
                     <div
-                      className="h-full rounded-md flex items-center justify-end pr-1.5 bg-gradient-to-r from-accent/45 to-accent/85 shadow-[inset_0_0_8px_rgba(162,89,255,0.3)]"
+                      className="h-full rounded-md flex items-center justify-end pr-1.5"
                       style={{
                         width: `${comp.claude.pct}%`,
-                        animation: "ddBarGrow 0.9s cubic-bezier(.22,1,.36,1) forwards",
+                        background: "linear-gradient(to right, rgba(162,89,255,0.45), rgba(162,89,255,0.85))",
+                        boxShadow: "inset 0 0 8px rgba(162,89,255,0.3)",
                       }}
                     >
                       <span className="text-[0.68rem] font-bold text-white/95 whitespace-nowrap">
@@ -120,15 +121,16 @@ export function DeepDive() {
 
                 {/* GPT bar */}
                 <div className="flex items-center gap-2">
-                  <span className="text-[0.72rem] font-semibold text-accent3 w-[76px] flex-shrink-0">
+                  <span className="text-[0.72rem] font-semibold text-[#00ffc8] w-[76px] flex-shrink-0">
                     GPT-5.4
                   </span>
                   <div className="flex-1 h-5 bg-white/5 rounded-md overflow-hidden">
                     <div
-                      className="h-full rounded-md flex items-center justify-end pr-1.5 bg-gradient-to-r from-accent3/35 to-cyan/75 shadow-[inset_0_0_8px_rgba(0,255,200,0.25)]"
+                      className="h-full rounded-md flex items-center justify-end pr-1.5"
                       style={{
                         width: `${comp.gpt.pct}%`,
-                        animation: "ddBarGrow 0.9s cubic-bezier(.22,1,.36,1) forwards",
+                        background: "linear-gradient(to right, rgba(0,255,200,0.35), rgba(0,212,255,0.75))",
+                        boxShadow: "inset 0 0 8px rgba(0,255,200,0.25)",
                       }}
                     >
                       <span className="text-[0.68rem] font-bold text-white/95 whitespace-nowrap">
@@ -143,10 +145,10 @@ export function DeepDive() {
               <span
                 className={`text-xs font-bold px-2.5 py-1 rounded-lg inline-flex items-center gap-1 ${
                   comp.winner === "claude"
-                    ? "bg-accent/10 text-accent"
+                    ? "bg-[#a259ff]/10 text-[#a259ff]"
                     : comp.winner === "gpt"
-                    ? "bg-accent3/10 text-accent3"
-                    : "bg-yellow/10 text-yellow"
+                    ? "bg-[#00ffc8]/10 text-[#00ffc8]"
+                    : "bg-[#ffe566]/10 text-[#ffe566]"
                 }`}
               >
                 {comp.winner === "claude"
@@ -167,7 +169,7 @@ export function DeepDive() {
         <div className="flex items-center justify-center gap-10 bg-surface border border-border rounded-2xl p-7 mb-11 flex-wrap">
           <div className="text-center">
             <div className="text-sm text-muted mb-2">Claude Sonnet 4.6</div>
-            <div className="font-heading text-5xl font-extrabold bg-gradient-to-br from-accent to-accent2 bg-clip-text text-transparent">
+            <div className="font-heading text-5xl font-extrabold bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] bg-clip-text text-transparent">
               2
             </div>
             <div className="text-xs text-muted">categories won</div>
@@ -175,7 +177,7 @@ export function DeepDive() {
           <div className="text-2xl font-extrabold text-muted">vs</div>
           <div className="text-center">
             <div className="text-sm text-muted mb-2">ChatGPT GPT-5.4</div>
-            <div className="font-heading text-5xl font-extrabold bg-gradient-to-br from-accent3 to-cyan bg-clip-text text-transparent">
+            <div className="font-heading text-5xl font-extrabold bg-gradient-to-br from-[#00ffc8] to-[#00d4ff] bg-clip-text text-transparent">
               3
             </div>
             <div className="text-xs text-muted">categories won</div>
@@ -185,7 +187,7 @@ export function DeepDive() {
         {/* Editorial */}
         <div className="grid lg:grid-cols-[1fr_280px] gap-10 items-start">
           <div>
-            <h3 className="font-heading text-2xl font-extrabold mb-4">
+            <h3 className="font-heading text-2xl font-extrabold mb-4 text-text">
               The honest take
             </h3>
             <div className="text-muted text-[0.95rem] leading-relaxed space-y-3.5">
@@ -221,13 +223,13 @@ export function DeepDive() {
               <div className="text-[0.72rem] text-muted font-bold uppercase tracking-wide mb-1.5">
                 Best for writers & analysts
               </div>
-              <div className="font-heading font-extrabold mb-3.5">
+              <div className="font-heading font-extrabold mb-3.5 text-text">
                 Claude Sonnet 4.6
               </div>
               <Link
                 href="https://claude.ai"
                 target="_blank"
-                className="inline-block bg-gradient-to-br from-accent to-accent2 text-white rounded-2xl px-5 py-2 text-sm font-semibold transition-all shadow-[0_0_12px_rgba(162,89,255,0.3)] hover:shadow-[0_0_24px_rgba(162,89,255,0.6)] hover:translate-y-[-1px]"
+                className="inline-block bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] text-white rounded-2xl px-5 py-2 text-sm font-semibold transition-all shadow-[0_0_12px_rgba(162,89,255,0.3)] hover:shadow-[0_0_24px_rgba(162,89,255,0.6)] hover:translate-y-[-1px]"
               >
                 Try Claude →
               </Link>
@@ -236,13 +238,13 @@ export function DeepDive() {
               <div className="text-[0.72rem] text-muted font-bold uppercase tracking-wide mb-1.5">
                 Best for do-everything users
               </div>
-              <div className="font-heading font-extrabold mb-3.5">
+              <div className="font-heading font-extrabold mb-3.5 text-text">
                 ChatGPT GPT-5.4
               </div>
               <Link
                 href="https://chat.openai.com"
                 target="_blank"
-                className="inline-block bg-gradient-to-br from-accent3 to-cyan text-black rounded-2xl px-5 py-2 text-sm font-semibold transition-all shadow-[0_0_12px_rgba(0,255,200,0.3)] hover:shadow-[0_0_24px_rgba(0,255,200,0.5)] hover:translate-y-[-1px]"
+                className="inline-block bg-gradient-to-br from-[#00ffc8] to-[#00d4ff] text-black rounded-2xl px-5 py-2 text-sm font-semibold transition-all shadow-[0_0_12px_rgba(0,255,200,0.3)] hover:shadow-[0_0_24px_rgba(0,255,200,0.5)] hover:translate-y-[-1px]"
               >
                 Try ChatGPT →
               </Link>

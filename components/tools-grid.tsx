@@ -24,10 +24,10 @@ export function ToolsGrid() {
     <div id="tools" className="bg-white/[0.015] py-20 border-y border-border">
       <section className="max-w-6xl mx-auto px-6">
         {/* Section header */}
-        <div className="text-xs font-bold tracking-wider uppercase text-accent mb-3">
+        <div className="text-xs font-bold tracking-wider uppercase text-[#a259ff] mb-3">
           The Reviews
         </div>
-        <div className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
+        <div className="font-heading text-3xl md:text-4xl font-extrabold mb-4 text-text">
           Every AI tool worth knowing
         </div>
         <p className="text-muted text-lg max-w-lg mb-12">
@@ -43,8 +43,8 @@ export function ToolsGrid() {
               onClick={() => setActiveFilter(filter.key)}
               className={`bg-surface border rounded-3xl px-4 py-1.5 text-sm font-medium cursor-pointer transition-all ${
                 activeFilter === filter.key
-                  ? "border-accent text-text bg-accent/15 shadow-[0_0_12px_rgba(162,89,255,0.25)]"
-                  : "border-border text-muted hover:border-accent hover:text-text hover:bg-accent/15 hover:shadow-[0_0_12px_rgba(162,89,255,0.25)]"
+                  ? "border-[#a259ff] text-text bg-[#a259ff]/15 shadow-[0_0_12px_rgba(162,89,255,0.25)]"
+                  : "border-border text-muted hover:border-[#a259ff] hover:text-text hover:bg-[#a259ff]/15 hover:shadow-[0_0_12px_rgba(162,89,255,0.25)]"
               }`}
             >
               {filter.emoji && <span className="mr-1">{filter.emoji}</span>}
