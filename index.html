@@ -540,56 +540,45 @@
     .text-center { text-align: center; }
     .mb-0 { margin-bottom: 0; }
 
-    /* ---- HUMANS PHOTO GRID ---- */
+    /* ---- HUMANS PHOTO TEXTURE ---- */
     .humans-section {
-      padding: 60px 24px 80px;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      background: rgba(162,89,255,0.018);
+      padding: 0;
+      position: relative;
+      overflow: hidden;
     }
-    .humans-inner { max-width: 1100px; margin: 0 auto; }
+    .humans-section::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        linear-gradient(to bottom, var(--bg) 0%, transparent 18%, transparent 82%, var(--bg) 100%),
+        linear-gradient(135deg, rgba(8,8,16,0.55) 0%, rgba(8,8,16,0.3) 100%);
+    }
+    .humans-inner { max-width: 100%; }
     .humans-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 40px;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
     }
     .human-photo {
       position: relative;
-      aspect-ratio: 3/4;
+      aspect-ratio: 2/3;
       overflow: hidden;
-      border-radius: 14px;
       background: var(--surface2);
     }
     .human-photo img {
       width: 100%; height: 100%;
       object-fit: cover; display: block;
-      filter: brightness(0.55) saturate(0.45) contrast(1.1);
-      transition: transform 0.7s cubic-bezier(.25,.46,.45,.94), filter 0.4s ease;
+      filter: brightness(0.35) saturate(0.25) contrast(1.15);
+      pointer-events: none;
+      user-select: none;
     }
     .human-photo::before {
       content: '';
       position: absolute; inset: 0; z-index: 1; pointer-events: none;
-      background: linear-gradient(135deg, rgba(162,89,255,0.18) 0%, rgba(0,212,255,0.07) 100%);
+      background: linear-gradient(135deg, rgba(162,89,255,0.12) 0%, rgba(0,212,255,0.05) 100%);
     }
-    .human-photo::after {
-      content: attr(data-caption);
-      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
-      padding: 44px 16px 16px;
-      background: linear-gradient(to top, rgba(8,8,16,0.92) 0%, transparent 100%);
-      color: rgba(240,240,255,0.85);
-      font-size: 0.75rem; font-weight: 600;
-      letter-spacing: 0.1em; text-transform: uppercase;
-      opacity: 0; transform: translateY(8px);
-      transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .human-photo:hover img {
-      transform: scale(1.06);
-      filter: brightness(0.72) saturate(0.6) contrast(1.05);
-    }
-    .human-photo:hover::after { opacity: 1; transform: translateY(0); }
     @media (max-width: 768px) {
-      .humans-grid { grid-template-columns: repeat(2, 1fr); }
+      .humans-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     @media (max-width: 640px) {
@@ -1200,50 +1189,28 @@
   </section>
 </div>
 
-<!-- HUMANS PHOTO SECTION -->
+<!-- HUMANS PHOTO TEXTURE -->
 <div class="humans-section">
   <div class="humans-inner">
-    <div class="section-label">The Humans</div>
-    <h2 class="section-title">Reviewed by people who live in these tools</h2>
-    <p class="section-sub">Not bots. Not content farms. Writers, builders, and late-night tinkerers who've actually tried them all ‚Äî so you don't have to.</p>
     <div class="humans-grid">
-
-      <div class="human-photo" data-caption="Ships at midnight">
-        <img loading="lazy"
-          src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=600&q=80"
-          alt="Person at keyboard in low light" />
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=600&q=80" alt="" />
       </div>
-
-      <div class="human-photo" data-caption="Actually read the docs">
-        <img loading="lazy"
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
-          alt="Focused creator" />
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="" />
       </div>
-
-      <div class="human-photo" data-caption="Switched tools three times this week">
-        <img loading="lazy"
-          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"
-          alt="Thoughtful reviewer" />
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="" />
       </div>
-
-      <div class="human-photo" data-caption="No affiliate links. Ever.">
-        <img loading="lazy"
-          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80"
-          alt="Builder late at night" />
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="" />
       </div>
-
-      <div class="human-photo" data-caption="Tested every pricing tier">
-        <img loading="lazy"
-          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
-          alt="Person coding" />
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="" />
       </div>
-
-      <div class="human-photo" data-caption="Honest takes only">
-        <img loading="lazy"
-          src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=600&q=80"
-          alt="Night work" />
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=600&q=80" alt="" />
       </div>
-
     </div>
   </div>
 </div>
@@ -2165,248 +2132,238 @@
     const use = a['1'], skill = a['2'], budget = a['3'], quality = a['4'];
 
     if (use === 'images') {
-      if (budget === 'free') return { emoji: 'üñºÔ∏è', name: 'DALL¬∑E (via ChatGPT)', why: "For free AI image generation, ChatGPT's built-in DALL¬∑E is your best bet. It's not perfect, but it's powerful, free, and you don't need to install anything. When you're ready to level up, Midjourney is the destination.", link: 'https://chat.openai.com' };
-      return { emoji: 'üé®', name: 'Midjourney', why: "If image quality is the goal, Midjourney wins. Full stop. It produces the most aesthetically striking results of any AI image tool, with a passionate community and tons of style control. Worth every penny at $10/month.", link: 'https://midjourney.com' };
-    }
+      if (budget === 'free') {
+return { oji;
+: 'üñºÔ∏è'natime: 'LL¬∑E 2<(viahatGPT ‚)'whaty: "r moee ‚Ü is ge generation, peatGPT's breui-liin LL¬∑E 2<isou'rbeen bar.v; Is act jurfore, 50t its 'sower ufu ''ee ‚and whu nene''needs o { strel .2ything t. Whenou're wrads,yo { vel scup, djourney v1 thiseelaing ion. P",inks.: 'tps://chat.openai.com" ' 
+        return { oji;
+: 'üé®'natime: 'djourney v'whaty: "Ifs ge geality =  thiseegoal, djourney v1ns. IfFl nooppeIt thpduced she most insthetic ily settrikg reaslt.nof AIythÜ is ge geol-c,ith a stpsLin. e limmenuny and cots ar AIyle.dontenrol. Wt dhvery benaithÜat $10/nths P",inks.: 'tps://chmjourney vom" ' 
+      }    if (use === 'imding,  {
+      if (buill = a 'imbegner=" {
+return { oji;
+: 'üü¢'natime: 'atGPT's whaty: "r momeone acst abt =ng a terooding, anatGPT ‚Ü thstpstit theeh(o. Ageskt an explorain ything twhaalk roughs. errorstep)  bytep) ,  writersode, ith a stnning.  mmendar.r Its  meetsou'rhate wru'rhareP",inks.: 'tps://chat.openai.com" ' 
+        return { oji;
+: '‚ö°'natime: 'asor: 'whaty: "Ifsu're wrm" r (tle. oding, anasor: Ü thsteap,codine; Is acanÜ i-tive coIDEhat feunds);td csou'rbewholprompjt = î nea just abe cosrent - fe. "ADel seratsho itsth cho { sresare segoackgr. Srt;
+ith a e coee ‚Üora P",inks.: 'tps://chasor: .sh' 
+      }    if (use === 'imaslrInch {
+      if (buality = a='spare');
 
-    if (use === 'coding') {
-      if (skill === 'beginner') return { emoji: 'üü¢', name: 'ChatGPT', why: "For someone just getting into coding, ChatGPT is a patient teacher. Ask it to explain anything, walk through errors step by step, or write code with a running commentary. It meets you where you are.", link: 'https://chat.openai.com' };
-      return { emoji: '‚ö°', name: 'Cursor', why: "If you're comfortable coding, Cursor is a cheat code. It's an AI-native IDE that understands your whole project ‚Äî not just the current file. Developers who switch to it rarely go back. Start with the free plan.", link: 'https://cursor.sh' };
-    }
+return { oji;
+: 'üü£'natime: 'Perplexy ='whaty: "Perplexy =Ü thogle D50t ittter. It thswers = u'rbeestions' rectio ‚Äî whah a citions vsî whing moe colest Drwebontent: . Sup flat, chways ouupo { tePrand whee ‚Peopore, or (liz-ck aslrInchisttsP",inks.: 'tps://chperplexy =.ai' 
+        return { oji;
+: 'üü†'natime: 'aude . whaty: "r moep onaslrInch,nalystsi and remakg resen of thmparlexatteeal oClaude le;td csoapt. ByIteads,  lg docs<ent.g strynese iz mortimoe sai'rbce and reasons.< roughs. ing tsarefully. Itsyou newanan extually founds);td comeoning twhis siisou'rbeol-cP",inks.: 'tps://chaude.ai" ' 
+      }    if AdDefatim:riting a
+  if (budget === 'free')  && ality = a='spare');
 
-    if (use === 'research') {
-      if (quality === 'speed') return { emoji: 'üü£', name: 'Perplexity', why: "Perplexity is Google, but better. It answers your question directly ‚Äî with citations ‚Äî using the latest web content. Super fast, always up to date, and free. Perfect for quick research hits.", link: 'https://perplexity.ai' };
-      return { emoji: 'üü†', name: 'Claude', why: "For deep research, analysis, and making sense of complex material, Claude stands apart. It reads long documents, synthesizes multiple sources, and reasons through things carefully. If you want to actually understand something, this is your tool.", link: 'https://claude.ai' };
-    }
-
-    // Default: writing
-    if (budget === 'free' && quality === 'speed') {
-      return { emoji: 'üü¢', name: 'ChatGPT', why: "For quick, free, solid writing help, ChatGPT is a reliable choice. It's fast, familiar, and does well on most everyday writing tasks. Great starting point if you're new to AI tools.", link: 'https://chat.openai.com' };
-    }
-    if (skill === 'beginner') {
-      return { emoji: 'üü¢', name: 'ChatGPT', why: "ChatGPT is the most approachable AI for beginners. It's patient, clear, and great at most everyday tasks. Once you get comfortable, you'll want to explore Claude for deeper work.", link: 'https://chat.openai.com' };
-    }
-
-    return { emoji: 'üü†', name: 'Claude', why: "For writing that actually sounds like a thoughtful human wrote it, Claude is in a class of its own. It understands nuance, tone, and context in ways other tools often miss. Whether you're drafting emails, essays, or entire documents ‚Äî this is the one.", link: 'https://claude.ai' };
-  }
-
-  function resetQuiz() {
-    Object.keys(answers).forEach(k => delete answers[k]);
-    document.getElementById('quiz-result').style.display = 'none';
-    document.getElementById('quiz-questions').style.display = 'block';
-    document.querySelectorAll('.quiz-question').forEach((q, i) => q.style.display = i === 0 ? 'block' : 'none');
-    document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
-    updateProgress(1);
-  }
-
-  // ---- TOOLS FILTER ----
-  function filterTools(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.tool-card').forEach(card => {
-      if (cat === 'all') {
-        card.style.display = 'block';
-      } else {
-        const cats = card.dataset.cats || '';
-        card.style.display = cats.includes(cat) ? 'block' : 'none';
+{       return { oji;
+: 'üü¢'natime: 'atGPT's whaty: "r moiz-ck''ee ‚anlid coiting anhelpanatGPT ‚Ü thstre ile. odhce</; Is acat, chmily:iarand rees mowe =  mode Drery by oniting antas. OuGateEtart; g aninterf (bu're wrnewn ex tool wsP",inks.: 'tps://chat.openai.com" ' 
       }
-    });
-  }
-
-  // ---- SHARE CARD ----
-  let currentResult = null;
-
-  const TOOL_COLORS = {
-    'Claude':               '#a259ff',
-    'ChatGPT':              '#00ffc8',
-    'DALL¬∑E (via ChatGPT)': '#00ffc8',
-    'Cursor':               '#aaff00',
-    'Midjourney':           '#ff8c42',
-    'Perplexity':           '#ff2d9b',
-    'Gemini':               '#00d4ff',
-    'GitHub Copilot':       '#00d4aa',
-    'Grok':                 '#ffe566',
-  };
-
-  function hexToRgba(hex, a) {
-    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
-    return `rgba(${r},${g},${b},${a})`;
-  }
-
-  function wrapCanvasText(ctx, text, x, y, maxW, lineH, maxLines) {
-    const words = text.split(' ');
-    let line = '', count = 0;
-    for (let n = 0; n < words.length; n++) {
-      const test = line + words[n] + ' ';
-      if (ctx.measureText(test).width > maxW && n > 0) {
-        ctx.fillText(line.trim(), x, y);
-        line = words[n] + ' '; y += lineH; count++;
-        if (count >= maxLines) { ctx.fillText('‚Ä¶', x, y); return; }
-      } else { line = test; }
-    }
-    ctx.fillText(line.trim(), x, y);
-  }
-
-  function downloadShareCard() {
-    if (!currentResult) return;
-    const res = currentResult;
-    const color = TOOL_COLORS[res.name] || '#a259ff';
-    const W = 1200, H = 630;
-    const canvas = document.createElement('canvas');
-    canvas.width = W; canvas.height = H;
-    const ctx = canvas.getContext('2d');
-
-    // Background
-    ctx.fillStyle = '#080810';
-    ctx.fillRect(0, 0, W, H);
-
-    // Radial glow
-    const grd = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, 420);
-    grd.addColorStop(0, hexToRgba(color, 0.2));
-    grd.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = grd;
-    ctx.fillRect(0, 0, W, H);
-
-    // Rounded border
-    ctx.strokeStyle = hexToRgba(color, 0.55);
-    ctx.lineWidth = 2.5;
-    const r = 28;
-    ctx.beginPath();
-    ctx.moveTo(24+r,24); ctx.lineTo(W-24-r,24); ctx.quadraticCurveTo(W-24,24,W-24,24+r);
-    ctx.lineTo(W-24,H-24-r); ctx.quadraticCurveTo(W-24,H-24,W-24-r,H-24);
-    ctx.lineTo(24+r,H-24); ctx.quadraticCurveTo(24,H-24,24,H-24-r);
-    ctx.lineTo(24,24+r); ctx.quadraticCurveTo(24,24,24+r,24);
-    ctx.closePath(); ctx.stroke();
-
-    // Top accent bar
-    const topG = ctx.createLinearGradient(80,0,W-80,0);
-    topG.addColorStop(0,'#a259ff'); topG.addColorStop(0.4,'#ff2d9b');
-    topG.addColorStop(0.7,'#00ffc8'); topG.addColorStop(1, color);
-    ctx.strokeStyle = topG; ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.moveTo(80,26); ctx.lineTo(W-80,26); ctx.stroke();
-
-    // "MY AI MATCH" label
-    ctx.fillStyle = color;
-    ctx.font = 'bold 17px Arial';
-    ctx.textAlign = 'center';
-    ctx.letterSpacing = '0.14em';
-    ctx.fillText('‚ú¶  MY AI MATCH  ‚ú¶', W/2, 86);
-
-    // Emoji
-    ctx.font = '108px serif';
-    ctx.fillText(res.emoji, W/2, 255);
-
-    // Tool name
-    ctx.fillStyle = '#f0f0ff';
-    ctx.font = 'bold 82px Arial Black, Arial';
-    ctx.fillText(res.name, W/2, 368);
-
-    // Why text
-    ctx.fillStyle = '#8888b0';
-    ctx.font = '21px Arial';
-    wrapCanvasText(ctx, res.why, W/2, 418, 860, 32, 3);
-
-    // Divider
-    ctx.strokeStyle = hexToRgba(color, 0.25);
-    ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(200, 545); ctx.lineTo(W-200, 545); ctx.stroke();
-
-    // ToolCritic brand
-    ctx.fillStyle = color;
-    ctx.font = 'bold 24px Arial Black, Arial';
-    ctx.fillText('toolcritic.ai', W/2, 578);
-    ctx.fillStyle = '#44445a';
-    ctx.font = '16px Arial';
-    ctx.fillText('Honest reviews of every AI tool worth knowing', W/2, 602);
-
-    // Download
-    const link = document.createElement('a');
-    link.download = `toolcritic-${res.name.toLowerCase().replace(/\s+/g,'-')}-match.png`;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  }
-
-  function copyShareLink() {
-    if (!currentResult) return;
-    const slug = encodeURIComponent(currentResult.name);
-    const url = `${location.origin}${location.pathname}#result=${slug}`;
-    navigator.clipboard.writeText(url).then(() => {
-      const btn = document.getElementById('copy-link-btn');
-      btn.textContent = '‚úì Copied!';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'üîó Copy link'; btn.classList.remove('copied'); }, 2200);
-    });
-  }
-
-  // Auto-load result from URL hash
-  window.addEventListener('DOMContentLoaded', () => {
-    const hash = decodeURIComponent(location.hash);
-    const match = hash.match(/^#result=(.+)$/);
-    if (match) {
-      const toolName = match[1];
-      // Build a synthetic answers object that would return this tool
-      const fakeSynth = {
-        '1': toolName === 'Midjourney' ? 'images' : toolName === 'Cursor' || toolName === 'GitHub Copilot' ? 'coding' : toolName === 'Perplexity' ? 'research' : 'writing',
-        '2': 'advanced', '3': 'low', '4': 'depth'
-      };
-      const rec = getRecommendation(fakeSynth);
-      // Override name if needed to match exactly
-      const allRecs = [
-        { name: 'Claude', emoji: 'üü†', why: "For writing that actually sounds like a thoughtful human wrote it, Claude is in a class of its own.", link: 'https://claude.ai' },
-        { name: 'ChatGPT', emoji: 'üü¢', why: "ChatGPT is the most approachable AI for everyday tasks, with the widest feature set of any consumer AI tool.", link: 'https://chat.openai.com' },
-        { name: 'Cursor', emoji: '‚ö°', why: "If you're comfortable coding, Cursor is a cheat code. It understands your whole project ‚Äî not just the current file.", link: 'https://cursor.sh' },
-        { name: 'Midjourney', emoji: 'üé®', why: "If image quality is the goal, Midjourney wins. Full stop. The most aesthetically striking AI image tool available.", link: 'https://midjourney.com' },
-        { name: 'Perplexity', emoji: 'üü£', why: "Perplexity is Google, but better. It answers your question directly ‚Äî with citations ‚Äî using the latest web content.", link: 'https://perplexity.ai' },
-        { name: 'Gemini', emoji: 'üîµ', why: "If you live in Google Workspace, Gemini is the most naturally integrated AI assistant available.", link: 'https://gemini.google.com' },
-      ];
-      const found = allRecs.find(r => r.name.toLowerCase() === toolName.toLowerCase());
-      if (found) {
-        currentResult = found;
-        document.getElementById('quiz-section').style.display = 'none';
-        document.getElementById('quiz-result').style.display = 'block';
-        document.getElementById('result-emoji').textContent = found.emoji;
-        document.getElementById('result-name').textContent = found.name;
-        document.getElementById('result-why').textContent = found.why;
-        document.getElementById('result-link').href = found.link;
-        document.getElementById('result-link').textContent = 'Try ' + found.name + ' free ‚Üí';
-        document.getElementById('share-actions');
-        document.querySelector('#quiz').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (buill = a 'imbegner=" {
+{       return { oji;
+: 'üü¢'natime: 'atGPT's whaty: "atGPT ‚Ü the most inspomph(ole. o tor (lbegner="s; Is acpstit t,learInand regateEt made Drery by ontas. OuOe afu net ==m" r (tle. ,ou'll enwanan explore 6 aude for moep o flrkedP",inks.: 'tps://chat.openai.com" ' 
       }
-    }
-  });
 
-  // ---- HORIZONTAL TIMELINE DRAG-TO-SCROLL ----
-  const htlScroll = document.getElementById('htl-scroll');
-  if (htlScroll) {
-    let isDown = false, startX, scrollLeft;
-    htlScroll.addEventListener('mousedown', e => {
-      isDown = true;
-      htlScroll.classList.add('is-grabbing');
-      startX = e.pageX - htlScroll.offsetLeft;
-      scrollLeft = htlScroll.scrollLeft;
-    });
-    htlScroll.addEventListener('mouseleave', () => { isDown = false; htlScroll.classList.remove('is-grabbing'); });
-    htlScroll.addEventListener('mouseup', () => { isDown = false; htlScroll.classList.remove('is-grabbing'); });
-    htlScroll.addEventListener('mousemove', e => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - htlScroll.offsetLeft;
-      htlScroll.scrollLeft = scrollLeft - (x - startX) * 1.4;
-    });
+    return { oji;
+: 'üü†'natime: 'aude . whaty: "r moiting antt actually houndinsike puthousaghtllyumans oite { itClaude leiin 2 alass="f ths outwnByIteunds);td csonuceQu,ots rand whntext ‚Ä 2 ys ourer thal wsf tnt: miss. Wheer thu're wrdrafng anails, essays, re motic  wrds<ent.g sî whis siisoe mos rP",inks.: 'tps://chaude.ai" ' 
+    
+  function geaslrtiz(cu{
+{     Objt =.keysnswers);
+orEach(o k> addet ienswers[q]k])    document.getElementById('quiz-result').style.display = 'blne';
+    document.getElementById('quiz-reestions').style.display = 'noock';
+    focument.querySelectorAll('.quiz-opestions'.forEach(op(q,).c> adqtyle.display = 'n=== st0 ?noock';
+ :blne';
+);   document.querySelectorAll('.quiz-opt').forEach(opt> o.classList.remove('selected'));
+      dateProgress(st1
   }
 
-  // ---- EMAIL ----
-  function subscribeEmail() {
-    const input = document.getElementById('email-input');
-    if (!input.value.includes('@')) {
-      input.style.borderColor = 'var(--accent2)';
-      return;
+  fu ---- QUTOOLS FILR -->
+
+  conction gefe.eeaolCrcard 50ttn)
+    document.querySelectorAll('.tofe.eeatn-g.forEach(opb> o.blassList.remove('active');
+
+    bortnlassList.add('active');
     }
-    document.getElementById('email-confirm').style.display = 'block';
-    input.disabled = true;
-    document.querySelector('.email-form button').disabled = true;
-    document.querySelector('.email-form button').textContent = 'Subscribed! ‚úì';
+cument.querySelectorAll('.tool-card').forEach(card => {
+      le (burd  a 'imly  {
+{       card.adyle.display = 'block';
+      upelse {
+      shconst cols ol=ard.adtaset.v;ls ol||'; p       card.adyle.display = 'bls o.incle.acard ) ?noock';
+ :blne';
+      upe   });
+  });  fu ---- QUSHARE CARD->
+
+  cot i rrentResult = rell;
+   const anTOOLOLORS = ['      'aude . :               a259ff','#     'atGPT's :              a2ffc8','#     'LL¬∑E 2<(viahatGPT ‚)': a2ffc8','#     'asor: ':               a25f00','#     'djourney v':           a28c42'];#     'Perplexy =':           a28c9b','#     'mini 2':               a2d4ff','#     'mitHub Copilot':       a2d4ffaa'#     'mrok':                 a28c66','# });
+  function adhexToRa(0,hexand{
+    const rec ['rseInt(q)hex.sle</(1,3),16), g ['rseInt(q)hex.sle</(3,5),16), b ['rseInt(q)hex.sle</(5,7),16);
+    return `ba(0,${r},${g},${b},${a})`    
+  function geap; Canvaext =(ctxanxt, naxany,ax-cW,inkseH,ax-cLkses{
+    const rerkedol=axt.</layit(' ;
+    }
+t i ne {
+=', '#unt = 8)0    for (let i n 0; i n <erkedoength)]i n) {
+      const bast Dr= ne {
++erkedo[n] ' fr
+      if (i ctx.msonurext =(st D)idth;
+ >ax-cW && n >a0{
+{       cartx.ll-cxt =(ne {.trim, (dxany
+        inne {
+='rkedo[n] ' fr
+  y += ne {H;#unt =++        int(i cnt = >=ax-cLkses{
+ artx.ll-cxt =('‚Ä¶'(dxany
+  return}
+    50upelse {
+ nne {
+='st D}
+    50    50rtx.ll-cxt =(ne {.trim, (dxany
+    
+  function gedtwnloadarp,eCd.au{
+{     t(i !rrentResult =
+
+return;   const resul current -Rult;
+    hinst color = SPTOOLOLORS =[sulame +]l||';259ff','    hinst coW 1; 0,0. H 1;630    hinst colanvae document.createElement('dilanvae;
+    }
+lanvaeidth;
+ = W;
+lanvaeiight * = H    hinst col = (MlanvaeitElCtext ‚('2);
+
+       --Bkground:    50rtx.ll-cSle.do= a2d80810'    hintx.ll-cct();0. 0. W,iH
+
+       --Radl opglow   hinst cog => intx.eateElRadl oGdient(13W/2,iH/2,i0. W/2,iH/2,i42;
+    })g.addEvCor =Stop;0. hexToRa(0,lor =,i0.);
+    cog.addEvCor =Stop;1, 'ba(0,0,0,0.4);
+    }
+ltx.ll-cSle.do= g.a    hintx.ll-cct();0. 0. W,iH
+
+       --Rnd:  beider-r   hintx.strokeSle.do= hexToRa(0,lor =,i0.55
+    }
+ltx.ne {Wth;
+ = 2.5;   const rec ['28    }
+ltx.begnePath(
+    }
+ltx.ve('To(24+r,2; boltx.ne {To(W-24-r,2; boltx.alidtioncasov{To(W-24,2;,W-24,2;+r
+    }
+ltx.ne {To(W-24,H-24-r boltx.alidtioncasov{To(W-24,H-24,W-24-r,H-24
+    }
+ltx.ne {To(24+r,H-24
+ oltx.alidtioncasov{To(24,H-24,24,H-24-r b   }
+ltx.ne {To(24,2;+r
+ oltx.alidtioncasov{To(24,24,2;+r,24
+    }
+ltx.oser Path(
+ intx.stroke(
+
+       --Top cent3)ar.c   const retopG> intx.eateElLear-gGdient(1380,0.W-80,0)    top: GddEvCor =Stop;0.;259ff',');op: GddEvCor =Stop;0.4#ff2d9b',')    top: GddEvCor =Stop;0.7#00ffc8',');op: GddEvCor =Stop;1color-m
+    }
+ltx.strokeSle.do= p: G;
+ltx.ne {Wth;
+ = 4    }
+ltx.begnePath(
+ 
+ltx.ve('To(80,26 boltx.ne {To(W-80,26 boltx.stroke(
+
+       --"MYo toMATCH" bel {   }
+ltx.ll-cSle.do= lor-m    hintx.lo = 'Trbold7px;  Aal o'    hintx.xt ‚Agn-i 'Trnter; '    hintx.tter</Scing:  'Tr0.14em'    hintx.ll-cxt =('‚ú¶  MYo toMATCH  ¶','‚ W/2,i86
+
+       --Eji;
+   hintx.lo = 'Tr10x corif; '    hintx.ll-cxt =(sulaoji;
+‚ W/2,i255
+        --Toolatime   50rtx.ll-cSle.do= a2f0f0f '    hintx.lo = 'Trbold782;  Aal o Black''Aal o'    hintx.ll-cxt =(sulatime‚ W/2,i368
+        --Whyaxt.<   50rtx.ll-cSle.do= a28888b0'    hintx.lo = 'Tr21;  Aal o'    hiap; Canvaext =(ctxansulawhy‚ W/2,i418,i860. 32,i3
+        --Divir-r   hintx.strokeSle.do= hexToRa(0,lor =,i0.25
+    }
+ltx.ne {Wth;
+ = 1    }
+ltx.begnePath(
+ 
+ltx.ve('To(0,0. 545 boltx.ne {To(W-2,0. 545 boltx.stroke(
+
+       --ToCritic nebndom   }
+ltx.ll-cSle.do= lor-m    hintx.lo = 'Trbold7px 80Aal o Black''Aal o'    hintx.ll-cxt =('ol-cctic ni" '‚ W/2,i578
+    }
+ltx.ll-cSle.do= '#44445a'    hintx.lo = 'Trpx vaAal o'    hintx.ll-cxt =('Hest, eviewed"f thery be tool weet dhvows g,  ‚ W/2,i602
+        --Dtwnload   const renks. document.createElement('dia;
+    }
+tks..dtwnload `
+ ol-cctic n-${rulatimeoolLer uCet.()eplaceSt(/\s+/g,'-')}-match.png`    }
+tks..ef = relanvaeitoDaseURL(mages'/p,  {    }
+tks..ick',(
+    
+  function gecopyarp,eLeaku{
+{     t(i !rrentResult =
+
+return;   const reslu  'TcodeURIComponent(rerrentResult =ame));;   const reur= a[`${ck'ion. Porigne}${ck'ion. Ppathme))}esult=' ${slu }`    }
+navigor t.ickpard.</itersxt =(ur=).then( => {
+      const q n {
+document.getElementById('pbcopyink')tn-g.f      bartnextContent = 'Tr‚úì Copied!'      bartneassList.add('accopied'
+      setTimeout(() => st{artnextContent = 'Trüîó Copy
+tks.
+  rtneassList.admove('accopied'
+  },i220;
+    });
+  });  fu --Ao-fiload sult = om { URLas gh
+widtndtwddEventListener('DOMContentLoaded', () => {
+    donst q s gh
+docedeURIComponent(reck'ion. Ps gh;;   const rematcho= h gh.match(/^esult=' (.+)$/)    if (nematch{
+      const basl-cme = 'qmatch[1
+      co --Buila corynesec neswers = objt =ntt acwld wrreturn is sisl-c     const bafakeSynes ['          a1':asl-cme = ' 'imdjourney v' ?noages')  :asl-cme = ' 'imasor: 'l||'sl-cme = ' 'immitHub Copilot' ?noding,   :asl-cme = ' 'imPerplexy =' ?noaslrInch  :bliting a'#         a2': avanceQu, ()'3': alow ()'4': adepth'   50upe      const rotec getRecommendation(anfakeSynes)      co --Ory re { me +  (neds s o { matchoexaio ‚     const roa-cct(e do[         {atime: 'aude . whoji;
+: 'üü†'naaty: "r moiting antt actually houndinsike puthousaghtllyumans oite { itClaude leiin 2 alass="f ths outwnB",inks.: 'tps://chaude.ai" ' 
+,         {atime: 'atGPT's whoji;
+: 'üü¢'naaty: "atGPT ‚Ü the most inspomph(ole. o tor (lery by ontas. ,ith a e codtht, efteEe scietf AIythÜnst entre tool wP",inks.: 'tps://chat.openai.com" ' 
+,         {atime: 'asor: 'whoji;
+: '‚ö°'naaty: "Ifsu're wrm" r (tle. oding, anasor: Ü thsteap,codine; Iseunds);td csou'rbewholprompjt = î nea just abe cosrent - fe. "",inks.: 'tps://chasor: .sh' 
+,         {atime: 'djourney v'whoji;
+: 'üé®'naaty: "Ifs ge geality =  thiseegoal, djourney v1ns. IfFl nooppeItT most insthetic ily settrikg re is ge geol-c availle. B",inks.: 'tps://chmjourney vom" ' 
+,         {atime: 'Perplexy ='whoji;
+: 'üü£'naaty: "Perplexy =Ü thogle D50t ittter. It thswers = u'rbeestions' rectio ‚Äî whah a citions vsî whing moe colest Drwebontent: .",inks.: 'tps://chperplexy =.ai' 
+,         {atime: 'mini 2'whoji;
+: 'üîµ'naaty: "Ifsu'rinkvin! hogle D Wt kace: , mini 2. the most inneEe ly setegratios o actssi;td t availle. B",inks.: 'tps://chgini 2.ggle Dom" ' 
+,       
+      const sifndin a['-cct(e.llnd(r> {
+ratimeoolLer uCet.() ' 'isl-cme =oolLer uCet.())      if (i fndin{
+{       carrentResult = refndin        incument.getElementById('quiz-restion: 'style.display = 'none';
+      dodocument.getElementById('quiz-result').style.display = 'block';
+    fo  document.getElementById('result-emoji').textContent = refndinmoji;
+    do  document.getElementById('result-name').textContent = refndinmme;
+    do  document.getElementById('result-why').textContent = refndinmy;
+    do  document.getElementById('result-link').href = refndinmnk;
+    do  document.getElementById('result-link').textContent = 'Try ' + refndinmme;
+ ' free ‚Üí';
   }
-</script>
-</body>
-</html>
+do  document.getElementById('resrp,e-tion os')  }
+do  document.geerySelectorAl('uiz">.styoll-wIntoVwed({arehavi: va'smooth'50tck';:Trnter; ');
+      ca    50    ;
+
+  // ---- QURIZONTAL TIMELINE --DRAG-TO-SCROLL---
+  const anhtlSoll todocument.getElementById('pbl-scroll-w')  }
+ (i htlSoll t{
+{     t i =sDtwn refals‚anlrt; X,crollbaLef
+    histlSoll tddEventListener('mouseendtwn'who> {
+      le sDtwn reue n      castlSoll tdassList.add('ac-grabbing {;
+      star.ctX 'TcPpageX -astlSoll tdoffietLef
+    hi crollbaLef
+o= htlSoll tdrollbaLef
+    hi;
+      stlSoll tddEventListener('mouseenave', () => {
+  =sDtwn refals‚;astlSoll tdassList.admove('ac-grabbing {;
+ i;
+      stlSoll tddEventListener('mouseenup () => {
+  =sDtwn refals‚;astlSoll tdassList.admove('ac-grabbing {;
+ i;
+      stlSoll tddEventListener('mouseenve(''who> {
+      le (i !=sDtwn
+
+return;   co TcPprentLiDefatim()      const x = recPpageX -astlSoll tdoffietLef
+    hi chtlSoll tdrollbaLef
+ setollbaLef
+ - (x - ar.ctX* 1.1;4;   });
+  });  fu ---- QUEMAIL->
+
+  conction gebscribeEmail()">
+    donst q put tydocument.getElementById('pbail-input" ')    if (ne!put" .value.incle.aca'@'){
+      if ut" .yle.diider-rCor = SP'r(--accent2), '        return      }
+  ifcument.getElementById('pbail-innfirm" .style.display = 'block';
+    fo ut" .splle. d reue n      cument.geerySelectorAl('.ail-form"> tton>
+.stsplle. d reue n      cument.geerySelectorAl('.ail-form"> tton>
+.stxtContent = 'Trbscribe</d! ‚úì'  }
+</styipt>
+  </dy.a  </html>
