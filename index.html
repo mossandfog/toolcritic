@@ -540,6 +540,58 @@
     .text-center { text-align: center; }
     .mb-0 { margin-bottom: 0; }
 
+    /* ---- HUMANS PHOTO GRID ---- */
+    .humans-section {
+      padding: 60px 24px 80px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: rgba(162,89,255,0.018);
+    }
+    .humans-inner { max-width: 1100px; margin: 0 auto; }
+    .humans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 40px;
+    }
+    .human-photo {
+      position: relative;
+      aspect-ratio: 3/4;
+      overflow: hidden;
+      border-radius: 14px;
+      background: var(--surface2);
+    }
+    .human-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      filter: brightness(0.55) saturate(0.45) contrast(1.1);
+      transition: transform 0.7s cubic-bezier(.25,.46,.45,.94), filter 0.4s ease;
+    }
+    .human-photo::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(135deg, rgba(162,89,255,0.18) 0%, rgba(0,212,255,0.07) 100%);
+    }
+    .human-photo::after {
+      content: attr(data-caption);
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
+      padding: 44px 16px 16px;
+      background: linear-gradient(to top, rgba(8,8,16,0.92) 0%, transparent 100%);
+      color: rgba(240,240,255,0.85);
+      font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      opacity: 0; transform: translateY(8px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+    .human-photo:hover img {
+      transform: scale(1.06);
+      filter: brightness(0.72) saturate(0.6) contrast(1.05);
+    }
+    .human-photo:hover::after { opacity: 1; transform: translateY(0); }
+    @media (max-width: 768px) {
+      .humans-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
     @media (max-width: 640px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
@@ -1146,6 +1198,54 @@
 
     </div>
   </section>
+</div>
+
+<!-- HUMANS PHOTO SECTION -->
+<div class="humans-section">
+  <div class="humans-inner">
+    <div class="section-label">The Humans</div>
+    <h2 class="section-title">Reviewed by people who live in these tools</h2>
+    <p class="section-sub">Not bots. Not content farms. Writers, builders, and late-night tinkerers who've actually tried them all — so you don't have to.</p>
+    <div class="humans-grid">
+
+      <div class="human-photo" data-caption="Ships at midnight">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=600&q=80"
+          alt="Person at keyboard in low light" />
+      </div>
+
+      <div class="human-photo" data-caption="Actually read the docs">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80"
+          alt="Focused creator" />
+      </div>
+
+      <div class="human-photo" data-caption="Switched tools three times this week">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80"
+          alt="Thoughtful reviewer" />
+      </div>
+
+      <div class="human-photo" data-caption="No affiliate links. Ever.">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80"
+          alt="Builder late at night" />
+      </div>
+
+      <div class="human-photo" data-caption="Tested every pricing tier">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80"
+          alt="Person coding" />
+      </div>
+
+      <div class="human-photo" data-caption="Honest takes only">
+        <img loading="lazy"
+          src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=600&q=80"
+          alt="Night work" />
+      </div>
+
+    </div>
+  </div>
 </div>
 
 <!-- USER PULL QUOTES -->
