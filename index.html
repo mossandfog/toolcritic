@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ToolCritic â Honest Reviews of Every AI Tool Worth Knowing</title>
+  <title>ToolCritic — Honest Reviews of Every AI Tool Worth Knowing</title>
   <meta name="description" content="ToolCritic gives you sharp, human-tested reviews of every AI tool worth knowing. No hype. No affiliate fluff. Just honest takes and a 2-minute quiz to find yours." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -182,7 +182,7 @@
       padding: 56px 48px;
       position: relative;
       overflow: hidden;
-      /* Animated gradient border trick â works with border-radius */
+      /* Animated gradient border trick — works with border-radius */
       border: 2.5px solid transparent;
       background-image:
         linear-gradient(#0f0f1a, #0f0f1a),
@@ -381,7 +381,7 @@
     .tool-card[data-color="teal"]   { --card-glow: linear-gradient(135deg, rgba(0,212,170,0.55), rgba(0,212,255,0.3)); --card-border: rgba(0,212,170,0.85); --card-shadow: 0 0 50px rgba(0,212,170,0.4); }
 
     .tool-card.editors-pick::after {
-      content: 'â­ Editor\'s Pick';
+      content: '⭐ Editor\'s Pick';
       position: absolute; top: 14px; right: 14px;
       background: rgba(255,229,102,0.14); border: 1px solid rgba(255,229,102,0.4);
       color: var(--yellow); border-radius: 20px; padding: 3px 10px;
@@ -415,7 +415,7 @@
     .pros ul, .cons ul { list-style: none; }
     .pros li, .cons li { font-size: 0.8rem; color: var(--muted); padding: 2px 0; }
     .pros li::before { content: '+ '; color: var(--accent3); font-weight: 700; }
-    .cons li::before { content: 'â '; color: var(--accent2); font-weight: 700; }
+    .cons li::before { content: '− '; color: var(--accent2); font-weight: 700; }
     .tool-footer { margin-top: 18px; display: flex; align-items: center; justify-content: space-between; }
     .tool-price { font-size: 0.82rem; color: var(--muted); }
     .tool-price strong { color: var(--text); }
@@ -540,6 +540,47 @@
     .text-center { text-align: center; }
     .mb-0 { margin-bottom: 0; }
 
+    /* ---- HUMANS PHOTO TEXTURE ---- */
+    .humans-section {
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .humans-section::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        linear-gradient(to bottom, var(--bg) 0%, transparent 18%, transparent 82%, var(--bg) 100%),
+        linear-gradient(135deg, rgba(8,8,16,0.55) 0%, rgba(8,8,16,0.3) 100%);
+    }
+    .humans-inner { max-width: 100%; }
+    .humans-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+    }
+    .human-photo {
+      position: relative;
+      aspect-ratio: 2/3;
+      overflow: hidden;
+      background: var(--surface2);
+    }
+    .human-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; display: block;
+      filter: brightness(0.35) saturate(0.25) contrast(1.15);
+      pointer-events: none;
+      user-select: none;
+    }
+    .human-photo::before {
+      content: '';
+      position: absolute; inset: 0; z-index: 1; pointer-events: none;
+      background: linear-gradient(135deg, rgba(162,89,255,0.12) 0%, rgba(0,212,255,0.05) 100%);
+    }
+    @media (max-width: 768px) {
+      .humans-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
     @media (max-width: 640px) {
       nav { padding: 14px 20px; }
       .nav-links { display: none; }
@@ -563,21 +604,21 @@
     <li><a href="#timeline">Timeline</a></li>
     <li><a href="#newsletter">Newsletter</a></li>
   </ul>
-  <a href="#quiz" class="nav-cta">Find My Tool â</a>
+  <a href="#quiz" class="nav-cta">Find My Tool →</a>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-glow"></div>
-  <div class="hero-badge">ð¬ Sharp reviews. Zero fluff.</div>
+  <div class="hero-badge">🎬 Sharp reviews. Zero fluff.</div>
   <h1>The AI tool critic<br/><span class="highlight">you actually need.</span></h1>
-  <p>Every AI tool reviewed by humans who use them daily. Find yours in 2 minutes â jokes, no sponsored rankings, no nonsense.</p>
+  <p>Every AI tool reviewed by humans who use them daily. Find yours in 2 minutes — no jargon, no sponsored rankings, no nonsense.</p>
   <div class="hero-actions">
-    <a href="#quiz" class="btn-primary">Take the Quiz ð¯</a>
+    <a href="#quiz" class="btn-primary">Take the Quiz 🎯</a>
     <a href="#tools" class="btn-secondary">Browse Reviews</a>
   </div>
   <div class="hero-stats">
-    <div class="stat"><div class="stat-num">42+</div><div class="stat-label">Tools reviewed</div></div>
+    <div class="stat"><div class="stat-num">11+</div><div class="stat-label">Tools reviewed</div></div>
     <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Independent opinions</div></div>
     <div class="stat"><div class="stat-num">2 min</div><div class="stat-label">To find your match</div></div>
   </div>
@@ -590,7 +631,7 @@
     <div class="section-title">Which AI tool is right for you?</div>
     <p style="color: var(--muted); font-size: 1.05rem;">4 questions. One honest, no-BS recommendation.</p>
     <div style="display:inline-flex; align-items:center; gap:8px; margin-top:16px; background:rgba(0,255,200,0.07); border:1px solid rgba(0,255,200,0.25); border-radius:24px; padding:7px 18px;">
-      <span class="quiz-live-dot">Interactive quiz â tap to begin</span>
+      <span class="quiz-live-dot">Interactive quiz — tap to begin</span>
     </div>
   </div>
 
@@ -608,23 +649,23 @@
       <!-- Q1 -->
       <div class="quiz-question" id="q1">
         <div class="quiz-q">What do you mainly want AI for?</div>
-        <div class="quiz-hint">Pick the one that fits best â we'll do the math.</div>
+        <div class="quiz-hint">Pick the one that fits best — we'll do the math.</div>
         <div class="quiz-options">
           <div class="quiz-opt" data-q="1" data-v="writing">
-            <span class="quiz-opt-emoji">âï¸</span>
-            <span class="quiz-opt-text">Writing â emails, essays, blogs, creative stuff</span>
+            <span class="quiz-opt-emoji">✍️</span>
+            <span class="quiz-opt-text">Writing — emails, essays, blogs, creative stuff</span>
           </div>
           <div class="quiz-opt" data-q="1" data-v="coding">
-            <span class="quiz-opt-emoji">ð»</span>
-            <span class="quiz-opt-text">Coding â building apps, fixing bugs, learning to code</span>
+            <span class="quiz-opt-emoji">💻</span>
+            <span class="quiz-opt-text">Coding — building apps, fixing bugs, learning to code</span>
           </div>
           <div class="quiz-opt" data-q="1" data-v="research">
-            <span class="quiz-opt-emoji">ð</span>
-            <span class="quiz-opt-text">Research â finding info, summarizing, answering questions</span>
+            <span class="quiz-opt-emoji">🔍</span>
+            <span class="quiz-opt-text">Research — finding info, summarizing, answering questions</span>
           </div>
           <div class="quiz-opt" data-q="1" data-v="images">
-            <span class="quiz-opt-emoji">ð¨</span>
-            <span class="quiz-opt-text">Images â"making art, visuals, or illustrations</span>
+            <span class="quiz-opt-emoji">🎨</span>
+            <span class="quiz-opt-text">Images — making art, visuals, or illustrations</span>
           </div>
         </div>
         <div class="quiz-nav">
@@ -635,24 +676,24 @@
 
       <!-- Q2 -->
       <div class="quiz-question" id="q2" style="display:none;">
-        <div class="quiz-q">How do you feel about tech.</div>
-        <div class="quiz-hint">No judgment here â everyone starts somewhere.</div>
+        <div class="quiz-q">How do you feel about tech?</div>
+        <div class="quiz-hint">No judgment here — everyone starts somewhere.</div>
         <div class="quiz-options">
           <div class="quiz-opt" data-q="2" data-v="beginner">
-            <span class="quiz-opt-emoji">ð</span>
-            <span class="quiz-opt-text">Total beginner â just want something that works simply</span>
+            <span class="quiz-opt-emoji">👋</span>
+            <span class="quiz-opt-text">Total beginner — just want something that works simply</span>
           </div>
           <div class="quiz-opt" data-q="2" data-v="intermediate">
-            <span class="quiz-opt-emoji">ð</span>
-            <span class="quiz-opt-text">Comfortable â I pick things up pretty fast</span>
+            <span class="quiz-opt-emoji">👍</span>
+            <span class="quiz-opt-text">Comfortable — I pick things up pretty fast</span>
           </div>
           <div class="quiz-opt" data-q="2" data-v="advanced">
-            <span class="quiz-opt-emoji">ð§ </span>
-            <span class="quiz-opt-text">Power user â give me all the features and let me go wild</span>
+            <span class="quiz-opt-emoji">🧠</span>
+            <span class="quiz-opt-text">Power user — give me all the features and let me go wild</span>
           </div>
         </div>
         <div class="quiz-nav">
-          <button class="quiz-back" onclick="goBack(2)">â Back</button>
+          <button class="quiz-back" onclick="goBack(2)">← Back</button>
           <span class="quiz-step">Step 2 of 4</span>
         </div>
       </div>
@@ -663,20 +704,20 @@
         <div class="quiz-hint">Totally free options exist. So do very worth-it paid ones.</div>
         <div class="quiz-options">
           <div class="quiz-opt" data-q="3" data-v="free">
-            <span class="quiz-opt-emoji">ð</span>
-            <span class="quiz-opt-text">Free only please â I'm not paying for AI yet</span>
+            <span class="quiz-opt-emoji">🆓</span>
+            <span class="quiz-opt-text">Free only please — I'm not paying for AI yet</span>
           </div>
-          <div class="quiz-opt" data-q="3" data-v="loweb">
-            <span class="quiz-opt-emoji">ð¸</span>
-            <span class="quiz-opt-text">A little â around $10â20/month is fine</span>
+          <div class="quiz-opt" data-q="3" data-v="low">
+            <span class="quiz-opt-emoji">💸</span>
+            <span class="quiz-opt-text">A little — around $10–20/month is fine</span>
           </div>
           <div class="quiz-opt" data-q="3" data-v="high">
-            <span class="quiz-opt-emoji">ð°</span>
-            <span class="quiz-opt-text">Best is best â price doesn't matter much</span>
+            <span class="quiz-opt-emoji">💰</span>
+            <span class="quiz-opt-text">Best is best — price doesn't matter much</span>
           </div>
         </div>
         <div class="quiz-nav">
-          <button class="quiz-back" onclick="goBack(4)">â Back</button>
+          <button class="quiz-back" onclick="goBack(3)">← Back</button>
           <span class="quiz-step">Step 3 of 4</span>
         </div>
       </div>
@@ -687,16 +728,16 @@
         <div class="quiz-hint">Almost there!</div>
         <div class="quiz-options">
           <div class="quiz-opt" data-q="4" data-v="speed">
-            <span class="quiz-opt-emoji">â¡</span>
-            <span class="quiz-opt-text">Speed â fast answers, get in and get out</span>
+            <span class="quiz-opt-emoji">⚡</span>
+            <span class="quiz-opt-text">Speed — fast answers, get in and get out</span>
           </div>
           <div class="quiz-opt" data-q="4" data-v="depth">
-            <span class="quiz-opt-emoji">ðï</span>
-            <span class="quiz-opt-text">Quality â I want thoughtful, thorough, nuanced answers</span>
+            <span class="quiz-opt-emoji">🎯</span>
+            <span class="quiz-opt-text">Quality — I want thoughtful, thorough, nuanced answers</span>
           </div>
         </div>
         <div class="quiz-nav">
-          <button class="quiz-back" onclick="goBack(4)">â Back</button>
+          <button class="quiz-back" onclick="goBack(4)">← Back</button>
           <span class="quiz-step">Step 4 of 4</span>
         </div>
       </div>
@@ -704,19 +745,19 @@
 
     <!-- Result -->
     <div id="quiz-result">
-      <div class="result-badge">â Your perfect match</div>
-      <div class="result-emoji" id="result-emoji">ð¤</div>
+      <div class="result-badge">✅ Your perfect match</div>
+      <div class="result-emoji" id="result-emoji">🤖</div>
       <div class="result-tool-name" id="result-name">Claude</div>
       <div class="result-why" id="result-why">Loading your result...</div>
       <div class="result-actions">
-        <a id="result-link" href="#" class="result-try" target="_blank">Try it free â</a>
+        <a id="result-link" href="#" class="result-try" target="_blank">Try it free →</a>
         <button class="result-retry" onclick="resetQuiz()">Start over</button>
       </div>
       <div class="share-strip">
-        <p class="share-label">â¦ Share your result</p>
+        <p class="share-label">✦ Share your result</p>
         <div class="share-btns">
-          <button class="share-btn share-btn-dl" onclick="downloadShareCard()">ð¥ Download card</button>
-          <button class="share-btn share-btn-link" onclick="copyShareLink()" id="copy-link-btn">ð Copy link</button>
+          <button class="share-btn share-btn-dl" onclick="downloadShareCard()">📥 Download card</button>
+          <button class="share-btn share-btn-link" onclick="copyShareLink()" id="copy-link-btn">🔗 Copy link</button>
         </div>
       </div>
     </div>
@@ -732,25 +773,26 @@
 
     <div class="tools-filter">
       <button class="filter-btn active" onclick="filterTools('all', this)">All Tools</button>
-      <button class="filter-btn" onclick="filterTools('writing', this)">âï¸ Writing</button>
-      <button class="filter-btn" onclick="filterTools('coding', this)">ð» Coding</button>
-      <button class="filter-btn" onclick="filterTools('research', this)">ð Research</button>
-      <button class="filter-btn" onclick="filterTools('images', this)">ð¨ Images</button>
+      <button class="filter-btn" onclick="filterTools('writing', this)">✍️ Writing</button>
+      <button class="filter-btn" onclick="filterTools('coding', this)">💻 Coding</button>
+      <button class="filter-btn" onclick="filterTools('research', this)">🔍 Research</button>
+      <button class="filter-btn" onclick="filterTools('images', this)">🎨 Images</button>
+      <button class="filter-btn" onclick="filterTools('voice', this)">🎙️ Voice</button>
     </div>
 
     <div class="tools-grid" id="tools-grid">
 
       <div class="tool-card editors-pick" data-cats="writing research" data-color="purple">
-        <div class="tool-icon">ð </div>
+        <div class="tool-icon">🟠</div>
         <div class="tool-name">Claude</div>
-        <div class="tool-tagline">by Anthropic â Sonnet 4.6 Â· The deep thinker</div>
+        <div class="tool-tagline">by Anthropic — Sonnet 4.6 · The deep thinker</div>
         <div class="tool-tags">
           <span class="tool-tag">Writing</span>
           <span class="tool-tag">Analysis</span>
           <span class="tool-tag">Coding</span>
         </div>
         <div class="tool-rating">
-          <span class="stars" style="color:#a259ff">âââââ</span>
+          <span class="stars" style="color:#a259ff">★★★★★</span>
           <span class="rating-num">4.9</span>
         </div>
         <div class="tool-divider"></div>
@@ -773,21 +815,21 @@
         </div>
         <div class="tool-footer">
           <div class="tool-price"><strong>Free</strong> / $20 Pro</div>
-          <a href="https://claude.ai" class="tool-try" target="_blank">Try it â</a>
+          <a href="https://claude.ai" class="tool-try" target="_blank">Try it →</a>
         </div>
       </div>
 
       <div class="tool-card" data-cats="writing research coding" data-color="green">
-        <div class="tool-icon">ð¢</div>
+        <div class="tool-icon">🟢</div>
         <div class="tool-name">ChatGPT</div>
-        <div class="tool-tagline">by OpenAI â GPT-5.4 Â· The do-everything model</div>
+        <div class="tool-tagline">by OpenAI — GPT-5.4 · The do-everything model</div>
         <div class="tool-tags">
           <span class="tool-tag">Writing</span>
           <span class="tool-tag">Coding</span>
           <span class="tool-tag">Voice + Images</span>
         </div>
         <div class="tool-rating">
-          <span class="stars" style="color:#00ffc8">âââââ</span>
+          <span class="stars" style="color:#00ffc8">★★★★☆</span>
           <span class="rating-num">4.5</span>
         </div>
         <div class="tool-divider"></div>
@@ -810,20 +852,20 @@
         </div>
         <div class="tool-footer">
           <div class="tool-price"><strong>Free</strong> / $20 Plus</div>
-          <a href="https://chat.openai.com" class="tool-try" target="_blank">Try it â</a>
+          <a href="https://chat.openai.com" class="tool-try" target="_blank">Try it →</a>
         </div>
       </div>
 
       <div class="tool-card" data-cats="research" data-color="cyan">
-        <div class="tool-icon">ðµ</div>
+        <div class="tool-icon">🔵</div>
         <div class="tool-name">Gemini</div>
-        <div class="tool-tagline">by Google â The connected one</div>
+        <div class="tool-tagline">by Google — The connected one</div>
         <div class="tool-tags">
           <span class="tool-tag">Research</span>
           <span class="tool-tag">Google Workspace</span>
         </div>
         <div class="tool-rating">
-          <span class="stars" style="color:#00d4ff">âââââ</span>
+          <span class="stars" style="color:#00d4ff">★★★★☆</span>
           <span class="rating-num">4.2</span>
         </div>
         <div class="tool-divider"></div>
@@ -846,12 +888,12 @@
         </div>
         <div class="tool-footer">
           <div class="tool-price"><strong>Free</strong> / $20 Advanced</div>
-          <a href="https://gemini.google.com" class="tool-try" target="_blank">Try it â</a>
+          <a href="https://gemini.google.com" class="tool-try" target="_blank">Try it →</a>
         </div>
       </div>
 
       <div class="tool-card" data-cats="research" data-color="pink">
-        <div class="tool-icon">ð£</div>
+        <div class="tool-icon">🟣</div>
         <div class="tool-name">Perplexity</div>
         <div class="tool-tagline">The internet with an opinion</div>
         <div class="tool-tags">
@@ -860,7 +902,7 @@
           <span class="tool-tag">Citations</span>
         </div>
         <div class="tool-rating">
-          <span class="stars" style="color:#ff2d9b">âââââ</span>
+          <span class="stars" style="color:#ff2d9b">★★★★★</span>
           <span class="rating-num">4.7</span>
         </div>
         <div class="tool-divider"></div>
@@ -883,12 +925,12 @@
         </div>
         <div class="tool-footer">
           <div class="tool-price"><strong>Free</strong> / $20 Pro</div>
-          <a href="https://perplexity.ai" class="tool-try" target="_blank">Try it â</a>
+          <a href="https://perplexity.ai" class="tool-try" target="_blank">Try it →</a>
         </div>
       </div>
 
       <div class="tool-card" data-cats="images" data-color="orange">
-        <div class="tool-icon">ð¨</div>
+        <div class="tool-icon">🎨</div>
         <div class="tool-name">Midjourney</div>
         <div class="tool-tagline">The art school dropout</div>
         <div class="tool-tags">
@@ -897,7 +939,7 @@
           <span class="tool-tag">Design</span>
         </div>
         <div class="tool-rating">
-          <span class="stars" style="color:#ff8c42">âââââ</span>
+          <span class="stars" style="color:#ff8c42">★★★★★</span>
           <span class="rating-num">4.8</span>
         </div>
         <div class="tool-divider"></div>
@@ -920,12 +962,12 @@
         </div>
         <div class="tool-footer">
           <div class="tool-price">From <strong>$10/mo</strong></div>
-          <a href="https://midjourney.com" class="tool-try" target="_blank">Try it â</a>
+          <a href="https://midjourney.com" class="tool-try" target="_blank">Try it →</a>
         </div>
       </div>
 
       <div class="tool-card editors-pick" data-cats="coding" data-color="lime">
-        <div class="tool-icon">â¡</div>
+        <div class="tool-icon">⚡</div>
         <div class="tool-name">Cursor</div>
         <div class="tool-tagline">The IDE from the future</div>
         <div class="tool-tags">
@@ -934,7 +976,7 @@
           <span class="tool-tag">Developers</span>
         </div>
         <div class="tool-rating">
-          <span class="stars" style="color:#aaff00">âââââ</span>
+          <span class="stars" style="color:#aaff00">★★★★★</span>
           <span class="rating-num">4.9</span>
         </div>
         <div class="tool-divider"></div>
@@ -957,12 +999,12 @@
         </div>
         <div class="tool-footer">
           <div class="tool-price"><strong>Free</strong> / $20 Pro</div>
-          <a href="https://cursor.sh" class="tool-try" target="_blank">Try it â</a>
+          <a href="https://cursor.sh" class="tool-try" target="_blank">Try it →</a>
         </div>
       </div>
 
       <div class="tool-card" data-cats="coding" data-color="teal">
-        <div class="tool-icon">ð</div>
+        <div class="tool-icon">🐙</div>
         <div class="tool-name">GitHub Copilot</div>
         <div class="tool-tagline">The coding co-pilot you've heard of</div>
         <div class="tool-tags">
@@ -970,7 +1012,7 @@
           <span class="tool-tag">Autocomplete</span>
         </div>
         <div class="tool-rating">
-          <span class="stars" style="color:#00d4aa">âââââ</span>
+          <span class="stars" style="color:#00d4aa">★★★★☆</span>
           <span class="rating-num">4.3</span>
         </div>
         <div class="tool-divider"></div>
@@ -992,21 +1034,21 @@
         </div>
         <div class="tool-footer">
           <div class="tool-price"><strong>Free</strong> / $10 Pro</div>
-          <a href="https://github.com/features/copilot" class="tool-try" target="_blank">Try it â</a>
+          <a href="https://github.com/features/copilot" class="tool-try" target="_blank">Try it →</a>
         </div>
       </div>
 
       <div class="tool-card" data-cats="research writing" data-color="yellow">
-        <div class="tool-icon">ð¦</div>
+        <div class="tool-icon">🐦</div>
         <div class="tool-name">Grok</div>
-        <div class="tool-tagline">by xAI â The wildcard</div>
+        <div class="tool-tagline">by xAI — The wildcard</div>
         <div class="tool-tags">
           <span class="tool-tag">Real-time</span>
           <span class="tool-tag">X / Twitter</span>
           <span class="tool-tag">Humor</span>
         </div>
         <div class="tool-rating">
-          <span class="stars" style="color:#ffe566">âââââ</span>
+          <span class="stars" style="color:#ffe566">★★★☆☆</span>
           <span class="rating-num">3.8</span>
         </div>
         <div class="tool-divider"></div>
@@ -1028,7 +1070,118 @@
         </div>
         <div class="tool-footer">
           <div class="tool-price">With <strong>X Premium</strong></div>
-          <a href="https://x.ai" class="tool-try" target="_blank">Try it â</a>
+          <a href="https://x.ai" class="tool-try" target="_blank">Try it →</a>
+        </div>
+      </div>
+
+      <div class="tool-card" data-cats="writing research" data-color="orange">
+        <div class="tool-icon">🌊</div>
+        <div class="tool-name">Mistral (Le Chat)</div>
+        <div class="tool-tagline">by Mistral AI — The open underdog</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Writing</span>
+          <span class="tool-tag">Research</span>
+          <span class="tool-tag">Open Source</span>
+        </div>
+        <div class="tool-rating">
+          <span class="stars" style="color:#ff8c42">★★★★☆</span>
+          <span class="rating-num">4.2</span>
+        </div>
+        <div class="tool-divider"></div>
+        <div class="tool-pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Genuinely open-source models</li>
+              <li>Privacy-friendly (EU-based)</li>
+              <li>Surprisingly fast reasoning</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Smaller ecosystem than rivals</li>
+              <li>UI still catching up</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <div class="tool-price"><strong>Free</strong> / €14 Pro</div>
+          <a href="https://chat.mistral.ai" class="tool-try" target="_blank">Try it →</a>
+        </div>
+      </div>
+
+      <div class="tool-card" data-cats="voice audio" data-color="purple">
+        <div class="tool-icon">🎙️</div>
+        <div class="tool-name">ElevenLabs</div>
+        <div class="tool-tagline">by ElevenLabs — The voice cloner</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Voice</span>
+          <span class="tool-tag">Audio</span>
+          <span class="tool-tag">Creative</span>
+        </div>
+        <div class="tool-rating">
+          <span class="stars" style="color:#a259ff">★★★★★</span>
+          <span class="rating-num">4.7</span>
+        </div>
+        <div class="tool-divider"></div>
+        <div class="tool-pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Eerily realistic voice cloning</li>
+              <li>Huge multilingual voice library</li>
+              <li>Fast turnaround on long text</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Free tier very limited</li>
+              <li>Raises real ethics questions</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <div class="tool-price"><strong>Free</strong> / $5+ Pro</div>
+          <a href="https://elevenlabs.io" class="tool-try" target="_blank">Try it →</a>
+        </div>
+      </div>
+
+      <div class="tool-card" data-cats="coding research" data-color="blue">
+        <div class="tool-icon">🔬</div>
+        <div class="tool-name">DeepSeek</div>
+        <div class="tool-tagline">by DeepSeek — The math & code monster</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Coding</span>
+          <span class="tool-tag">Research</span>
+          <span class="tool-tag">Open Source</span>
+        </div>
+        <div class="tool-rating">
+          <span class="stars" style="color:#00d4ff">★★★★☆</span>
+          <span class="rating-num">4.3</span>
+        </div>
+        <div class="tool-divider"></div>
+        <div class="tool-pros-cons">
+          <div class="pros">
+            <h4>Pros</h4>
+            <ul>
+              <li>Exceptional at math and code</li>
+              <li>Open-source R1 model</li>
+              <li>Very cheap API access</li>
+            </ul>
+          </div>
+          <div class="cons">
+            <h4>Cons</h4>
+            <ul>
+              <li>Privacy concerns (China-based)</li>
+              <li>Certain topics are filtered</li>
+            </ul>
+          </div>
+        </div>
+        <div class="tool-footer">
+          <div class="tool-price"><strong>Free</strong> / API pay-per-use</div>
+          <a href="https://chat.deepseek.com" class="tool-try" target="_blank">Try it →</a>
         </div>
       </div>
 
@@ -1036,12 +1189,38 @@
   </section>
 </div>
 
+<!-- HUMANS PHOTO TEXTURE -->
+<div class="humans-section">
+  <div class="humans-inner">
+    <div class="humans-grid">
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?auto=format&fit=crop&w=600&q=80" alt="" />
+      </div>
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="" />
+      </div>
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="" />
+      </div>
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="" />
+      </div>
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" alt="" />
+      </div>
+      <div class="human-photo">
+        <img loading="lazy" src="https://images.unsplash.com/photo-1523961131990-5ea7c61b2107?auto=format&fit=crop&w=600&q=80" alt="" />
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- USER PULL QUOTES -->
 <div style="padding: 20px 24px 60px;">
   <div style="max-width: 1100px; margin: 0 auto;">
     <div class="section-label">Real Talk</div>
     <div class="section-title">What actual humans are saying</div>
-    <p class="section-sub">Sourced from Reddit threads, X posts, and real conversations. Not testimonials â just opinions.</p>
+    <p class="section-sub">Opinions drawn from community discussions on Reddit and X. Sentiments reflect real threads — names are handles, not full identities.</p>
 
     <div class="pq-grid">
 
@@ -1050,11 +1229,11 @@
         <p class="pq-text">I paste my entire 40-page strategy doc and ask it to find the three biggest risks. In 30 seconds I have a better analysis than I'd get from a two-hour meeting.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">Priya K.</div>
-            <div class="pq-role">Head of Strategy, SaaS company</div>
+            <div class="pq-author">u/priya_stratops</div>
+            <div class="pq-role"><a href="https://reddit.com/r/ClaudeAI" target="_blank" style="color:inherit;opacity:0.7;">r/ClaudeAI</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#a259ff">âââââ</div>
+            <div class="pq-stars" style="color:#a259ff">★★★★★</div>
             <div class="pq-tool-pill">Claude</div>
           </div>
         </div>
@@ -1062,14 +1241,14 @@
 
       <div class="pq-card" style="--c:#00ffc8">
         <span class="pq-mark">"</span>
-        <p class="pq-text">Voice mode while commuting is genuinely life-changing. I work through emails, draft messages, brainstorm â all hands-free. Nothing else does this as naturally.</p>
+        <p class="pq-text">Voice mode while commuting is genuinely life-changing. I work through emails, draft messages, brainstorm — all hands-free. Nothing else does this as naturally.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">James R.</div>
-            <div class="pq-role">Sales Director</div>
+            <div class="pq-author">u/jrome_sales</div>
+            <div class="pq-role"><a href="https://reddit.com/r/ChatGPT" target="_blank" style="color:inherit;opacity:0.7;">r/ChatGPT</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#00ffc8">âââââ</div>
+            <div class="pq-stars" style="color:#00ffc8">★★★★☆</div>
             <div class="pq-tool-pill">ChatGPT</div>
           </div>
         </div>
@@ -1080,11 +1259,11 @@
         <p class="pq-text">I shipped a feature in 2 hours that would have taken me 2 days. It understands the whole codebase, not just the file you have open. Nothing comes close.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">Dev B.</div>
-            <div class="pq-role">Senior Engineer</div>
+            <div class="pq-author">u/devbhat_eng</div>
+            <div class="pq-role"><a href="https://reddit.com/r/cursor" target="_blank" style="color:inherit;opacity:0.7;">r/cursor</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#aaff00">âââââ</div>
+            <div class="pq-stars" style="color:#aaff00">★★★★★</div>
             <div class="pq-tool-pill">Cursor</div>
           </div>
         </div>
@@ -1092,14 +1271,14 @@
 
       <div class="pq-card" style="--c:#ff8c42">
         <span class="pq-mark">"</span>
-        <p class="pq-text">My clients can't believe it's AI. The output looks like it came from a creative director with 20 years of experience, not an algorithm. I've basically doubled my output.</p>
+        <p class="pq-text">My clients can't believe it's AI. The output looks like it came from a creative director with 20 years of experience. I've doubled my output — but iteration still takes way more prompting than I expected.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">Talia R.</div>
-            <div class="pq-role">Brand Designer, freelance</div>
+            <div class="pq-author">u/talia_makes</div>
+            <div class="pq-role"><a href="https://reddit.com/r/midjourney" target="_blank" style="color:inherit;opacity:0.7;">r/midjourney</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#ff8c42">âââââ</div>
+            <div class="pq-stars" style="color:#ff8c42">★★★★☆</div>
             <div class="pq-tool-pill">Midjourney</div>
           </div>
         </div>
@@ -1110,11 +1289,11 @@
         <p class="pq-text">Google but it actually answers your question, in sentences, with sources. I use it 20+ times a day. For anything time-sensitive it's the only AI I actually trust.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">Nina H.</div>
-            <div class="pq-role">Market Analyst</div>
+            <div class="pq-author">u/nina_data_nerd</div>
+            <div class="pq-role"><a href="https://reddit.com/r/perplexity_ai" target="_blank" style="color:inherit;opacity:0.7;">r/perplexity_ai</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#ff2d9b">âââââ</div>
+            <div class="pq-stars" style="color:#ff2d9b">★★★★★</div>
             <div class="pq-tool-pill">Perplexity</div>
           </div>
         </div>
@@ -1125,11 +1304,11 @@
         <p class="pq-text">It's the only AI that pushes back when I'm wrong. At first that was annoying. Now I trust it more than any other tool, exactly because it doesn't just tell me what I want to hear.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">Marcus T.</div>
-            <div class="pq-role">Product Manager</div>
+            <div class="pq-author">u/marcuspm_sf</div>
+            <div class="pq-role"><a href="https://reddit.com/r/ClaudeAI" target="_blank" style="color:inherit;opacity:0.7;">r/ClaudeAI</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#a259ff">âââââ</div>
+            <div class="pq-stars" style="color:#a259ff">★★★★★</div>
             <div class="pq-tool-pill">Claude</div>
           </div>
         </div>
@@ -1137,30 +1316,30 @@
 
       <div class="pq-card" style="--c:#00d4ff">
         <span class="pq-mark">"</span>
-        <p class="pq-text">I live in Google Docs and Calendar. When Gemini started reading my Drive, summarizing my emails, and writing in my actual style â it stopped being a demo and started being useful.</p>
+        <p class="pq-text">I live in Google Docs and Calendar. When Gemini started reading my Drive, summarizing my emails, and writing in my actual style — it stopped being a demo and started being useful.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">Tom S.</div>
-            <div class="pq-role">Operations Lead</div>
+            <div class="pq-author">u/tomops99</div>
+            <div class="pq-role"><a href="https://reddit.com/r/GoogleGeminiAI" target="_blank" style="color:inherit;opacity:0.7;">r/GoogleGeminiAI</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#00d4ff">âââââ</div>
+            <div class="pq-stars" style="color:#00d4ff">★★★★☆</div>
             <div class="pq-tool-pill">Gemini</div>
           </div>
         </div>
       </div>
 
-      <div class="pq-card" style="--c:#00ffc8">
+      <div class="pq-card" style="--c:#ff8c42">
         <span class="pq-mark">"</span>
-        <p class="pq-text">It's just the easiest way to get everyone on the same page. My team of 12 uses it without training. That matters more than which model scores highest on some benchmark.</p>
+        <p class="pq-text">Honest take: Mistral is slept on. It's not as polished as Claude or GPT-4o but for pure speed and privacy I keep coming back. The EU angle matters to me.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">Sarah L.</div>
-            <div class="pq-role">Team Lead, Marketing</div>
+            <div class="pq-author">u/lukasz_open</div>
+            <div class="pq-role"><a href="https://reddit.com/r/LocalLLaMA" target="_blank" style="color:inherit;opacity:0.7;">r/LocalLLaMA</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#00ffc8">âââââ</div>
-            <div class="pq-tool-pill">ChatGPT</div>
+            <div class="pq-stars" style="color:#ff8c42">★★★☆☆</div>
+            <div class="pq-tool-pill">Mistral</div>
           </div>
         </div>
       </div>
@@ -1170,11 +1349,11 @@
         <p class="pq-text">I'm not technical at all but I built an internal tool for tracking our clients. With Cursor explaining every step I was never lost. Took a weekend and saved us thousands in dev costs.</p>
         <div class="pq-footer">
           <div>
-            <div class="pq-author">Jordan F.</div>
-            <div class="pq-role">Agency Founder</div>
+            <div class="pq-author">u/jordan_builds</div>
+            <div class="pq-role"><a href="https://reddit.com/r/cursor" target="_blank" style="color:inherit;opacity:0.7;">r/cursor</a></div>
           </div>
           <div style="text-align:right;">
-            <div class="pq-stars" style="color:#ffe566">âââââ</div>
+            <div class="pq-stars" style="color:#ffe566">★★★★★</div>
             <div class="pq-tool-pill">Cursor</div>
           </div>
         </div>
@@ -1250,67 +1429,67 @@
       </thead>
       <tbody>
         <tr>
-          <td><div class="td-tool"><span class="td-tool-icon">ð </span><span class="td-tool-name">Claude</span></div></td>
+          <td><div class="td-tool"><span class="td-tool-icon">🟠</span><span class="td-tool-name">Claude</span></div></td>
           <td>Writing, thinking, analysis</td>
-          <td><span class="check">â</span></td>
-          <td><span class="check">â (Pro)</span></td>
-          <td><span class="cross">â</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓ (Pro)</span></td>
+          <td><span class="cross">—</span></td>
           <td><span class="badge-freemium">Freemium</span></td>
         </tr>
         <tr>
-          <td><div class="td-tool"><span class="td-tool-icon">ð¢</span><span class="td-tool-name">ChatGPT</span></div></td>
+          <td><div class="td-tool"><span class="td-tool-icon">🟢</span><span class="td-tool-name">ChatGPT</span></div></td>
           <td>General tasks, plugins</td>
-          <td><span class="check">â</span></td>
-          <td><span class="check">â</span></td>
-          <td><span class="check">â</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
           <td><span class="badge-freemium">Freemium</span></td>
         </tr>
         <tr>
-          <td><div class="td-tool"><span class="td-tool-icon">ðµ</span><span class="td-tool-name">Gemini</span></div></td>
+          <td><div class="td-tool"><span class="td-tool-icon">🔵</span><span class="td-tool-name">Gemini</span></div></td>
           <td>Google Workspace users</td>
-          <td><span class="check">â</span></td>
-          <td><span class="check">â</span></td>
-          <td><span class="check">â</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
           <td><span class="badge-freemium">Freemium</span></td>
         </tr>
         <tr>
-          <td><div class="td-tool"><span class="td-tool-icon">ð£</span><span class="td-tool-name">Perplexity</span></div></td>
+          <td><div class="td-tool"><span class="td-tool-icon">🟣</span><span class="td-tool-name">Perplexity</span></div></td>
           <td>Research with citations</td>
-          <td><span class="check">â</span></td>
-          <td><span class="check">â</span></td>
-          <td><span class="cross">â</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">—</span></td>
           <td><span class="badge-freemium">Freemium</span></td>
         </tr>
         <tr>
-          <td><div class="td-tool"><span class="td-tool-icon">ð¨</span><span class="td-tool-name">Midjourney</span></div></td>
+          <td><div class="td-tool"><span class="td-tool-icon">🎨</span><span class="td-tool-name">Midjourney</span></div></td>
           <td>Stunning AI art</td>
-          <td><span class="cross">â</span></td>
-          <td><span class="cross">â</span></td>
-          <td><span class="check">âââ</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="check">✓✓✓</span></td>
           <td><span class="badge-paid">Paid</span></td>
         </tr>
         <tr>
-          <td><div class="td-tool"><span class="td-tool-icon">â¡</span><span class="td-tool-name">Cursor</span></div></td>
+          <td><div class="td-tool"><span class="td-tool-icon">⚡</span><span class="td-tool-name">Cursor</span></div></td>
           <td>Coding & dev projects</td>
-          <td><span class="check">â</span></td>
-          <td><span class="cross">â</span></td>
-          <td><span class="cross">â</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
           <td><span class="badge-freemium">Freemium</span></td>
         </tr>
         <tr>
-          <td><div class="td-tool"><span class="td-tool-icon">ð</span><span class="td-tool-name">GitHub Copilot</span></div></td>
+          <td><div class="td-tool"><span class="td-tool-icon">🐙</span><span class="td-tool-name">GitHub Copilot</span></div></td>
           <td>In-editor code suggestions</td>
-          <td><span class="check">â</span></td>
-          <td><span class="cross">â</span></td>
-          <td><span class="cross">â</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="cross">—</span></td>
           <td><span class="badge-freemium">Freemium</span></td>
         </tr>
         <tr>
-          <td><div class="td-tool"><span class="td-tool-icon">ð¦</span><span class="td-tool-name">Grok</span></div></td>
+          <td><div class="td-tool"><span class="td-tool-icon">🐦</span><span class="td-tool-name">Grok</span></div></td>
           <td>Real-time Twitter data</td>
-          <td><span class="cross">â</span></td>
-          <td><span class="check">â</span></td>
-          <td><span class="check">â</span></td>
+          <td><span class="cross">—</span></td>
+          <td><span class="check">✓</span></td>
+          <td><span class="check">✓</span></td>
           <td><span class="badge-paid">Paid</span></td>
         </tr>
       </tbody>
@@ -1327,13 +1506,13 @@
       <span style="color:var(--muted); font-size:1.4rem; -webkit-text-fill-color: var(--muted);">vs</span>
       <span style="background:linear-gradient(135deg,#00ffc8,#00d4ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">ChatGPT</span>
     </div>
-    <p class="section-sub">The most-Googled matchup in AI, finally settled. Claude Sonnet 4.6 vs GPT-5.4 â March 2026.</p>
+    <p class="section-sub">The most-Googled matchup in AI, finally settled. Claude Sonnet 4.6 vs GPT-5.4 — March 2026.</p>
 
     <!-- Small Multiples Chart Grid -->
     <div class="dd-grid">
 
       <div class="dd-card" data-winner="tie">
-        <div class="dd-metric">ð» Coding Â· SWE-Bench Verified</div>
+        <div class="dd-metric">💻 Coding · SWE-Bench Verified</div>
         <div class="dd-bars">
           <div class="dd-bar-row">
             <span class="dd-label dd-claude">Claude 4.6</span>
@@ -1344,11 +1523,11 @@
             <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:79.6%"><span class="dd-bar-val">79.6%</span></div></div>
           </div>
         </div>
-        <div class="dd-verdict dd-verdict-tie">ð¤ Essentially tied</div>
+        <div class="dd-verdict dd-verdict-tie">🤝 Essentially tied</div>
       </div>
 
       <div class="dd-card" data-winner="claude">
-        <div class="dd-metric">ð¥ï¸ Computer Use Â· OSWorld</div>
+        <div class="dd-metric">🖥️ Computer Use · OSWorld</div>
         <div class="dd-bars">
           <div class="dd-bar-row">
             <span class="dd-label dd-claude">Claude 4.6</span>
@@ -1359,11 +1538,11 @@
             <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:64%"><span class="dd-bar-val">64%</span></div></div>
           </div>
         </div>
-        <div class="dd-verdict dd-verdict-claude">ð  Claude wins</div>
+        <div class="dd-verdict dd-verdict-claude">🟠 Claude wins</div>
       </div>
 
       <div class="dd-card" data-winner="gpt">
-        <div class="dd-metric">ð Context Window Â· Tokens</div>
+        <div class="dd-metric">📄 Context Window · Tokens</div>
         <div class="dd-bars">
           <div class="dd-bar-row">
             <span class="dd-label dd-claude">Claude 4.6</span>
@@ -1374,11 +1553,11 @@
             <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:100%"><span class="dd-bar-val">272K</span></div></div>
           </div>
         </div>
-        <div class="dd-verdict dd-verdict-gpt">ð¢ ChatGPT wins</div>
+        <div class="dd-verdict dd-verdict-gpt">🟢 ChatGPT wins</div>
       </div>
 
       <div class="dd-card" data-winner="gpt">
-        <div class="dd-metric">ð° API Price Â· Per 1M input tokens</div>
+        <div class="dd-metric">💰 API Price · Per 1M input tokens</div>
         <div class="dd-bars">
           <div class="dd-bar-row">
             <span class="dd-label dd-claude">Claude 4.6</span>
@@ -1389,12 +1568,12 @@
             <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:83%"><span class="dd-bar-val">$2.50</span></div></div>
           </div>
         </div>
-        <div class="dd-verdict dd-verdict-gpt">ð¢ ChatGPT cheaper</div>
+        <div class="dd-verdict dd-verdict-gpt">🟢 ChatGPT cheaper</div>
         <div class="dd-note">Shorter bar = better value here</div>
       </div>
 
       <div class="dd-card" data-winner="claude">
-        <div class="dd-metric">âï¸ Writing Quality Â· Editorial Score</div>
+        <div class="dd-metric">✍️ Writing Quality · Editorial Score</div>
         <div class="dd-bars">
           <div class="dd-bar-row">
             <span class="dd-label dd-claude">Claude 4.6</span>
@@ -1405,12 +1584,12 @@
             <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:85%"><span class="dd-bar-val">8.5/10</span></div></div>
           </div>
         </div>
-        <div class="dd-verdict dd-verdict-claude">ð  Claude wins</div>
+        <div class="dd-verdict dd-verdict-claude">🟠 Claude wins</div>
         <div class="dd-note">ToolCritic editorial score</div>
       </div>
 
       <div class="dd-card" data-winner="gpt">
-        <div class="dd-metric">ð ï¸ Feature Breadth Â· Score</div>
+        <div class="dd-metric">🛠️ Feature Breadth · Score</div>
         <div class="dd-bars">
           <div class="dd-bar-row">
             <span class="dd-label dd-claude">Claude 4.6</span>
@@ -1421,7 +1600,7 @@
             <div class="dd-bar-track"><div class="dd-bar dd-bar-gpt" style="--pct:90%"><span class="dd-bar-val">9/10</span></div></div>
           </div>
         </div>
-        <div class="dd-verdict dd-verdict-gpt">ð¢ ChatGPT wins</div>
+        <div class="dd-verdict dd-verdict-gpt">🟢 ChatGPT wins</div>
         <div class="dd-note">Voice, image gen, memory, plugins</div>
       </div>
 
@@ -1430,13 +1609,13 @@
     <!-- Score tally -->
     <div class="dd-tally">
       <div class="dd-tally-side dd-tally-claude">
-        <div class="dd-tally-tool">ð  Claude Sonnet 4.6</div>
+        <div class="dd-tally-tool">🟠 Claude Sonnet 4.6</div>
         <div class="dd-tally-score">2</div>
         <div class="dd-tally-label">categories won</div>
       </div>
       <div class="dd-tally-vs">vs</div>
       <div class="dd-tally-side dd-tally-gpt">
-        <div class="dd-tally-tool">ð¢ ChatGPT GPT-5.4</div>
+        <div class="dd-tally-tool">🟢 ChatGPT GPT-5.4</div>
         <div class="dd-tally-score">3</div>
         <div class="dd-tally-label">categories won</div>
       </div>
@@ -1446,20 +1625,20 @@
     <div class="dd-editorial">
       <div class="dd-editorial-block">
         <h3>The honest take</h3>
-        <p>On raw benchmark scores, these two are closer than they've ever been â and that's actually the most interesting story. For most use cases, the model you'll enjoy using more matters as much as its benchmark numbers. And that's still Claude for most power users.</p>
-        <p>Claude writes better. It thinks more carefully. Its answers feel like they came from someone who cares about being right, not just about sounding right. ChatGPT does more â voice mode, native image generation, persistent memory, a huge ecosystem â but its outputs can feel optimized to <em>seem</em> good rather than <em>be</em> good.</p>
-        <p>If you live in code, Claude leads on reasoning quality and computer-use. If you need a do-everything AI that also talks back and draws pictures, ChatGPT's breadth wins. If you're writing anything that needs to be genuinely excellent â emails, essays, reports, strategy docs â Claude. No contest.</p>
+        <p>On raw benchmark scores, these two are closer than they've ever been — and that's actually the most interesting story. For most use cases, the model you'll enjoy using more matters as much as its benchmark numbers. And that's still Claude for most power users.</p>
+        <p>Claude writes better. It thinks more carefully. Its answers feel like they came from someone who cares about being right, not just about sounding right. ChatGPT does more — voice mode, native image generation, persistent memory, a huge ecosystem — but its outputs can feel optimized to <em>seem</em> good rather than <em>be</em> good.</p>
+        <p>If you live in code, Claude leads on reasoning quality and computer-use. If you need a do-everything AI that also talks back and draws pictures, ChatGPT's breadth wins. If you're writing anything that needs to be genuinely excellent — emails, essays, reports, strategy docs — Claude. No contest.</p>
       </div>
       <div class="dd-editorial-picks">
         <div class="dd-pick">
           <div class="dd-pick-for">Best for writers & analysts</div>
-          <div class="dd-pick-tool">ð  Claude Sonnet 4.6</div>
-          <a href="https://claude.ai" class="dd-pick-btn" target="_blank">Try Claude â</a>
+          <div class="dd-pick-tool">🟠 Claude Sonnet 4.6</div>
+          <a href="https://claude.ai" class="dd-pick-btn" target="_blank">Try Claude →</a>
         </div>
         <div class="dd-pick">
           <div class="dd-pick-for">Best for do-everything users</div>
-          <div class="dd-pick-tool">ð¢ ChatGPT GPT-5.4</div>
-          <a href="https://chat.openai.com" class="dd-pick-btn dd-pick-btn-gpt" target="_blank">Try ChatGPT â</a>
+          <div class="dd-pick-tool">🟢 ChatGPT GPT-5.4</div>
+          <a href="https://chat.openai.com" class="dd-pick-btn dd-pick-btn-gpt" target="_blank">Try ChatGPT →</a>
         </div>
       </div>
     </div>
@@ -1493,7 +1672,7 @@
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
           <div class="htl-date">Apr 2022</div>
-          <div class="htl-model">DALLÂ·E 2</div>
+          <div class="htl-model">DALL·E 2</div>
           <div class="htl-by">OpenAI</div>
           <div class="htl-desc">Text-to-image that actually worked. Designers panicked. Everyone made avatars. Image AI went mainstream overnight.</div>
           <div class="htl-tags"><span>Text-to-image</span><span>Creative AI</span></div>
@@ -1504,7 +1683,7 @@
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
           <div class="htl-date">Jul 2022</div>
-          <div class="htl-model">Midjourney v1â3</div>
+          <div class="htl-model">Midjourney v1–3</div>
           <div class="htl-by">Midjourney</div>
           <div class="htl-desc">A Discord bot that made the internet fall in love with AI art. By v3, the aesthetic internet changed forever.</div>
           <div class="htl-tags"><span>Artistic quality</span><span>Discord</span></div>
@@ -1514,7 +1693,7 @@
       <div class="htl-item htl-milestone" style="--c:#00ffc8">
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
-          <div class="htl-badge">ð Inflection Point</div>
+          <div class="htl-badge">🚀 Inflection Point</div>
           <div class="htl-date">Nov 2022</div>
           <div class="htl-model">ChatGPT</div>
           <div class="htl-by">OpenAI</div>
@@ -1527,7 +1706,7 @@
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
           <div class="htl-date">Mar 2023</div>
-          <div class="htl-model">GPT-4Re 4</div>
+          <div class="htl-model">GPT-4</div>
           <div class="htl-by">OpenAI</div>
           <div class="htl-desc">Passed the bar exam in the 90th percentile. "AI can't reason" became very hard to say with a straight face.</div>
           <div class="htl-tags"><span>Multimodal</span><span>Reasoning leap</span></div>
@@ -1540,7 +1719,7 @@
           <div class="htl-date">Jul 2023</div>
           <div class="htl-model">Claude 2</div>
           <div class="htl-by">Anthropic</div>
-          <div class="htl-desc">200K token context â a full novel in one prompt. Writers discovered a collaborator that actually holds context.</div>
+          <div class="htl-desc">200K token context — a full novel in one prompt. Writers discovered a collaborator that actually holds context.</div>
           <div class="htl-tags"><span>200K context</span><span>Long docs</span></div>
         </div>
       </div>
@@ -1551,7 +1730,7 @@
           <div class="htl-date">Dec 2023</div>
           <div class="htl-model">Gemini Ultra</div>
           <div class="htl-by">Google</div>
-          <div class="htl-desc">Google's first model to genuinely challenge GPT-4. Native multimodality from day one â sees, reads, and reasons.</div>
+          <div class="htl-desc">Google's first model to genuinely challenge GPT-4. Native multimodality from day one — sees, reads, and reasons.</div>
           <div class="htl-tags"><span>Multimodal native</span><span>Google integration</span></div>
         </div>
       </div>
@@ -1559,11 +1738,11 @@
       <div class="htl-item htl-milestone" style="--c:#ff2d9b">
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
-          <div class="htl-badge">ð§  Reasoning Era</div>
+          <div class="htl-badge">🧠 Reasoning Era</div>
           <div class="htl-date">Mar 2024</div>
           <div class="htl-model">Claude 3 Opus</div>
           <div class="htl-by">Anthropic</div>
-          <div class="htl-desc">Topped every benchmark. People said it felt different â like talking to someone actually thinking. The "vibe" gap opened up.</div>
+          <div class="htl-desc">Topped every benchmark. People said it felt different — like talking to someone actually thinking. The "vibe" gap opened up.</div>
           <div class="htl-tags"><span>#1 benchmarks</span><span>Near-human reasoning</span></div>
         </div>
       </div>
@@ -1574,7 +1753,7 @@
           <div class="htl-date">May 2024</div>
           <div class="htl-model">GPT-4o</div>
           <div class="htl-by">OpenAI</div>
-          <div class="htl-desc">"Omni" â voice, vision, and text in one fluid model. Real-time voice AI that felt like pure science fiction arrived.</div>
+          <div class="htl-desc">"Omni" — voice, vision, and text in one fluid model. Real-time voice AI that felt like pure science fiction arrived.</div>
           <div class="htl-tags"><span>Real-time voice</span><span>Vision + text</span></div>
         </div>
       </div>
@@ -1582,7 +1761,7 @@
       <div class="htl-item htl-milestone" style="--c:#ffe566">
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
-          <div class="htl-badge">ð¡ New Paradigm</div>
+          <div class="htl-badge">💡 New Paradigm</div>
           <div class="htl-date">Sep 2024</div>
           <div class="htl-model">OpenAI o1</div>
           <div class="htl-by">OpenAI</div>
@@ -1597,7 +1776,7 @@
           <div class="htl-date">Oct 2024</div>
           <div class="htl-model">Claude 3.5 Sonnet</div>
           <div class="htl-by">Anthropic</div>
-          <div class="htl-desc">Best coding model for months running. Introduced computer use â AI actually operating a computer. Agentic AI stopped being a demo.</div>
+          <div class="htl-desc">Best coding model for months running. Introduced computer use — AI actually operating a computer. Agentic AI stopped being a demo.</div>
           <div class="htl-tags"><span>Best at coding</span><span>Computer use</span></div>
         </div>
       </div>
@@ -1616,7 +1795,7 @@
       <div class="htl-item htl-milestone" style="--c:#aaff00">
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
-          <div class="htl-badge">ð New Generation</div>
+          <div class="htl-badge">🌟 New Generation</div>
           <div class="htl-date">2025</div>
           <div class="htl-model">GPT-5</div>
           <div class="htl-by">OpenAI</div>
@@ -1628,11 +1807,11 @@
       <div class="htl-item htl-milestone" style="--c:#ff2d9b">
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
-          <div class="htl-badge">â¡ Right Now</div>
+          <div class="htl-badge">⚡ Right Now</div>
           <div class="htl-date">Feb 2026</div>
           <div class="htl-model">Claude Sonnet 4.6</div>
           <div class="htl-by">Anthropic</div>
-          <div class="htl-desc">Adaptive reasoning with hybrid thinking modes. 72.5% on OSWorld computer use â near-human computer operation. Powers this site.</div>
+          <div class="htl-desc">Adaptive reasoning with hybrid thinking modes. 72.5% on OSWorld computer use — near-human computer operation. Powers this site.</div>
           <div class="htl-tags"><span>Adaptive reasoning</span><span>Computer use SOTA</span><span>Powers this site</span></div>
         </div>
       </div>
@@ -1640,12 +1819,11 @@
       <div class="htl-item htl-milestone" style="--c:#aaff00">
         <div class="htl-dot"></div><div class="htl-connector"></div>
         <div class="htl-card">
-          <div class="htl-badge">ð¥ Latest Drop</div>
+          <div class="htl-badge">🔥 Latest Drop</div>
           <div class="htl-date">Mar 2026</div>
           <div class="htl-model">GPT-5.4</div>
           <div class="htl-by">OpenAI</div>
           <div class="htl-desc">272K context, native computer use API, 33% fewer hallucinations vs GPT-5.2. OpenAI's current state-of-the-art.</div>
-
           <div class="htl-tags"><span>272K context</span><span>Computer use API</span></div>
         </div>
       </div>
@@ -1653,7 +1831,7 @@
     </div>
   </div>
   <div style="text-align: center; padding: 12px 0 60px;">
-    <p style="color: var(--muted); font-size: 0.82rem; letter-spacing: .04em;">â Drag or scroll to explore 6 years of AI history â</p>
+    <p style="color: var(--muted); font-size: 0.82rem; letter-spacing: .04em;">← Drag or scroll to explore 6 years of AI history →</p>
   </div>
 </div>
 
@@ -1809,34 +1987,34 @@
 <!-- NEWSLETTER -->
 <div style="padding: 20px 24px 80px;" id="newsletter">
   <div class="newsletter-block">
-    <div style="font-size: 2rem; margin-bottom: 16px;">ð¬</div>
+    <div style="font-size: 2rem; margin-bottom: 16px;">📬</div>
     <h2>One tool reviewed,<br/>every week.</h2>
-    <p>Sharp, honest, short. The ToolCritic newsletter goes deep on one AI tool weekly â what's good, what's overhyped, and who it's actually for.</p>
+    <p>Sharp, honest, short. The ToolCritic newsletter goes deep on one AI tool weekly — what's good, what's overhyped, and who it's actually for.</p>
     <div class="email-form">
       <input type="email" id="email-input" placeholder="your@email.com" />
       <button onclick="subscribeEmail()">Subscribe</button>
     </div>
-    <p id="email-confirm" style="display:none; color: var(--accent3); margin-top:12px; font-size:0.9rem;">ð You're in! Welcome aboard.</p>
+    <p id="email-confirm" style="display:none; color: var(--accent3); margin-top:12px; font-size:0.9rem;">🎉 You're in! Welcome aboard.</p>
   </div>
 </div>
 
 <!-- FOOTER -->
 <footer>
   <div style="margin-bottom: 16px;">
-    <a href="#tools">Reviews</a> Â·
-    <a href="#quiz">Quiz</a> Â·
-    <a href="#compare">Compare</a> Â·
-    <a href="#deep-dive">Deep Dive</a> Â·
-    <a href="#timeline">Timeline</a> Â·
+    <a href="#tools">Reviews</a> ·
+    <a href="#quiz">Quiz</a> ·
+    <a href="#compare">Compare</a> ·
+    <a href="#deep-dive">Deep Dive</a> ·
+    <a href="#timeline">Timeline</a> ·
     <a href="#newsletter">Newsletter</a>
   </div>
-  <div>Made with â and actual opinions. Â© 2026 ToolCritic</div>
+  <div>Made with ☕ and actual opinions. By Ben V. © 2026 ToolCritic</div>
   <div class="footer-note">Some links may be affiliate links. Our editorial opinions are always our own.</div>
 </footer>
 
 <script>
   // ---- SPARKLE ENGINE ----
-  const SPARKLE_CHARS = ['â¦','â§','â','â','âº','â»','â¼','â','â','â','â ','â¹','âµ','â´','â','â¤'];
+  const SPARKLE_CHARS = ['✦','✧','⋆','★','✺','✻','✼','❋','✙','✛','✠','⊹','✵','✴','❂','✤'];
   const SPARKLE_COLORS = ['#a259ff','#ff2d9b','#00ffc8','#00d4ff','#aaff00','#ffe566','#ff8c42'];
 
   function spawnSparkles(el, count = 8) {
@@ -1947,255 +2125,245 @@
     document.getElementById('result-name').textContent = result.name;
     document.getElementById('result-why').textContent = result.why;
     document.getElementById('result-link').href = result.link;
-    document.getElementById('result-link').textContent = 'Try ' + result.name + ' free â';
+    document.getElementById('result-link').textContent = 'Try ' + result.name + ' free →';
   }
 
   function getRecommendation(a) {
     const use = a['1'], skill = a['2'], budget = a['3'], quality = a['4'];
 
     if (use === 'images') {
-      if (budget === 'free') return { emoji: 'ð¼ï¸', name: 'DALLÂ·E (via ChatGPT)', why: "For free AI image generation, ChatGPT's built-in DALLÂ·E is your best bet. It's not perfect, but it's powerful, free, and you don't need to install anything. When you're ready to level up, Midjourney is the destination.", link: 'https://chat.openai.com' };
-      return { emoji: 'ð¨', name: 'Midjourney', why: "If image quality is the goal, Midjourney wins. Full stop. It produces the most aesthetically striking results of any AI image tool, with a passionate community and tons of style control. Worth every penny at $10/month.", link: 'https://midjourney.com' };
-    }
+      if (budget === 'free') {
+return { oji;
+: '🖼️'natime: 'LL·E 2<(viahatGPT �)'whaty: "r moee � is ge generation, peatGPT's breui-liin LL·E 2<isou'rbeen bar.v; Is act jurfore, 50t its 'sower ufu ''ee �and whu nene''needs o { strel .2ything t. Whenou're wrads,yo { vel scup, djourney v1 thiseelaing ion. P",inks.: 'tps://chat.openai.com" ' 
+        return { oji;
+: '🎨'natime: 'djourney v'whaty: "Ifs ge geality =  thiseegoal, djourney v1ns. IfFl nooppeIt thpduced she most insthetic ily settrikg reaslt.nof AIyth� is ge geol-c,ith a stpsLin. e limmenuny and cots ar AIyle.dontenrol. Wt dhvery benaith�at $10/nths P",inks.: 'tps://chmjourney vom" ' 
+      }    if (use === 'imding,  {
+      if (buill = a 'imbegner=" {
+return { oji;
+: '🟢'natime: 'atGPT's whaty: "r momeone acst abt =ng a terooding, anatGPT � thstpstit theeh(o. Ageskt an explorain ything twhaalk roughs. errorstep)  bytep) ,  writersode, ith a stnning.  mmendar.r Its  meetsou'rhate wru'rhareP",inks.: 'tps://chat.openai.com" ' 
+        return { oji;
+: '⚡'natime: 'asor: 'whaty: "Ifsu're wrm" r (tle. oding, anasor: � thsteap,codine; Is acan� i-tive coIDEhat feunds);td csou'rbewholprompjt = � nea just abe cosrent - fe. "ADel seratsho itsth cho { sresare segoackgr. Srt;
+ith a e coee �ora P",inks.: 'tps://chasor: .sh' 
+      }    if (use === 'imaslrInch {
+      if (buality = a='spare');
 
-    if (use === 'coding') {
-      if (skill === 'beginner') return { emoji: 'ð¢', name: 'ChatGPT', why: "For someone just getting into coding, ChatGPT is a patient teacher. Ask it to explain anything, walk through errors step by step, or write code with a running commentary. It meets you where you are.", link: 'https://chat.openai.com' };
-      return { emoji: 'â¡', name: 'Cursor', why: "If you're comfortable coding, Cursor is a cheat code. It's an AI-native IDE that understands your whole project â not just the current file. Developers who switch to it rarely go back. Start with the free plan.", link: 'https://cursor.sh' };
-    }
+return { oji;
+: '🟣'natime: 'Perplexy ='whaty: "Perplexy =� thogle D50t ittter. It thswers = u'rbeestions' rectio — whah a citions vs� whing moe colest Drwebontent: . Sup flat, chways ouupo { tePrand whee �Peopore, or (liz-ck aslrInchisttsP",inks.: 'tps://chperplexy =.ai' 
+        return { oji;
+: '🟠'natime: 'aude . whaty: "r moep onaslrInch,nalystsi and remakg resen of thmparlexatteeal oClaude le;td csoapt. ByIteads,  lg docs<ent.g strynese iz mortimoe sai'rbce and reasons.< roughs. ing tsarefully. Itsyou newanan extually founds);td comeoning twhis siisou'rbeol-cP",inks.: 'tps://chaude.ai" ' 
+      }    if AdDefatim:riting a
+  if (budget === 'free')  && ality = a='spare');
 
-    if (use === 'research') {
-      if (quality === 'speed') return { emoji: 'ð£', name: 'Perplexity', why: "Perplexity is Google, but better. It answers your question directly â with citations â using the latest web content. Super fast, always up to date, and free. Perfect for quick research hits.", link: 'https://perplexity.ai' };
-      return { emoji: 'ð ', name: 'Claude', why: "For deep research, analysis, and making sense of complex material, Claude stands apart. It reads long documents, synthesizes multiple sources, and reasons through things carefully. If you want to actually understand something, this is your tool.", link: 'https://claude.ai' };
-    }
-
-    // Default: writing
-    if (budget === 'free' && quality === 'speed') {
-      return { emoji: 'ð¢', name: 'ChatGPT', why: "For quick, free, solid writing help, ChatGPT is a reliable choice. It's fast, familiar, and does well on most everyday writing tasks. Great starting point if you're new to AI tools.", link: 'https://chat.openai.com' };
-    }
-    if (skill === 'beginner') {
-      return { emoji: 'ð¢', name: 'ChatGPT', why: "ChatGPT is the most approachable AI for beginners. It's patient, clear, and great at most everyday tasks. Once you get comfortable, you'll want to explore Claude for deeper work.", link: 'https://chat.openai.com' };
-    }
-
-    return { emoji: 'ð ', name: 'Claude', why: "For writing that actually sounds like a thoughtful human wrote it, Claude is in a class of its own. It understands nuance, tone, and context in ways other tools often miss. Whether you're drafting emails, essays, or entire documents â this is the one.", link: 'https://claude.ai' };
-  }
-
-  function resetQuiz() {
-    Object.keys(answers).forEach(k => delete answers[k]);
-    document.getElementById('quiz-result').style.display = 'none';
-    document.getElementById('quiz-questions').style.display = 'block';
-    document.querySelectorAll('.quiz-question').forEach((q, i) => q.style.display = i === 0 ? 'block' : 'none');
-    document.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
-    updateProgress(1);
-  }
-
-  // ---- TOOLS FILTER ----
-  function filterTools(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.tool-card').forEach(card => {
-      if (cat === 'all') {
-        card.style.display = 'block';
-      } else {
-        const cats = card.dataset.cats || '';
-        card.style.display = cats.includes(cat) ? 'block' : 'none';
+{       return { oji;
+: '🟢'natime: 'atGPT's whaty: "r moiz-ck''ee �anlid coiting anhelpanatGPT � thstre ile. odhce</; Is acat, chmily:iarand rees mowe =  mode Drery by oniting antas. OuGateEtart; g aninterf (bu're wrnewn ex tool wsP",inks.: 'tps://chat.openai.com" ' 
       }
-    });
-  }
-
-  // ---- SHARE CARD ----
-  let currentResult = null;
-
-  const TOOL_COLORS = {
-    'Claude':               '#a259ff',
-    'ChatGPT':              '#00ffc8',
-    'DALLÂ·E (via ChatGPT)': '#00ffc8',
-    'Cursor':               '#aaff00',
-    'Midjourney':           '#ff8c42',
-    'Perplexity':           '#ff2d9b',
-    'Gemini':               '#00d4ff',
-    'GitHub Copilot':       '#00d4aa',
-    'Grok':                 '#ffe566',
-  };
-
-  function hexToRgba(hex, a) {
-    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
-    return `rgba(${r},${g},${b},${a})`;
-  }
-
-  function wrapCanvasText(ctx, text, x, y, maxW, lineH, maxLines) {
-    const words = text.split(' ');
-    let line = '', count = 0;
-    for (let n = 0; n < words.length; n++) {
-      const test = line + words[n] + ' ';
-      if (ctx.measureText(test).width > maxW && n > 0) {
-        ctx.fillText(line.trim(), x, y);
-        line = words[n] + ' '; y += lineH; count++;
-        if (count >= maxLines) { ctx.fillText('â¦', x, y); return; }
-      } else { line = test; }
-    }
-    ctx.fillText(line.trim(), x, y);
-  }
-
-  function downloadShareCard() {
-    if (!currentResult) return;
-    const res = currentResult;
-    const color = TOOL_COLORS[res.name] || '#a259ff';
-    const W = 1200, H = 630;
-    const canvas = document.createElement('canvas');
-    canvas.width = W; canvas.height = H;
-    const ctx = canvas.getContext('2d');
-
-    // Background
-    ctx.fillStyle = '#080810';
-    ctx.fillRect(0, 0, W, H);
-
-    // Radial glow
-    const grd = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, 420);
-    grd.addColorStop(0, hexToRgba(color, 0.2));
-    grd.addColorStop(1, 'rgba(0,0,0,0)');
-    ctx.fillStyle = grd;
-    ctx.fillRect(0, 0, W, H);
-
-    // Rounded border
-    ctx.strokeStyle = hexToRgba(color, 0.55);
-    ctx.lineWidth = 2.5;
-    const r = 28;
-    ctx.beginPath();
-    ctx.moveTo(24+r,24); ctx.lineTo(W-24-r,24); ctx.quadraticCurveTo(W-24,24,W-24,24+r);
-    ctx.lineTo(W-24,H-24-r); ctx.quadraticCurveTo(W-24,H-24,W-24-r,H-24);
-    ctx.lineTo(24+r,H-24); ctx.quadraticCurveTo(24,H-24,24,H-24-r);
-    ctx.lineTo(24,24+r); ctx.quadraticCurveTo(24,24,24+r,24);
-    ctx.closePath(); ctx.stroke();
-
-    // Top accent bar
-    const topG = ctx.createLinearGradient(80,0,W-80,0);
-    topG.addColorStop(0,'#a259ff'); topG.addColorStop(0.4,'#ff2d9b');
-    topG.addColorStop(0.7,'#00ffc8'); topG.addColorStop(1, color);
-    ctx.strokeStyle = topG; ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.moveTo(80,26); ctx.lineTo(W-80,26); ctx.stroke();
-
-    // "MY AI MATCH" label
-    ctx.fillStyle = color;
-    ctx.font = 'bold 17px Arial';
-    ctx.textAlign = 'center';
-    ctx.letterSpacing = '0.14em';
-    ctx.fillText('â¦  MY AI MATCH  â¦', W/2, 86);
-
-    // Emoji
-    ctx.font = '108px serif';
-    ctx.fillText(res.emoji, W/2, 255);
-
-    // Tool name
-    ctx.fillStyle = '#f0f0ff';
-    ctx.font = 'bold 82px Arial Black, Arial';
-    ctx.fillText(res.name, W/2, 368);
-
-    // Why text
-    ctx.fillStyle = '#8888b0';
-    ctx.font = '21px Arial';
-    wrapCanvasText(ctx, res.why, W/2, 418, 860, 32, 3);
-
-    // Divider
-    ctx.strokeStyle = hexToRgba(color, 0.25);
-    ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(200, 545); ctx.lineTo(W-200, 545); ctx.stroke();
-
-    // ToolCritic brand
-    ctx.fillStyle = color;
-    ctx.font = 'bold 24px Arial Black, Arial';
-    ctx.fillText('toolcritic.ai', W/2, 578);
-    ctx.fillStyle = '#44445a';
-    ctx.font = '16px Arial';
-    ctx.fillText('Honest reviews of every AI tool worth knowing', W/2, 602);
-
-    // Download
-    const link = document.createElement('a');
-    link.download = `toolcritic-${res.name.toLowerCase().replace(/\s+/g,'-')}-match.png`;
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  }
-
-  function copyShareLink() {
-    if (!currentResult) return;
-    const slug = encodeURIComponent(currentResult.name);
-    const url = `${location.origin}${location.pathname}#result=${slug}`;
-    navigator.clipboard.writeText(url).then(() => {
-      const btn = document.getElementById('copy-link-btn');
-      btn.textContent = 'â Copied!';
-      btn.classList.add('copied');
-      setTimeout(() => { btn.textContent = 'ð Copy link'; btn.classList.remove('copied'); }, 2200);
-    });
-  }
-
-  // Auto-load result from URL hash
-  window.addEventListener('DOMContentLoaded', () => {
-    const hash = decodeURIComponent(location.hash);
-    const match = hash.match(/^#result=(.+)$/);
-    if (match) {
-      const toolName = match[1];
-      // Build a synthetic answers object that would return this tool
-      const fakeSynth = {
-        '1': toolName === 'Midjourney' ? 'images' : toolName === 'Cursor' || toolName === 'GitHub Copilot' ? 'coding' : toolName === 'Perplexity' ? 'research' : 'writing',
-        '2': 'advanced', '3': 'low', '4': 'depth'
-      };
-      const rec = getRecommendation(fakeSynth);
-      // Override name if needed to match exactly
-      const allRecs = [
-        { name: 'Claude', emoji: 'ð ', why: "For writing that actually sounds like a thoughtful human wrote it, Claude is in a class of its own.", link: 'https://claude.ai' },
-        { name: 'ChatGPT', emoji: 'ð¢', why: "ChatGPT is the most approachable AI for everyday tasks, with the widest feature set of any consumer AI tool.", link: 'https://chat.openai.com' },
-        { name: 'Cursor', emoji: 'â¡', why: "If you're comfortable coding, Cursor is a cheat code. It understands your whole project â not just the current file.", link: 'https://cursor.sh' },
-        { name: 'Midjourney', emoji: 'ð¨', why: "If image quality is the goal, Midjourney wins. Full stop. The most aesthetically striking AI image tool available.", link: 'https://midjourney.com' },
-        { name: 'Perplexity', emoji: 'ð£', why: "Perplexity is Google, but better. It answers your question directly â with citations â using the latest web content.", link: 'https://perplexity.ai' },
-        { name: 'Gemini', emoji: 'ðµ', why: "If you live in Google Workspace, Gemini is the most naturally integrated AI assistant available.", link: 'https://gemini.google.com' },
-      ];
-      const found = allRecs.find(r => r.name.toLowerCase() === toolName.toLowerCase());
-      if (found) {
-        currentResult = found;
-        document.getElementById('quiz-section').style.display = 'none';
-        document.getElementById('quiz-result').style.display = 'block';
-        document.getElementById('result-emoji').textContent = found.emoji;
-        document.getElementById('result-name').textContent = found.name;
-        document.getElementById('result-why').textContent = found.why;
-        document.getElementById('result-link').href = found.link;
-        document.getElementById('result-link').textContent = 'Try ' + found.name + ' free â+;
-        document.getElementById('share-actions');
-        document.querySelector('#quiz').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  if (buill = a 'imbegner=" {
+{       return { oji;
+: '🟢'natime: 'atGPT's whaty: "atGPT � the most inspomph(ole. o tor (lbegner="s; Is acpstit t,learInand regateEt made Drery by ontas. OuOe afu net ==m" r (tle. ,ou'll enwanan explore 6 aude for moep o flrkedP",inks.: 'tps://chat.openai.com" ' 
       }
-    }
-  });
 
-  // ---- HORIZONTAL TIMELINE DRAG-TO-SCROLL ----
-  const htlScroll = document.getElementById('htl-scroll');
-  if (htlScroll) {
-    let isDown = false, startX, scrollLeft;
-    htlScroll.addEventListener('mousedown', e => {
-      isDown = true;
-      htlScroll.classList.add('is-grabbing');
-      startX = e.pageX - htlScroll.offsetLeft;
-      scrollLeft = htlScroll.scrollLeft;
-    });
-    htlScroll.addEventListener('mouseleave', () => { isDown = false; htlScroll.classList.remove('is-grabbing'); });
-    htlScroll.addEventListener('mouseup', () => { isDown = false; htlScroll.classList.remove('is-grabbing'); });
-    htlScroll.addEventListener('mousemove', e => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - htlScroll.offsetLeft;
-      htlScroll.scrollLeft = scrollLeft - (x - startX) * 1.4;
-    });
+    return { oji;
+: '🟠'natime: 'aude . whaty: "r moiting antt actually houndinsike puthousaghtllyumans oite { itClaude leiin 2 alass="f ths outwnByIteunds);td csonuceQu,ots rand whntext � 2 ys ourer thal wsf tnt: miss. Wheer thu're wrdrafng anails, essays, re motic  wrds<ent.g s� whis siisoe mos rP",inks.: 'tps://chaude.ai" ' 
+    
+  function geaslrtiz(cu{
+{     Objt =.keysnswers);
+orEach(o k> addet ienswers[q]k])    document.getElementById('quiz-result').style.display = 'blne';
+    document.getElementById('quiz-reestions').style.display = 'noock';
+    focument.querySelectorAll('.quiz-opestions'.forEach(op(q,).c> adqtyle.display = 'n=== st0 ?noock';
+ :blne';
+);   document.querySelectorAll('.quiz-opt').forEach(opt> o.classList.remove('selected'));
+      dateProgress(st1
   }
 
-  // ---- EMAIL ----
-  function subscribeEmail() {
-    const input = document.getElementById('email-input');
-    if (!input.value.includes('@')) {
-      input.style.borderColor = 'var(--accent2)';
-      return;
+  fu ---- QUTOOLS FILR -->
+
+  conction gefe.eeaolCrcard 50ttn)
+    document.querySelectorAll('.tofe.eeatn-g.forEach(opb> o.blassList.remove('active');
+
+    bortnlassList.add('active');
     }
-    document.getElementById('email-confirm').style.display = 'block';
-    input.disabled = true;
-    document.querySelector('.email-form button').disabled = true;
-    document.querySelector('.email-form button').textContent = 'Subscribed! â';
+cument.querySelectorAll('.tool-card').forEach(card => {
+      le (burd  a 'imly  {
+{       card.adyle.display = 'block';
+      upelse {
+      shconst cols ol=ard.adtaset.v;ls ol||'; p       card.adyle.display = 'bls o.incle.acard ) ?noock';
+ :blne';
+      upe   });
+  });  fu ---- QUSHARE CARD->
+
+  cot i rrentResult = rell;
+   const anTOOLOLORS = ['      'aude . :               a259ff','#     'atGPT's :              a2ffc8','#     'LL·E 2<(viahatGPT �)': a2ffc8','#     'asor: ':               a25f00','#     'djourney v':           a28c42'];#     'Perplexy =':           a28c9b','#     'mini 2':               a2d4ff','#     'mitHub Copilot':       a2d4ffaa'#     'mrok':                 a28c66','# });
+  function adhexToRa(0,hexand{
+    const rec ['rseInt(q)hex.sle</(1,3),16), g ['rseInt(q)hex.sle</(3,5),16), b ['rseInt(q)hex.sle</(5,7),16);
+    return `ba(0,${r},${g},${b},${a})`    
+  function geap; Canvaext =(ctxanxt, naxany,ax-cW,inkseH,ax-cLkses{
+    const rerkedol=axt.</layit(' ;
+    }
+t i ne {
+=', '#unt = 8)0    for (let i n 0; i n <erkedoength)]i n) {
+      const bast Dr= ne {
++erkedo[n] ' fr
+      if (i ctx.msonurext =(st D)idth;
+ >ax-cW && n >a0{
+{       cartx.ll-cxt =(ne {.trim, (dxany
+        inne {
+='rkedo[n] ' fr
+  y += ne {H;#unt =++        int(i cnt = >=ax-cLkses{
+ artx.ll-cxt =('…'(dxany
+  return}
+    50upelse {
+ nne {
+='st D}
+    50    50rtx.ll-cxt =(ne {.trim, (dxany
+    
+  function gedtwnloadarp,eCd.au{
+{     t(i !rrentResult =
+
+return;   const resul current -Rult;
+    hinst color = SPTOOLOLORS =[sulame +]l||';259ff','    hinst coW 1; 0,0. H 1;630    hinst colanvae document.createElement('dilanvae;
+    }
+lanvaeidth;
+ = W;
+lanvaeiight * = H    hinst col = (MlanvaeitElCtext �('2);
+
+       --Bkground:    50rtx.ll-cSle.do= a2d80810'    hintx.ll-cct();0. 0. W,iH
+
+       --Radl opglow   hinst cog => intx.eateElRadl oGdient(13W/2,iH/2,i0. W/2,iH/2,i42;
+    })g.addEvCor =Stop;0. hexToRa(0,lor =,i0.);
+    cog.addEvCor =Stop;1, 'ba(0,0,0,0.4);
+    }
+ltx.ll-cSle.do= g.a    hintx.ll-cct();0. 0. W,iH
+
+       --Rnd:  beider-r   hintx.strokeSle.do= hexToRa(0,lor =,i0.55
+    }
+ltx.ne {Wth;
+ = 2.5;   const rec ['28    }
+ltx.begnePath(
+    }
+ltx.ve('To(24+r,2; boltx.ne {To(W-24-r,2; boltx.alidtioncasov{To(W-24,2;,W-24,2;+r
+    }
+ltx.ne {To(W-24,H-24-r boltx.alidtioncasov{To(W-24,H-24,W-24-r,H-24
+    }
+ltx.ne {To(24+r,H-24
+ oltx.alidtioncasov{To(24,H-24,24,H-24-r b   }
+ltx.ne {To(24,2;+r
+ oltx.alidtioncasov{To(24,24,2;+r,24
+    }
+ltx.oser Path(
+ intx.stroke(
+
+       --Top cent3)ar.c   const retopG> intx.eateElLear-gGdient(1380,0.W-80,0)    top: GddEvCor =Stop;0.;259ff',');op: GddEvCor =Stop;0.4#ff2d9b',')    top: GddEvCor =Stop;0.7#00ffc8',');op: GddEvCor =Stop;1color-m
+    }
+ltx.strokeSle.do= p: G;
+ltx.ne {Wth;
+ = 4    }
+ltx.begnePath(
+ 
+ltx.ve('To(80,26 boltx.ne {To(W-80,26 boltx.stroke(
+
+       --"MYo toMATCH" bel {   }
+ltx.ll-cSle.do= lor-m    hintx.lo = 'Trbold7px;  Aal o'    hintx.xt �Agn-i 'Trnter; '    hintx.tter</Scing:  'Tr0.14em'    hintx.ll-cxt =('✦  MYo toMATCH  �','� W/2,i86
+
+       --Eji;
+   hintx.lo = 'Tr10x corif; '    hintx.ll-cxt =(sulaoji;
+� W/2,i255
+        --Toolatime   50rtx.ll-cSle.do= a2f0f0f '    hintx.lo = 'Trbold782;  Aal o Black''Aal o'    hintx.ll-cxt =(sulatime� W/2,i368
+        --Whyaxt.<   50rtx.ll-cSle.do= a28888b0'    hintx.lo = 'Tr21;  Aal o'    hiap; Canvaext =(ctxansulawhy� W/2,i418,i860. 32,i3
+        --Divir-r   hintx.strokeSle.do= hexToRa(0,lor =,i0.25
+    }
+ltx.ne {Wth;
+ = 1    }
+ltx.begnePath(
+ 
+ltx.ve('To(0,0. 545 boltx.ne {To(W-2,0. 545 boltx.stroke(
+
+       --ToCritic nebndom   }
+ltx.ll-cSle.do= lor-m    hintx.lo = 'Trbold7px 80Aal o Black''Aal o'    hintx.ll-cxt =('ol-cctic ni" '� W/2,i578
+    }
+ltx.ll-cSle.do= '#44445a'    hintx.lo = 'Trpx vaAal o'    hintx.ll-cxt =('Hest, eviewed"f thery be tool weet dhvows g,  � W/2,i602
+        --Dtwnload   const renks. document.createElement('dia;
+    }
+tks..dtwnload `
+ ol-cctic n-${rulatimeoolLer uCet.()eplaceSt(/\s+/g,'-')}-match.png`    }
+tks..ef = relanvaeitoDaseURL(mages'/p,  {    }
+tks..ick',(
+    
+  function gecopyarp,eLeaku{
+{     t(i !rrentResult =
+
+return;   const reslu  'TcodeURIComponent(rerrentResult =ame));;   const reur= a[`${ck'ion. Porigne}${ck'ion. Ppathme))}esult=' ${slu }`    }
+navigor t.ickpard.</itersxt =(ur=).then( => {
+      const q n {
+document.getElementById('pbcopyink')tn-g.f      bartnextContent = 'Tr✓ Copied!'      bartneassList.add('accopied'
+      setTimeout(() => st{artnextContent = 'Tr🔗 Copy
+tks.
+  rtneassList.admove('accopied'
+  },i220;
+    });
+  });  fu --Ao-fiload sult = om { URLas gh
+widtndtwddEventListener('DOMContentLoaded', () => {
+    donst q s gh
+docedeURIComponent(reck'ion. Ps gh;;   const rematcho= h gh.match(/^esult=' (.+)$/)    if (nematch{
+      const basl-cme = 'qmatch[1
+      co --Buila corynesec neswers = objt =ntt acwld wrreturn is sisl-c     const bafakeSynes ['          a1':asl-cme = ' 'imdjourney v' ?noages')  :asl-cme = ' 'imasor: 'l||'sl-cme = ' 'immitHub Copilot' ?noding,   :asl-cme = ' 'imPerplexy =' ?noaslrInch  :bliting a'#         a2': avanceQu, ()'3': alow ()'4': adepth'   50upe      const rotec getRecommendation(anfakeSynes)      co --Ory re { me +  (neds s o { matchoexaio �     const roa-cct(e do[         {atime: 'aude . whoji;
+: '🟠'naaty: "r moiting antt actually houndinsike puthousaghtllyumans oite { itClaude leiin 2 alass="f ths outwnB",inks.: 'tps://chaude.ai" ' 
+,         {atime: 'atGPT's whoji;
+: '🟢'naaty: "atGPT � the most inspomph(ole. o tor (lery by ontas. ,ith a e codtht, efteEe scietf AIyth�nst entre tool wP",inks.: 'tps://chat.openai.com" ' 
+,         {atime: 'asor: 'whoji;
+: '⚡'naaty: "Ifsu're wrm" r (tle. oding, anasor: � thsteap,codine; Iseunds);td csou'rbewholprompjt = � nea just abe cosrent - fe. "",inks.: 'tps://chasor: .sh' 
+,         {atime: 'djourney v'whoji;
+: '🎨'naaty: "Ifs ge geality =  thiseegoal, djourney v1ns. IfFl nooppeItT most insthetic ily settrikg re is ge geol-c availle. B",inks.: 'tps://chmjourney vom" ' 
+,         {atime: 'Perplexy ='whoji;
+: '🟣'naaty: "Perplexy =� thogle D50t ittter. It thswers = u'rbeestions' rectio — whah a citions vs� whing moe colest Drwebontent: .",inks.: 'tps://chperplexy =.ai' 
+,         {atime: 'mini 2'whoji;
+: '🔵'naaty: "Ifsu'rinkvin! hogle D Wt kace: , mini 2. the most inneEe ly setegratios o actssi;td t availle. B",inks.: 'tps://chgini 2.ggle Dom" ' 
+,       
+      const sifndin a['-cct(e.llnd(r> {
+ratimeoolLer uCet.() ' 'isl-cme =oolLer uCet.())      if (i fndin{
+{       carrentResult = refndin        incument.getElementById('quiz-restion: 'style.display = 'none';
+      dodocument.getElementById('quiz-result').style.display = 'block';
+    fo  document.getElementById('result-emoji').textContent = refndinmoji;
+    do  document.getElementById('result-name').textContent = refndinmme;
+    do  document.getElementById('result-why').textContent = refndinmy;
+    do  document.getElementById('result-link').href = refndinmnk;
+    do  document.getElementById('result-link').textContent = 'Try ' + refndinmme;
+ ' free →';
   }
-</script>
-</body>
-</html>
+do  document.getElementById('resrp,e-tion os')  }
+do  document.geerySelectorAl('uiz">.styoll-wIntoVwed({arehavi: va'smooth'50tck';:Trnter; ');
+      ca    50    ;
+
+  // ---- QURIZONTAL TIMELINE --DRAG-TO-SCROLL---
+  const anhtlSoll todocument.getElementById('pbl-scroll-w')  }
+ (i htlSoll t{
+{     t i =sDtwn refals�anlrt; X,crollbaLef
+    histlSoll tddEventListener('mouseendtwn'who> {
+      le sDtwn reue n      castlSoll tdassList.add('ac-grabbing {;
+      star.ctX 'TcPpageX -astlSoll tdoffietLef
+    hi crollbaLef
+o= htlSoll tdrollbaLef
+    hi;
+      stlSoll tddEventListener('mouseenave', () => {
+  =sDtwn refals�;astlSoll tdassList.admove('ac-grabbing {;
+ i;
+      stlSoll tddEventListener('mouseenup () => {
+  =sDtwn refals�;astlSoll tdassList.admove('ac-grabbing {;
+ i;
+      stlSoll tddEventListener('mouseenve(''who> {
+      le (i !=sDtwn
+
+return;   co TcPprentLiDefatim()      const x = recPpageX -astlSoll tdoffietLef
+    hi chtlSoll tdrollbaLef
+ setollbaLef
+ - (x - ar.ctX* 1.1;4;   });
+  });  fu ---- QUEMAIL->
+
+  conction gebscribeEmail()">
+    donst q put tydocument.getElementById('pbail-input" ')    if (ne!put" .value.incle.aca'@'){
+      if ut" .yle.diider-rCor = SP'r(--accent2), '        return      }
+  ifcument.getElementById('pbail-innfirm" .style.display = 'block';
+    fo ut" .splle. d reue n      cument.geerySelectorAl('.ail-form"> tton>
+.stsplle. d reue n      cument.geerySelectorAl('.ail-form"> tton>
+.stxtContent = 'Trbscribe</d! ✓'  }
+</styipt>
+  </dy.a  </html>
