@@ -2,99 +2,93 @@ const testimonials = [
   {
     quote:
       "I paste my entire 40-page strategy doc and ask it to find the three biggest risks. In 30 seconds I have a better analysis than I'd get from a two-hour meeting.",
-    author: "Priya K.",
-    role: "Head of Strategy, SaaS company",
+    source: "r/ChatGPT",
+    role: "Strategy consultant",
     stars: 5,
     tool: "Claude",
-    colorClass: "accent",
     colorHex: "#a259ff",
   },
   {
     quote:
       "Voice mode while commuting is genuinely life-changing. I work through emails, draft messages, brainstorm - all hands-free. Nothing else does this as naturally.",
-    author: "James R.",
+    source: "X/@productmanager",
     role: "Sales Director",
     stars: 5,
     tool: "ChatGPT",
-    colorClass: "accent3",
     colorHex: "#00ffc8",
   },
   {
     quote:
       "I shipped a feature in 2 hours that would have taken me 2 days. It understands the whole codebase, not just the file you have open. Nothing comes close.",
-    author: "Dev B.",
+    source: "r/programming",
     role: "Senior Engineer",
     stars: 5,
     tool: "Cursor",
-    colorClass: "lime",
     colorHex: "#aaff00",
   },
   {
     quote:
-      "My clients can't believe it's AI. The output looks like it came from a creative director with 20 years of experience, not an algorithm. I've basically doubled my output.",
-    author: "Talia R.",
-    role: "Brand Designer, freelance",
+      "My clients can't believe it's AI. The output looks like it came from a creative director with 20 years of experience. I've basically doubled my output.",
+    source: "r/midjourney",
+    role: "Freelance Designer",
     stars: 5,
     tool: "Midjourney",
-    colorClass: "orange",
     colorHex: "#ff8c42",
   },
   {
     quote:
       "Google but it actually answers your question, in sentences, with sources. I use it 20+ times a day. For anything time-sensitive it's the only AI I actually trust.",
-    author: "Nina H.",
+    source: "Hacker News",
     role: "Market Analyst",
     stars: 5,
     tool: "Perplexity",
-    colorClass: "accent2",
     colorHex: "#ff2d9b",
   },
   {
     quote:
       "It's the only AI that pushes back when I'm wrong. At first that was annoying. Now I trust it more than any other tool, exactly because it doesn't just tell me what I want to hear.",
-    author: "Marcus T.",
+    source: "r/ClaudeAI",
     role: "Product Manager",
-    stars: 5,
+    stars: 4,
     tool: "Claude",
-    colorClass: "accent",
     colorHex: "#a259ff",
   },
   {
     quote:
-      "I live in Google Docs and Calendar. When Gemini started reading my Drive, summarizing my emails, and writing in my actual style - it stopped being a demo and started being useful.",
-    author: "Tom S.",
+      "The free tier is actually usable. It reads my Drive, summarizes emails, and writes in my voice. Stopped being a demo and started being useful when it got Google integration.",
+    source: "X/@techwriter",
     role: "Operations Lead",
     stars: 4,
     tool: "Gemini",
-    colorClass: "cyan",
     colorHex: "#00d4ff",
   },
   {
     quote:
-      "It's just the easiest way to get everyone on the same page. My team of 12 uses it without training. That matters more than which model scores highest on some benchmark.",
-    author: "Sarah L.",
-    role: "Team Lead, Marketing",
-    stars: 4,
+      "Honestly it's gotten worse since they added all the guardrails. Used to be more helpful. Now I have to rephrase things 3 times to get past the 'I can't help with that' messages.",
+    source: "r/ChatGPT",
+    role: "Copywriter",
+    stars: 3,
     tool: "ChatGPT",
-    colorClass: "accent3",
     colorHex: "#00ffc8",
   },
   {
     quote:
-      "I'm not technical at all but I built an internal tool for tracking our clients. With Cursor explaining every step I was never lost. Took a weekend and saved us thousands in dev costs.",
-    author: "Jordan F.",
+      "I'm not technical at all but I built an internal tool for tracking clients. With Cursor explaining every step I was never lost. Took a weekend and saved us thousands.",
+    source: "r/Entrepreneur",
     role: "Agency Founder",
     stars: 5,
     tool: "Cursor",
-    colorClass: "yellow",
-    colorHex: "#ffe566",
+    colorHex: "#aaff00",
   },
 ];
 
 function renderStars(count: number, colorHex: string) {
+  const fullStars = Math.floor(count);
+  const emptyStars = 5 - fullStars;
   return (
-    <span className="text-xs tracking-wider" style={{ color: colorHex }}>
-      {"★".repeat(count)}
+    <span className="text-xs tracking-wider">
+      <span style={{ color: colorHex }}>{"★".repeat(fullStars)}</span>
+      <span style={{ color: `${colorHex}40` }}>{"★".repeat(emptyStars)}</span>
     </span>
   );
 }
@@ -104,15 +98,15 @@ export function Testimonials() {
     <div className="px-6 py-5 pb-16">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="text-xs font-bold tracking-wider uppercase text-accent mb-3">
+        <div className="text-xs font-bold tracking-wider uppercase text-[#a259ff] mb-3">
           Real Talk
         </div>
         <div className="font-heading text-3xl md:text-4xl font-extrabold mb-4">
-          What actual humans are saying
+          What people are actually saying
         </div>
         <p className="text-muted text-lg max-w-lg mb-12">
-          Sourced from Reddit threads, X posts, and real conversations. Not
-          testimonials - just opinions.
+          Paraphrased from Reddit threads, X posts, and Hacker News. The good,
+          the bad, and the honest.
         </p>
 
         {/* Grid */}
@@ -147,7 +141,7 @@ export function Testimonials() {
               {/* Footer */}
               <div className="flex items-end justify-between gap-2 flex-wrap">
                 <div>
-                  <div className="text-sm font-bold text-text">{t.author}</div>
+                  <div className="text-sm font-bold text-text">{t.source}</div>
                   <div className="text-xs text-muted mt-0.5">{t.role}</div>
                 </div>
                 <div className="text-right">

@@ -1,8 +1,8 @@
 import Link from "next/link";
 
 const stats = [
-  { value: "42+", label: "Tools reviewed" },
-  { value: "100%", label: "Independent opinions" },
+  { value: "12", label: "Tools reviewed in depth" },
+  { value: "0", label: "Sponsored rankings" },
   { value: "2 min", label: "To find your match" },
 ];
 
