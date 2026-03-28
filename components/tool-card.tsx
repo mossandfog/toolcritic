@@ -52,6 +52,12 @@ const colorStyles: Record<string, { glow: string; border: string; shadow: string
     shadow: "0 0 50px rgba(255,229,102,0.4)",
     stars: "#ffe566",
   },
+  red: {
+    glow: "linear-gradient(135deg, rgba(255,80,80,0.55), rgba(255,45,155,0.3))",
+    border: "rgba(255,80,80,0.85)",
+    shadow: "0 0 50px rgba(255,80,80,0.4)",
+    stars: "#ff5050",
+  },
 };
 
 function renderStars(count: number, color: string) {
