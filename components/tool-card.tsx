@@ -80,7 +80,7 @@ function renderStars(count: number, color: string) {
 }
 
 export function ToolCard({ tool }: { tool: Tool }) {
-  const styles = colorStyles[tool.color];
+  const styles = colorStyles[tool.color] || colorStyles.purple;
 
   return (
     <div
