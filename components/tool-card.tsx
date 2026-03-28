@@ -82,8 +82,7 @@ function renderStars(count: number, color: string) {
 }
 
 export function ToolCard({ tool }: { tool: Tool }) {
-  const colorKey = tool.color as keyof typeof colorStyles;
-  const styles = colorStyles[colorKey] ?? colorStyles.purple;
+  const styles = colorStyles[tool.color] || colorStyles.purple;
 
   return (
     <div
