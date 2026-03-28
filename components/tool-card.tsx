@@ -3,6 +3,8 @@
 import Link from "next/link";
 import type { Tool } from "@/lib/tools-data";
 
+// Color styles for tool cards
+
 const colorStyles: Record<string, { glow: string; border: string; shadow: string; stars: string }> = {
   purple: {
     glow: "linear-gradient(135deg, rgba(162,89,255,0.6), rgba(100,50,255,0.4))",
@@ -80,7 +82,8 @@ function renderStars(count: number, color: string) {
 }
 
 export function ToolCard({ tool }: { tool: Tool }) {
-  const styles = colorStyles[tool.color];
+  const colorKey = tool.color as keyof typeof colorStyles;
+  const styles = colorStyles[colorKey] ?? colorStyles.purple;
 
   return (
     <div
