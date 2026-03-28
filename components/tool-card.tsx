@@ -3,8 +3,6 @@
 import Link from "next/link";
 import type { Tool } from "@/lib/tools-data";
 
-// Color styles for tool cards
-
 const colorStyles: Record<string, { glow: string; border: string; shadow: string; stars: string }> = {
   purple: {
     glow: "linear-gradient(135deg, rgba(162,89,255,0.6), rgba(100,50,255,0.4))",
@@ -62,6 +60,8 @@ const colorStyles: Record<string, { glow: string; border: string; shadow: string
   },
 };
 
+const defaultStyle = colorStyles.purple;
+
 function renderStars(count: number, color: string) {
   const fullStars = Math.floor(count);
   const hasHalfStar = count % 1 >= 0.5;
@@ -82,22 +82,17 @@ function renderStars(count: number, color: string) {
 }
 
 export function ToolCard({ tool }: { tool: Tool }) {
-  const styles = colorStyles[tool.color] || colorStyles.purple;
+  const styles = colorStyles[tool.color] ?? defaultStyle;
 
   return (
-    <div
-      className="group bg-surface border border-border rounded-[18px] p-6 transition-all duration-300 cursor-pointer relative overflow-hidden hover:translate-y-[-6px] hover:scale-[1.01]"
-    >
-      {/* Glow layer (hidden by default, visible on hover) */}
+    <div className="group bg-surface border border-border rounded-[18px] p-6 transition-all duration-300 cursor-pointer relative overflow-hidden hover:translate-y-[-6px] hover:scale-[1.01]">
       <div
         className="absolute inset-[-1px] rounded-[18px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-0"
         style={{ background: styles.glow }}
       />
 
-      {/* Inner background layer */}
       <div className="absolute inset-[1px] rounded-[17px] bg-surface -z-10" />
 
-      {/* Hover border effect */}
       <div
         className="absolute inset-0 rounded-[18px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
         style={{
@@ -105,27 +100,22 @@ export function ToolCard({ tool }: { tool: Tool }) {
         }}
       />
 
-      {/* Editor's Pick badge */}
       {tool.editorsPick && (
         <div className="absolute top-3.5 right-3.5 bg-[#ffe566]/15 border border-[#ffe566]/40 text-[#ffe566] rounded-2xl px-2.5 py-0.5 text-[0.72rem] font-bold shadow-[0_0_12px_rgba(255,229,102,0.25)] z-10">
           Editor&apos;s Pick
         </div>
       )}
 
-      {/* Icon */}
       <div className="text-4xl mb-3.5">{tool.icon}</div>
 
-      {/* Name */}
       <div className="font-heading text-xl font-bold mb-1 group-hover:text-white transition-colors text-text">
         {tool.name}
       </div>
 
-      {/* Tagline */}
       <div className="text-muted text-sm mb-3.5 group-hover:text-[#c8c8e8] transition-colors">
         {tool.tagline}
       </div>
 
-      {/* Tags */}
       <div className="flex gap-1.5 flex-wrap mb-4">
         {tool.tags.map((tag) => (
           <span
@@ -137,7 +127,6 @@ export function ToolCard({ tool }: { tool: Tool }) {
         ))}
       </div>
 
-      {/* Rating */}
       <div className="flex items-center gap-2 mb-4">
         {renderStars(tool.stars, styles.stars)}
         <span className="text-sm font-semibold text-text group-hover:text-text transition-colors">
@@ -145,10 +134,8 @@ export function ToolCard({ tool }: { tool: Tool }) {
         </span>
       </div>
 
-      {/* Divider */}
       <div className="h-px bg-border my-4" />
 
-      {/* Pros and Cons */}
       <div className="grid grid-cols-2 gap-3">
         <div>
           <h4 className="text-[0.72rem] font-bold tracking-wide uppercase text-[#00ffc8] mb-2">
@@ -176,7 +163,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
                 key={con}
                 className="text-xs text-muted py-0.5 group-hover:text-[#c8c8e8] transition-colors"
               >
-                <span className="text-[#ff2d9b] font-bold mr-1">−</span>
+                <span className="text-[#ff2d9b] font-bold mr-1">-</span>
                 {con}
               </li>
             ))}
@@ -184,7 +171,6 @@ export function ToolCard({ tool }: { tool: Tool }) {
         </div>
       </div>
 
-      {/* Footer */}
       <div className="mt-4 flex items-center justify-between">
         <div className="text-sm text-muted group-hover:text-[#c8c8e8] transition-colors">
           <strong className="text-text">{tool.price.split(" / ")[0]}</strong>
@@ -195,7 +181,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
           target="_blank"
           className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] text-white border-none rounded-2xl px-4 py-1.5 text-sm font-semibold transition-all shadow-[0_0_10px_rgba(162,89,255,0.3)] hover:shadow-[0_0_20px_rgba(162,89,255,0.6)] hover:scale-105"
         >
-          Try it →
+          Try it
         </Link>
       </div>
     </div>
