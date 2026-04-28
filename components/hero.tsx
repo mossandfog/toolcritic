@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const stats = [
-  { value: "12", label: "Tools reviewed in depth" },
+  { value: "13", label: "Tools reviewed in depth" },
   { value: "0", label: "Sponsored rankings" },
   { value: "2 min", label: "To find your match" },
 ];

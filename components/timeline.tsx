@@ -22,24 +22,6 @@ const timelineItems = [
     tags: ["Text-to-image", "12B params"],
   },
   {
-    date: "Apr 2022",
-    model: "DALL·E 2",
-    by: "OpenAI",
-    color: "#00d4ff",
-    milestone: false,
-    desc: "Text-to-image that actually worked. Designers panicked. Everyone made avatars. AI art went mainstream overnight.",
-    tags: ["Photorealistic", "Inpainting"],
-  },
-  {
-    date: "Jul 2022",
-    model: "Midjourney v1-3",
-    by: "Midjourney",
-    color: "#ff8c42",
-    milestone: false,
-    desc: "A Discord bot that made the internet fall in love with AI art. By v3, the aesthetic internet changed forever.",
-    tags: ["Artistic style", "Discord-native"],
-  },
-  {
     date: "Aug 2022",
     model: "Stable Diffusion",
     by: "Stability AI",
@@ -60,15 +42,6 @@ const timelineItems = [
     tags: ["100M users / 2mo", "Culture shift"],
   },
   {
-    date: "Feb 2023",
-    model: "Bing Chat",
-    by: "Microsoft",
-    color: "#00d4ff",
-    milestone: false,
-    desc: "Microsoft moved fast. GPT-4 in a search engine, before GPT-4 was even announced. Also: Sydney became a meme.",
-    tags: ["GPT-4 preview", "Sydney incident"],
-  },
-  {
     date: "Mar 2023",
     model: "GPT-4",
     by: "OpenAI",
@@ -77,24 +50,6 @@ const timelineItems = [
     badge: "Reasoning Leap",
     desc: "Passed the bar exam in the 90th percentile. \"AI can't reason\" became very hard to say with a straight face.",
     tags: ["Multimodal", "Bar exam: 90th %ile"],
-  },
-  {
-    date: "Mar 2023",
-    model: "Claude (1.0)",
-    by: "Anthropic",
-    color: "#ff2d9b",
-    milestone: false,
-    desc: "Anthropic enters the chat. Built by ex-OpenAI researchers focused on AI safety. The vibe was different from day one.",
-    tags: ["Constitutional AI", "Safety-focused"],
-  },
-  {
-    date: "Jul 2023",
-    model: "Claude 2",
-    by: "Anthropic",
-    color: "#ff2d9b",
-    milestone: false,
-    desc: "100K token context - an entire novel in one prompt. Writers discovered an AI that actually holds context.",
-    tags: ["100K context", "Long documents"],
   },
   {
     date: "Jul 2023",
@@ -107,15 +62,6 @@ const timelineItems = [
     tags: ["Open weights", "70B params"],
   },
   {
-    date: "Sep 2023",
-    model: "Mistral 7B",
-    by: "Mistral AI",
-    color: "#ffe566",
-    milestone: false,
-    desc: "A tiny French startup released a 7B model that punched way above its weight. Europe entered the AI race.",
-    tags: ["7B params", "Apache 2.0"],
-  },
-  {
     date: "Dec 2023",
     model: "Gemini Ultra",
     by: "Google",
@@ -123,15 +69,6 @@ const timelineItems = [
     milestone: false,
     desc: "Google's first model to genuinely challenge GPT-4. Native multimodality from day one - sees, reads, and reasons.",
     tags: ["Multimodal native", "1M context"],
-  },
-  {
-    date: "Dec 2023",
-    model: "Mixtral 8x7B",
-    by: "Mistral AI",
-    color: "#ffe566",
-    milestone: false,
-    desc: "Mixture of experts goes mainstream. GPT-3.5 level quality at a fraction of the compute. Efficiency breakthrough.",
-    tags: ["MoE architecture", "Sparse model"],
   },
   {
     date: "Feb 2024",
@@ -152,15 +89,6 @@ const timelineItems = [
     badge: "Vibe Shift",
     desc: "Topped every benchmark. People said it felt different - like talking to someone actually thinking. The \"vibe\" gap opened up.",
     tags: ["#1 benchmarks", "200K context"],
-  },
-  {
-    date: "Apr 2024",
-    model: "Llama 3",
-    by: "Meta",
-    color: "#a259ff",
-    milestone: false,
-    desc: "8B and 70B models that finally competed with closed-source. The 400B model was coming. Open-source caught up.",
-    tags: ["8B / 70B", "15T tokens"],
   },
   {
     date: "May 2024",
@@ -249,13 +177,81 @@ const timelineItems = [
     tags: ["100K H100s", "Real-time X data"],
   },
   {
+    date: "Feb 2025",
+    model: "GPT-5.3 Codex",
+    by: "OpenAI",
+    color: "#00ffc8",
+    milestone: true,
+    badge: "Agentic Coding",
+    desc: "The most capable agentic coding model. Writes, tests, and deploys. Software engineering fundamentally changed.",
+    tags: ["Agentic coding", "Full stack"],
+  },
+  {
     date: "Mar 2025",
-    model: "Claude 3.5 Opus",
+    model: "GPT-5.4",
+    by: "OpenAI",
+    color: "#00ffc8",
+    milestone: true,
+    badge: "Pro Work",
+    desc: "Frontier model for professional work. GPT-5.4 Pro launched alongside for maximum performance on complex tasks.",
+    tags: ["Professional", "Complex tasks"],
+  },
+  {
+    date: "Mar 2025",
+    model: "Claude 4 Opus",
     by: "Anthropic",
     color: "#ff2d9b",
+    milestone: true,
+    badge: "Extended Thinking",
+    desc: "Hours of deep reasoning. Claude gained the ability to think through problems over extended periods. Research-grade AI.",
+    tags: ["Extended thinking", "Research-grade"],
+  },
+  {
+    date: "Nov 2025",
+    model: "Gemini 3",
+    by: "Google",
+    color: "#00d4ff",
+    milestone: true,
+    badge: "Google's Moment",
+    desc: "Google's most intelligent model. Native multimodality, deep reasoning, and seamless Workspace integration finally clicked.",
+    tags: ["Most intelligent", "Native multimodal"],
+  },
+  {
+    date: "Jan 2026",
+    model: "Gemini 3 Deep Think",
+    by: "Google",
+    color: "#00d4ff",
     milestone: false,
-    desc: "The most capable Claude yet. Extended thinking, better reasoning, improved computer use. The thinking model evolved.",
-    tags: ["Extended thinking", "Best writing"],
+    desc: "AI designed for science. Extended reasoning for research problems. Google pushed into frontier reasoning territory.",
+    tags: ["Scientific reasoning", "Deep research"],
+  },
+  {
+    date: "Feb 2026",
+    model: "Gemini 3.1 Pro",
+    by: "Google",
+    color: "#00d4ff",
+    milestone: false,
+    desc: "Smarter model for complex tasks. Improved reasoning, better instruction following. The Pro tier caught up.",
+    tags: ["Complex tasks", "Pro tier"],
+  },
+  {
+    date: "Apr 2026",
+    model: "GPT-5.5",
+    by: "OpenAI",
+    color: "#00ffc8",
+    milestone: true,
+    badge: "Current Frontier",
+    desc: "Intuitive AI for real work. GPT-5.5 and GPT-5.5 Pro available via API. The new state of the art.",
+    tags: ["Real work", "State of art"],
+  },
+  {
+    date: "Apr 2026",
+    model: "Gemini Robotics-ER",
+    by: "Google",
+    color: "#00d4ff",
+    milestone: false,
+    desc: "Reasoning-first model for robots. AI moved from screens to physical world. A new frontier opened.",
+    tags: ["Robotics", "Physical AI"],
   },
   {
     date: "Present",
@@ -264,8 +260,8 @@ const timelineItems = [
     color: "#aaff00",
     milestone: true,
     badge: "Right Now",
-    desc: "5 frontier labs. Open-source catching up. Reasoning models standard. Computer use emerging. AI agents becoming real. Everything accelerating.",
-    tags: ["Multi-model era", "Agents emerging"],
+    desc: "6 frontier labs. Open-source still catching up. Reasoning models standard. Agentic AI is real. Robotics emerging. The acceleration continues.",
+    tags: ["Multi-model era", "Agents are real"],
   },
 ];
 
@@ -321,7 +317,7 @@ export function Timeline() {
           </em>
         </div>
         <p className="text-muted text-lg max-w-xl mb-0">
-          5 years. 28 breakthroughs. From GPT-3 to agents. Drag to explore the timeline that changed everything.
+          6 years. 27 breakthroughs. From GPT-3 to agentic AI. Drag to explore the timeline that changed everything.
         </p>
       </div>
 
@@ -445,7 +441,7 @@ export function Timeline() {
 
       <div className="text-center py-3 pb-16">
         <p className="text-muted text-sm tracking-wide">
-          Drag or scroll to explore 5 years of AI history
+          Drag or scroll to explore 6 years of AI history
         </p>
       </div>
     </div>
