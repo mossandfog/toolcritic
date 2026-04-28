@@ -25,7 +25,7 @@ export function Footer() {
           </span>
         ))}
       </div>
-      <div className="text-text">Made with care and actual opinions. © 2025 ToolCritic</div>
+      <div className="text-text">Made with care and actual opinions. © 2026 ToolCritic</div>
       <div className="mt-2 text-xs opacity-60">
         Built by a human who uses these tools daily. No sponsored rankings.
       </div>

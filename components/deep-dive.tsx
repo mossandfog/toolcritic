@@ -4,11 +4,11 @@ const comparisons = [
   {
     metric: "Coding · SWE-Bench Verified",
     icon: "💻",
-    claude: { value: "72%", pct: 96 },
-    gpt: { value: "69%", pct: 92 },
+    claude: { value: "75%", pct: 94 },
+    gpt: { value: "72%", pct: 90 },
     winner: "claude",
     verdict: "Claude edges it",
-    note: "Claude 4 Opus vs GPT-5.5",
+    note: "April 2026 benchmarks",
   },
   {
     metric: "Reasoning · GPQA Diamond",
@@ -70,7 +70,7 @@ export function DeepDive() {
         </div>
         <div className="font-heading text-3xl md:text-4xl font-extrabold mb-2.5 flex items-center gap-4 flex-wrap">
           <span className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] bg-clip-text text-transparent">
-            Claude 4
+            Claude 4.7
           </span>
           <span className="text-muted text-2xl">vs</span>
           <span className="bg-gradient-to-br from-[#00ffc8] to-[#00d4ff] bg-clip-text text-transparent">
@@ -78,7 +78,7 @@ export function DeepDive() {
           </span>
         </div>
         <p className="text-muted text-lg max-w-xl mb-8">
-          The current frontier matchup. Claude 4 Opus vs GPT-5.5 - closer than ever, but different vibes.
+          The current frontier matchup. Claude 4.7 Sonnet vs GPT-5.5 - April 2026.
         </p>
 
         {/* Comparison grid */}
@@ -103,7 +103,7 @@ export function DeepDive() {
                 {/* Claude bar */}
                 <div className="flex items-center gap-2">
                   <span className="text-[0.72rem] font-semibold text-[#a259ff] w-[76px] flex-shrink-0">
-                    Claude 4
+                    Claude 4.7
                   </span>
                   <div className="flex-1 h-5 bg-white/5 rounded-md overflow-hidden">
                     <div
@@ -170,7 +170,7 @@ export function DeepDive() {
         {/* Score tally */}
         <div className="flex items-center justify-center gap-10 bg-surface border border-border rounded-2xl p-7 mb-11 flex-wrap">
           <div className="text-center">
-            <div className="text-sm text-muted mb-2">Claude 4 Opus</div>
+            <div className="text-sm text-muted mb-2">Claude 4.7 Sonnet</div>
             <div className="font-heading text-5xl font-extrabold bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] bg-clip-text text-transparent">
               3
             </div>
@@ -194,23 +194,22 @@ export function DeepDive() {
             </h3>
             <div className="text-muted text-[0.95rem] leading-relaxed space-y-3.5">
               <p>
-                For the first time, these two are genuinely neck-and-neck on benchmarks. 
-                GPT-5.5 brought massive improvements to reasoning and context length, 
-                while Claude 4 Opus doubled down on what made Claude special: thoughtful, 
-                careful, genuinely good writing.
+                Claude 4.7 Sonnet dropped in April 2026 and immediately reclaimed the 
+                coding crown. Anthropic focused on developer experience - better tool use, 
+                more reliable structured output, and faster response times. The writing 
+                quality gap has widened again.
               </p>
               <p>
-                Claude still writes better. Its answers feel considered rather than 
-                generated. Extended thinking mode lets it work through complex problems 
-                for hours. For anyone doing serious knowledge work - research, analysis, 
-                strategy - Claude remains the obvious choice.
+                GPT-5.5 is still the most capable all-rounder. The 400K context window 
+                is unmatched, Sora integration for video generation is seamless, and 
+                the voice mode feels genuinely conversational. For multimodal work, 
+                nothing else comes close.
               </p>
               <p>
-                GPT-5.5 does more. Sora integration means video generation. Voice mode 
-                is seamless. The 400K context window is massive. And the raw reasoning 
-                scores have finally caught up. If you want one AI that does everything, 
-                GPT-5.5 is hard to beat. But if you want one AI that does the important 
-                things exceptionally well, Claude 4 is still the answer.
+                The real story in 2026: these models are converging on capability but 
+                diverging on philosophy. Claude feels like a thoughtful collaborator. 
+                GPT-5.5 feels like a powerful tool. Neither is wrong - it depends what 
+                you need.
               </p>
             </div>
           </div>
@@ -219,10 +218,10 @@ export function DeepDive() {
           <div className="flex flex-col gap-4">
             <div className="bg-surface border border-border rounded-2xl p-5">
               <div className="text-[0.72rem] text-muted font-bold uppercase tracking-wide mb-1.5">
-                Best for writers & analysts
+                Best for coding & writing
               </div>
               <div className="font-heading font-extrabold mb-3.5 text-text">
-                Claude 4 Opus
+                Claude 4.7 Sonnet
               </div>
               <Link
                 href="https://claude.ai"

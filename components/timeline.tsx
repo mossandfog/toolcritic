@@ -246,6 +246,16 @@ const timelineItems = [
   },
   {
     date: "Apr 2026",
+    model: "Claude 4.7 Sonnet",
+    by: "Anthropic",
+    color: "#ff2d9b",
+    milestone: true,
+    badge: "Coding Crown",
+    desc: "Anthropic reclaims the coding lead. Claude 4.7 brings faster responses, better tool use, and the best writing quality in the market.",
+    tags: ["Best for coding", "Writing quality"],
+  },
+  {
+    date: "Apr 2026",
     model: "Gemini Robotics-ER",
     by: "Google",
     color: "#00d4ff",
