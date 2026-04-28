@@ -85,7 +85,7 @@ export function ToolCard({ tool }: { tool: Tool }) {
   const styles = colorStyles[tool.color] ?? defaultStyle;
 
   return (
-    <div className="group bg-surface border border-border rounded-[18px] p-6 transition-all duration-300 cursor-pointer relative overflow-hidden hover:translate-y-[-6px] hover:scale-[1.01]">
+    <Link href={`/tools/${tool.id}`} className="block group bg-surface border border-border rounded-[18px] p-6 transition-all duration-300 cursor-pointer relative overflow-hidden hover:translate-y-[-6px] hover:scale-[1.01]">
       <div
         className="absolute inset-[-1px] rounded-[18px] opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-0"
         style={{ background: styles.glow }}
@@ -176,14 +176,12 @@ export function ToolCard({ tool }: { tool: Tool }) {
           <strong className="text-text">{tool.price.split(" / ")[0]}</strong>
           {tool.price.includes(" / ") && ` / ${tool.price.split(" / ")[1]}`}
         </div>
-        <Link
-          href={tool.link}
-          target="_blank"
-          className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] text-white border-none rounded-2xl px-4 py-1.5 text-sm font-semibold transition-all shadow-[0_0_10px_rgba(162,89,255,0.3)] hover:shadow-[0_0_20px_rgba(162,89,255,0.6)] hover:scale-105"
+        <span
+          className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] text-white border-none rounded-2xl px-4 py-1.5 text-sm font-semibold transition-all shadow-[0_0_10px_rgba(162,89,255,0.3)] group-hover:shadow-[0_0_20px_rgba(162,89,255,0.6)] group-hover:scale-105"
         >
-          Try it
-        </Link>
+          Learn more
+        </span>
       </div>
-    </div>
+    </Link>
   );
 }
