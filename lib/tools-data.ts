@@ -13,6 +13,7 @@ export interface Tool {
   cons: string[];
   price: string;
   link: string;
+  fullReview?: string;
 }
 
 export const tools: Tool[] = [
@@ -216,6 +217,38 @@ export const tools: Tool[] = [
     price: "$10/mo add-on",
     link: "https://notion.so/product/ai",
   },
+  {
+    id: "openclaw",
+    icon: "🦞",
+    name: "OpenClaw",
+    tagline: "Open-source · Your AI, your rules",
+    tags: ["Self-hosted", "Open Source", "Privacy"],
+    rating: 4.7,
+    stars: 5,
+    color: "red",
+    categories: ["coding", "writing", "research"],
+    editorsPick: true,
+    pros: ["Use any LLM (Claude, GPT, Llama)", "Run locally with full privacy", "Agentic tools & file access"],
+    cons: ["Requires some technical setup", "BYOK (bring your own API keys)"],
+    price: "Free (open source)",
+    link: "https://github.com/OpenClaw/OpenClaw",
+    fullReview: `OpenClaw is fundamentally different from ChatGPT, Claude, and other hosted AI chats. Instead of being a product with its own model, it's an open-source framework that lets you build your own AI assistant using any model you want.
+
+**What makes it different:**
+- **Model agnostic**: Plug in Claude, GPT-4, Gemini, Llama, or any other model. Switch between them freely.
+- **Runs anywhere**: Desktop app (Mac, Windows, Linux), self-hosted server, or even mobile.
+- **True privacy**: When running locally with Llama, your data never leaves your machine.
+- **Agentic by design**: Built for tool use - browse the web, read PDFs, access files, execute code.
+
+**Who it's for:**
+OpenClaw is ideal for power users who want control. Developers who want to customize their AI stack. Privacy-conscious users who don't want their data on corporate servers. Teams who want to run AI internally.
+
+**Who should skip it:**
+If you just want to chat with an AI without thinking about infrastructure, stick with ChatGPT or Claude. OpenClaw requires you to bring your own API keys or run local models.
+
+**The bottom line:**
+OpenClaw represents where AI assistants are heading - personal, customizable, and under your control. Microsoft is already copying this "playbook" for Copilot. If you're technical enough to set it up, it's the most flexible option available.`,
+  },
 ];
 
 export const comparisonData = [
@@ -335,5 +368,14 @@ export const comparisonData = [
     webAccess: false,
     imageGen: false,
     pricing: "paid",
+  },
+  {
+    icon: "🦞",
+    name: "OpenClaw",
+    bestFor: "Power users who want control",
+    freeTier: true,
+    webAccess: true,
+    imageGen: "Via plugins",
+    pricing: "free",
   },
 ];
