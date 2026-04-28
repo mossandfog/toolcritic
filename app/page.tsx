@@ -15,11 +15,11 @@ export default function Home() {
       <Nav />
       <Hero />
       <Quiz />
+      <Timeline />
       <ToolsGrid />
       <Testimonials />
       <ComparisonTable />
       <DeepDive />
-      <Timeline />
       <Newsletter />
       <Footer />
     </main>

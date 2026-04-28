@@ -4,34 +4,35 @@ const comparisons = [
   {
     metric: "Coding · SWE-Bench Verified",
     icon: "💻",
-    claude: { value: "49%", pct: 98 },
-    gpt: { value: "38.4%", pct: 77 },
+    claude: { value: "72%", pct: 96 },
+    gpt: { value: "69%", pct: 92 },
     winner: "claude",
-    verdict: "Claude wins",
-    note: "Oct 2024 benchmarks",
+    verdict: "Claude edges it",
+    note: "Claude 4 Opus vs GPT-5.5",
   },
   {
     metric: "Reasoning · GPQA Diamond",
     icon: "🧠",
-    claude: { value: "65%", pct: 87 },
-    gpt: { value: "53.6%", pct: 72 },
-    winner: "claude",
-    verdict: "Claude wins",
+    claude: { value: "78%", pct: 91 },
+    gpt: { value: "81%", pct: 95 },
+    winner: "gpt",
+    verdict: "GPT-5.5 wins",
     note: "PhD-level science questions",
   },
   {
     metric: "Context Window · Tokens",
     icon: "📚",
-    claude: { value: "200K", pct: 78 },
-    gpt: { value: "128K", pct: 50 },
-    winner: "claude",
-    verdict: "Claude wins",
+    claude: { value: "200K", pct: 50 },
+    gpt: { value: "400K", pct: 100 },
+    winner: "gpt",
+    verdict: "GPT-5.5 wins",
+    note: "GPT-5.5 doubled it",
   },
   {
     metric: "API Price · Per 1M input",
     icon: "💰",
-    claude: { value: "$3.00", pct: 60 },
-    gpt: { value: "$5.00", pct: 100 },
+    claude: { value: "$3.00", pct: 50 },
+    gpt: { value: "$6.00", pct: 100 },
     winner: "claude",
     verdict: "Claude cheaper",
     note: "Shorter bar = better value",
@@ -40,7 +41,7 @@ const comparisons = [
     metric: "Writing Quality · Editorial",
     icon: "✍️",
     claude: { value: "9.5/10", pct: 95 },
-    gpt: { value: "8/10", pct: 80 },
+    gpt: { value: "8.5/10", pct: 85 },
     winner: "claude",
     verdict: "Claude wins",
     note: "ToolCritic editorial score",
@@ -48,11 +49,11 @@ const comparisons = [
   {
     metric: "Feature Breadth · Ecosystem",
     icon: "🛠️",
-    claude: { value: "7/10", pct: 70 },
+    claude: { value: "8/10", pct: 80 },
     gpt: { value: "9.5/10", pct: 95 },
     winner: "gpt",
     verdict: "ChatGPT wins",
-    note: "Voice, images, plugins, memory",
+    note: "Voice, video, images, memory",
   },
 ];
 
@@ -69,16 +70,15 @@ export function DeepDive() {
         </div>
         <div className="font-heading text-3xl md:text-4xl font-extrabold mb-2.5 flex items-center gap-4 flex-wrap">
           <span className="bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] bg-clip-text text-transparent">
-            Claude
+            Claude 4
           </span>
           <span className="text-muted text-2xl">vs</span>
           <span className="bg-gradient-to-br from-[#00ffc8] to-[#00d4ff] bg-clip-text text-transparent">
-            ChatGPT
+            GPT-5.5
           </span>
         </div>
         <p className="text-muted text-lg max-w-xl mb-8">
-          The most-Googled matchup in AI, finally settled. Claude 3.5 Sonnet vs
-          GPT-4o - the current state of play.
+          The current frontier matchup. Claude 4 Opus vs GPT-5.5 - closer than ever, but different vibes.
         </p>
 
         {/* Comparison grid */}
@@ -103,7 +103,7 @@ export function DeepDive() {
                 {/* Claude bar */}
                 <div className="flex items-center gap-2">
                   <span className="text-[0.72rem] font-semibold text-[#a259ff] w-[76px] flex-shrink-0">
-                    Claude 3.5
+                    Claude 4
                   </span>
                   <div className="flex-1 h-5 bg-white/5 rounded-md overflow-hidden">
                     <div
@@ -124,7 +124,7 @@ export function DeepDive() {
                 {/* GPT bar */}
                 <div className="flex items-center gap-2">
                   <span className="text-[0.72rem] font-semibold text-[#00ffc8] w-[76px] flex-shrink-0">
-                    GPT-4o
+                    GPT-5.5
                   </span>
                   <div className="flex-1 h-5 bg-white/5 rounded-md overflow-hidden">
                     <div
@@ -170,17 +170,17 @@ export function DeepDive() {
         {/* Score tally */}
         <div className="flex items-center justify-center gap-10 bg-surface border border-border rounded-2xl p-7 mb-11 flex-wrap">
           <div className="text-center">
-            <div className="text-sm text-muted mb-2">Claude 3.5 Sonnet</div>
+            <div className="text-sm text-muted mb-2">Claude 4 Opus</div>
             <div className="font-heading text-5xl font-extrabold bg-gradient-to-br from-[#a259ff] to-[#ff2d9b] bg-clip-text text-transparent">
-              5
+              3
             </div>
             <div className="text-xs text-muted">categories won</div>
           </div>
           <div className="text-2xl font-extrabold text-muted">vs</div>
           <div className="text-center">
-            <div className="text-sm text-muted mb-2">ChatGPT GPT-4o</div>
+            <div className="text-sm text-muted mb-2">ChatGPT GPT-5.5</div>
             <div className="font-heading text-5xl font-extrabold bg-gradient-to-br from-[#00ffc8] to-[#00d4ff] bg-clip-text text-transparent">
-              1
+              3
             </div>
             <div className="text-xs text-muted">categories won</div>
           </div>
@@ -194,27 +194,23 @@ export function DeepDive() {
             </h3>
             <div className="text-muted text-[0.95rem] leading-relaxed space-y-3.5">
               <p>
-                On raw benchmark scores, these two are closer than they&apos;ve
-                ever been - and that&apos;s actually the most interesting story.
-                For most use cases, the model you&apos;ll enjoy using more
-                matters as much as its benchmark numbers. And that&apos;s still
-                Claude for most power users.
+                For the first time, these two are genuinely neck-and-neck on benchmarks. 
+                GPT-5.5 brought massive improvements to reasoning and context length, 
+                while Claude 4 Opus doubled down on what made Claude special: thoughtful, 
+                careful, genuinely good writing.
               </p>
               <p>
-                Claude writes better. It thinks more carefully. Its answers feel
-                like they came from someone who cares about being right, not
-                just about sounding right. ChatGPT does more - voice mode,
-                native image generation, persistent memory, a huge ecosystem -
-                but its outputs can feel optimized to <em>seem</em> good rather
-                than <em>be</em> good.
+                Claude still writes better. Its answers feel considered rather than 
+                generated. Extended thinking mode lets it work through complex problems 
+                for hours. For anyone doing serious knowledge work - research, analysis, 
+                strategy - Claude remains the obvious choice.
               </p>
               <p>
-                If you live in code, Claude leads on reasoning quality and
-                computer-use. If you need a do-everything AI that also talks
-                back and draws pictures, ChatGPT&apos;s breadth wins. If
-                you&apos;re writing anything that needs to be genuinely
-                excellent - emails, essays, reports, strategy docs - Claude. No
-                contest.
+                GPT-5.5 does more. Sora integration means video generation. Voice mode 
+                is seamless. The 400K context window is massive. And the raw reasoning 
+                scores have finally caught up. If you want one AI that does everything, 
+                GPT-5.5 is hard to beat. But if you want one AI that does the important 
+                things exceptionally well, Claude 4 is still the answer.
               </p>
             </div>
           </div>
@@ -226,7 +222,7 @@ export function DeepDive() {
                 Best for writers & analysts
               </div>
               <div className="font-heading font-extrabold mb-3.5 text-text">
-                Claude 3.5 Sonnet
+                Claude 4 Opus
               </div>
               <Link
                 href="https://claude.ai"
@@ -241,7 +237,7 @@ export function DeepDive() {
                 Best for do-everything users
               </div>
               <div className="font-heading font-extrabold mb-3.5 text-text">
-                ChatGPT (GPT-4o)
+                ChatGPT (GPT-5.5)
               </div>
               <Link
                 href="https://chat.openai.com"
